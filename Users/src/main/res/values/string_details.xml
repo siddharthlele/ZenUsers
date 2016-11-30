@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- PET DETAILS -->
+    <string name="pet_details_about_label">ABOUT THIS PET</string>
+    <string name="pet_details_about_value">PET NAME</string>
+    <string name="pet_details_gender_label">GENDER</string>
+    <string name="pet_details_gender_value">PET GENDER</string>
+    <string name="pet_details_age_label">AGE</string>
+    <string name="pet_details_age_value">PET AGE</string>
+    <string name="pet_details_breed_label">BREED</string>
+    <string name="pet_details_breed_value">PET BREED</string>
+    <string name="pet_details_vaccination_label">VACCINATIONS RECORDS</string>
+    <string name="pet_details_add_new_label">Add New</string>
+    <string name="pet_details_medication_label">MEDICATIONS RECORDS</string>
+</resources>

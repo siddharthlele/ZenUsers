@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- PROFILE CREATOR AND MODIFIER -->
+    <string name="profile_dob">&#xf073;</string>
+
+    <!-- DOCTOR ITEM -->
+    <string name="doctor_item_like_icon">&#xf087;</string>
+    <string name="doctor_bottom_separator_circle">&#xf111;</string>
+
+    <!-- DOCTOR PROFILE -->
+    <string name="doc_profile_exp_icon">&#xf0b1;</string>
+    <string name="doc_profile_likes_icon">&#xf087;</string>
+    <string name="doc_profile_charges_icon">&#xf0d6;</string>
+    <string name="doc_profile_hospital_icon">&#xf0f8;</string>
+    <string name="doc_profile_timings_icon">&#xf017;</string>
+    <string name="doc_profile_reviews_icon">&#xf0e6;</string>
+    <string name="doc_profile_images_icon">&#xf03e;</string>
+    <string name="doc_profile_services_icon">&#xf085;</string>
+
+
+    <string name="gender_female">&#xf221;</string>
+    <string name="gender_male">&#xf222;</string>
+    <string name="gender_less">&#xf228;</string>
+    <string name="dob_selector_icon">&#xE8DF;</string>
+    <string name="breed_icon">&#xE91D;</string>
+    <string name="age_icon">&#xE7E9;</string>
+    <string name="close_icon">&#xf00d;</string>
+</resources>

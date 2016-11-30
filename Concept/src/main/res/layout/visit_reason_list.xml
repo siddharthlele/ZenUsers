@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/myToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <com.mikepenz.iconics.view.IconicsImageView
+            android:id="@+id/btnFeedbackExit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:adjustViewBounds="true"
+            app:iiv_color="@android:color/black"
+            app:iiv_icon="gmd-arrow-back"
+            app:iiv_size="16dp" />
+    </android.support.v7.widget.Toolbar>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/fixed_divider_horizontal_bright" />
+
+    <android.support.v7.widget.AppCompatEditText
+        android:id="@+id/edtSearch"
+        fontPath="fonts/Roboto-Medium.ttf"
+        android:layout_width="fill_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@null"
+        android:drawableLeft="@drawable/places_ic_search"
+        android:drawablePadding="6dp"
+        android:drawableStart="@drawable/places_ic_search"
+        android:gravity="start|center"
+        android:hint="Search"
+        android:padding="11dp"
+        android:textColor="@android:color/primary_text_light"
+        android:textColorHint="@android:color/tertiary_text_light"
+        android:textSize="16sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/listVisitReasons"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:cacheColorHint="@android:color/transparent"
+        android:fadingEdge="none"
+        android:overScrollMode="never"
+        android:persistentDrawingCache="scrolling"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@color/primary_dark"
+        android:scrollbars="vertical"
+        android:visibility="visible" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btnSubmit"
+        fontPath="fonts/Roboto-Medium.ttf"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:background="@color/primary_dark"
+        android:gravity="center"
+        android:text="DONE"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="16sp" />
+
+</LinearLayout>

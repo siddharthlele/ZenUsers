@@ -1,0 +1,99 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "24.0.3"
+    defaultConfig {
+        applicationId "com.zenpets.users"
+        minSdkVersion 15
+        targetSdkVersion 25
+        versionCode 1
+        versionName "0.0.1"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    /** ANDROID SUPPORT LIBRARIES **/
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:cardview-v7:25.0.1'
+    compile 'com.android.support:recyclerview-v7:25.0.1'
+    compile 'com.android.support:design:25.0.1'
+
+    /** GOOGLE PLAY SERVICES **/
+    compile 'com.google.android.gms:play-services-maps:9.8.0'
+    compile 'com.google.android.gms:play-services-location:9.8.0'
+    compile 'com.google.android.gms:play-services-places:9.8.0'
+    compile 'com.google.android.gms:play-services-auth:9.8.0'
+
+    /** FIREBASE **/
+    compile 'com.google.firebase:firebase-auth:9.8.0'
+    compile 'com.google.firebase:firebase-crash:9.8.0'
+    compile 'com.google.firebase:firebase-database:9.8.0'
+    compile 'com.google.firebase:firebase-storage:9.8.0'
+
+    /** FIREBASE UI **/
+    compile 'com.firebaseui:firebase-ui-database:0.6.0'
+
+    /** THE FACEBOOK SDK **/
+    compile 'com.facebook.android:facebook-android-sdk:4.17.0'
+
+    /** CALLIGRAPHY **/
+    compile 'uk.co.chrisjenx:calligraphy:2.2.0'
+
+    /** PICASSO LIBRARY **/
+    compile 'com.squareup.picasso:picasso:2.5.2'
+
+    /** THE CIRCLE IMAGE VIEW LIBRARY **/
+    compile 'de.hdodenhof:circleimageview:2.1.0'
+
+    /** BUTTER KNIFE **/
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+
+    /** MATERIAL DIALOGS **/
+    compile 'com.afollestad.material-dialogs:core:0.8.5.9'
+
+    /** MATERIAL DATE PICKER **/
+    compile 'com.wdullaer:materialdatetimepicker:2.5.0'
+
+    /** TIMES SQUARE LIBRARY **/
+    compile 'com.squareup:android-times-square:1.6.5@aar'
+
+    /** THE ICONICS LIBRARY **/
+    compile "com.mikepenz:iconics-core:2.8.1@aar"
+    compile 'com.mikepenz:google-material-typeface:2.2.0.3.original@aar'
+    compile 'com.mikepenz:material-design-iconic-typeface:2.2.0.2@aar'
+    compile 'com.mikepenz:fontawesome-typeface:4.6.0.3@aar'
+
+    /** THE GOOGLE MAPS UTILITY **/
+    compile 'com.google.maps.android:android-maps-utils:0.4.4'
+
+    /** MULTI IMAGE PICKER **/
+    compile 'com.github.darsh2:MultipleImageSelect:v0.0.4'
+
+    /** PERMISSIONS MANAGER **/
+    compile 'com.github.k0shk0sh:PermissionHelper:1.1.0'
+
+    /** JODA TIME LIBRARY **/
+    compile 'joda-time:joda-time:2.9.4'
+}
+
+apply plugin: 'com.google.gms.google-services'

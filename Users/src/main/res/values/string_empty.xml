@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="empty_pet_records">You haven\'t added any Pet\'s to your account yet. Tap here to add one now.</string>
+    <string name="empty_vaccination_record">You haven\'t added any Vaccination Records for this Pet yet. Tap here to add one now.</string>
+    <string name="empty_medication_record">You haven\'t added any Medication Records for this Pet yet. Tap here to add one now.</string>
+</resources>

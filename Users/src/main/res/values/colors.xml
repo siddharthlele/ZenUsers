@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="primary">#4CAF50</color>
+    <color name="primary_dark">#388E3C</color>
+    <color name="primary_light">#C8E6C9</color>
+    <color name="accent">#009688</color>
+    <color name="primary_text">#212121</color>
+    <color name="secondary_text">#757575</color>
+    <color name="icons">#FFFFFF</color>
+    <color name="divider">#BDBDBD</color>
+
+    &lt;!&ndash; CARD BG &ndash;&gt;
+    <color name="card_bg">#C8E6C9</color>
+
+    &lt;!&ndash; SIDE BAR BG &ndash;&gt;
+    <color name="side_bar_bg">#388E3C</color>-->
+
+    <color name="primary">#384e77</color>
+    <color name="primary_dark">#2b3e5f</color>
+    <color name="accent">#26CF5F</color>
+    <color name="card_bg">#ffffff</color>
+
+    <!-- SIDE BAR BG COLOR -->
+    <color name="side_bar_bg">#3D435C</color>
+
+    <!-- ICON COLORS -->
+    <color name="icons">#FFFFFF</color>
+
+    <!-- APP BG -->
+    <color name="app_bg">#2D3030</color>
+
+
+    <!--<color name="primary">#212121</color>
+    <color name="primary_dark">#040404</color>
+    <color name="accent">#26CF5F</color>
+    <color name="card_bg">#424242</color>
+
+    &lt;!&ndash; SIDE BAR BG COLOR &ndash;&gt;
+    <color name="side_bar_bg">#3D435C</color>
+
+    &lt;!&ndash; ICON COLORS &ndash;&gt;
+    <color name="icons">#FFFFFF</color>
+
+    &lt;!&ndash; APP BG &ndash;&gt;
+    <color name="app_bg">#2D3030</color>-->
+</resources>

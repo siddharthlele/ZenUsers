@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/zen_toolbar" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@color/primary_dark">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="220dp">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/imgvwProfilePicture"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_person_outline_black_24dp" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/linlaEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="47dp"
+                    android:layout_height="47dp"
+                    android:adjustViewBounds="true"
+                    app:iiv_color="@android:color/tertiary_text_light"
+                    app:iiv_icon="faw-envelope"
+                    app:iiv_size="18dp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtEmailAddress"
+                    fontPath="fonts/RobotoCondensed-Regular.ttf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:gravity="start|center"
+                    android:padding="11dp"
+                    android:text="Email Address"
+                    android:textColor="@android:color/primary_text_light"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#CC999999" />
+
+            <LinearLayout
+                android:id="@+id/linlaDisplayName"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="47dp"
+                    android:layout_height="47dp"
+                    android:adjustViewBounds="true"
+                    app:iiv_color="@android:color/tertiary_text_light"
+                    app:iiv_icon="faw-user"
+                    app:iiv_size="18dp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/txtDisplayName"
+                    fontPath="fonts/RobotoCondensed-Regular.ttf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:gravity="start|center"
+                    android:padding="11dp"
+                    android:text="Display Name"
+                    android:textColor="@android:color/primary_text_light"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#CC999999" />
+
+            <LinearLayout
+                android:id="@+id/linlaPhoneNumber"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="47dp"
+                    android:layout_height="47dp"
+                    android:adjustViewBounds="true"
+                    app:iiv_color="@android:color/tertiary_text_light"
+                    app:iiv_icon="faw-phone"
+                    app:iiv_size="18dp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtISDCode"
+                    fontPath="fonts/RobotoCondensed-Regular.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center"
+                    android:padding="11dp"
+                    android:text="+91"
+                    android:textColor="@android:color/primary_text_light"
+                    android:textSize="15sp" />
+
+                <View
+                    android:layout_width="0.50dp"
+                    android:layout_height="fill_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#CC999999" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtPhoneNumber"
+                    fontPath="fonts/RobotoCondensed-Regular.ttf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start|center"
+                    android:padding="11dp"
+                    android:text="Phone Number"
+                    android:textColor="@android:color/primary_text_light"
+                    android:textSize="15sp" />
+
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="47dp"
+                    android:layout_height="47dp"
+                    android:layout_marginRight="5dp"
+                    android:adjustViewBounds="true"
+                    app:iiv_color="@android:color/tertiary_text_light"
+                    app:iiv_icon="gmd-edit"
+                    app:iiv_size="16dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#CC999999" />
+
+            <LinearLayout
+                android:id="@+id/linlaCity"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="47dp"
+                    android:layout_height="47dp"
+                    android:adjustViewBounds="true"
+                    app:iiv_color="@android:color/tertiary_text_light"
+                    app:iiv_icon="faw-map-marker"
+                    app:iiv_size="18dp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtCity"
+                    fontPath="fonts/RobotoCondensed-Regular.ttf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start|center"
+                    android:padding="11dp"
+                    android:text="City"
+                    android:textColor="@android:color/primary_text_light"
+                    android:textSize="15sp" />
+
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="47dp"
+                    android:layout_height="47dp"
+                    android:layout_marginRight="5dp"
+                    android:adjustViewBounds="true"
+                    app:iiv_color="@android:color/tertiary_text_light"
+                    app:iiv_icon="faw-sort-desc"
+                    app:iiv_size="16dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#CC999999" />
+
+            <LinearLayout
+                android:id="@+id/linlaGender"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="47dp"
+                    android:layout_height="47dp"
+                    android:adjustViewBounds="true"
+                    app:iiv_color="@android:color/tertiary_text_light"
+                    app:iiv_icon="faw-venus-mars"
+                    app:iiv_size="18dp" />
+
+                <RadioGroup
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/rdbtnMale"
+                        fontPath="fonts/RobotoCondensed-Regular.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="11dp"
+                        android:text="Male"
+                        android:textColor="@android:color/primary_text_light"
+                        android:textSize="14sp" />
+
+                    <android.support.v7.widget.AppCompatRadioButton
+                        android:id="@+id/rdbtnFemale"
+                        fontPath="fonts/RobotoCondensed-Regular.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="11dp"
+                        android:text="Female"
+                        android:textColor="@android:color/primary_text_light"
+                        android:textSize="14sp" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.50dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="5dp"
+                android:background="#CC999999" />
+
+            <LinearLayout
+                android:id="@+id/linlaDOB"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="47dp"
+                    android:layout_height="47dp"
+                    android:adjustViewBounds="true"
+                    app:iiv_color="@android:color/tertiary_text_light"
+                    app:iiv_icon="faw-birthday-cake"
+                    app:iiv_size="18dp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtDOB"
+                    fontPath="fonts/RobotoCondensed-Regular.ttf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:enabled="false"
+                    android:gravity="start|center"
+                    android:padding="11dp"
+                    android:text="Date of Birth"
+                    android:textColor="@android:color/primary_text_light"
+                    android:textSize="15sp" />
+
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="47dp"
+                    android:layout_height="47dp"
+                    android:layout_marginRight="5dp"
+                    android:adjustViewBounds="true"
+                    app:iiv_color="@android:color/tertiary_text_light"
+                    app:iiv_icon="faw-sort-desc"
+                    app:iiv_size="16dp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

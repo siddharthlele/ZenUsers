@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/grpServices"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashDoctors"
+            android:checked="true"
+            android:icon="@drawable/ic_doctor"
+            android:title="Doctors" />
+        <item
+            android:id="@+id/dashHostels"
+            android:checked="false"
+            android:icon="@drawable/ic_hotel_white_24dp"
+            android:title="Pet Hostels" />
+        <item
+            android:id="@+id/dashTrainers"
+            android:checked="false"
+            android:icon="@drawable/ic_timer_white_24dp"
+            android:title="Trainers" />
+        <item
+            android:id="@+id/dashAllServices"
+            android:checked="false"
+            android:icon="@drawable/ic_all_services"
+            android:title="All Services" />
+    </group>
+
+    <group
+        android:id="@+id/grpShop"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashMedicines"
+            android:checked="false"
+            android:icon="@drawable/ic_medicines"
+            android:title="Pet Medicines" />
+        <item
+            android:id="@+id/dashFood"
+            android:checked="false"
+            android:icon="@drawable/ic_food_white_24dp"
+            android:title="Pet Food" />
+        <item
+            android:id="@+id/dashAccessories"
+            android:checked="false"
+            android:icon="@drawable/ic_store_mall_directory_white_24dp"
+            android:title="Pet Accessories" />
+    </group>
+
+    <group
+        android:id="@+id/grpUserPets"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashMyPets"
+            android:checked="false"
+            android:icon="@drawable/ic_pets_white_24dp"
+            android:title="@string/dash_btn_lbl_pets" />
+    </group>
+
+    <group
+        android:id="@+id/grpSocial"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashDiscuss"
+            android:checked="false"
+            android:icon="@drawable/ic_message_white_24dp"
+            android:title="@string/dash_btn_lbl_discuss" />
+        <item
+            android:id="@+id/dashTips"
+            android:checked="false"
+            android:icon="@drawable/ic_feedback_white_24dp"
+            android:title="@string/dash_btn_lbl_tips" />
+    </group>
+    <group android:id="@+id/grpActivities">
+        <item
+            android:id="@+id/dashSettings"
+            android:checked="false"
+            android:icon="@drawable/ic_settings_white_24dp"
+            android:title="@string/dash_btn_lbl_settings" />
+        <item
+            android:id="@+id/dashHelp"
+            android:checked="false"
+            android:icon="@drawable/ic_help_white_24dp"
+            android:title="@string/dash_btn_lbl_help" />
+    </group>
+</menu>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/menuServices"
+        android:icon="@drawable/ic_all_services"
+        android:title="Services" />
+
+    <item
+        android:id="@+id/menuShop"
+        android:icon="@drawable/ic_store_mall_directory_white_24dp"
+        android:title="Shop" />
+
+    <item
+        android:id="@+id/menuConsult"
+        android:icon="@drawable/ic_message_white_24dp"
+        android:title="Consult" />
+
+    <item
+        android:id="@+id/menuProfile"
+        android:icon="@drawable/ic_person_white_24dp"
+        android:title="Profile" />
+</menu>

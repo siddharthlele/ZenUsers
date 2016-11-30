@@ -1,0 +1,16 @@
+<resources>
+
+    <!-- PHONE / TABLET-->
+    <bool name="isTablet">false</bool>
+
+    <!-- SPLASH SCREEN -->
+    <dimen name="app_name_size">47sp</dimen>
+
+    <!-- SCROLL BAR SIZE -->
+    <dimen name="scroll_bar_size">5dp</dimen>
+
+    <!-- EMPTY DETAILS -->
+    <dimen name="empty_margin">10dp</dimen>
+    <dimen name="empty_pad">6dp</dimen>
+    <dimen name="empty_size">18sp</dimen>
+</resources>

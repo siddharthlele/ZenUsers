@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="profile_creator">User Profile</string>
+    <string name="add_a_new_pet">Add a new Pet</string>
+    <string name="add_a_new_vaccination_record">New Vaccination</string>
+    <string name="add_a_new_medicine_record">New Medicine</string>
+</resources>

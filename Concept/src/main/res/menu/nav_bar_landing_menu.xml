@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/grpShopsAndServices"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashServices"
+            android:checked="true"
+            android:icon="@drawable/ic_all_services"
+            android:title="Services" />
+        <item
+            android:id="@+id/dashShops"
+            android:checked="false"
+            android:icon="@drawable/ic_store_mall_directory_white_24dp"
+            android:title="Shop" />
+        <item
+            android:id="@+id/dashConsult"
+            android:checked="false"
+            android:icon="@drawable/ic_message_white_24dp"
+            android:title="@string/dash_btn_lbl_consult" />
+    </group>
+
+    <group
+        android:id="@+id/grpProfile"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashUserProfile"
+            android:checked="false"
+            android:icon="@drawable/ic_person_outline_white_24dp"
+            android:title="@string/dash_btn_lbl_profile" />
+    </group>
+    <item
+        android:id="@+id/dashHelp"
+        android:checked="false"
+        android:icon="@drawable/ic_help_white_24dp"
+        android:title="@string/dash_btn_lbl_help" />
+</menu>

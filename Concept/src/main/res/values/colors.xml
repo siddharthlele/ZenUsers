@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="primary">#384e77</color>
+    <color name="primary_dark">#2b3e5f</color>
+    <!--<color name="accent">#26CF5F</color>-->
+    <color name="card_bg">#ffffff</color>
+
+    <!-- SIDE BAR BG COLOR -->
+    <color name="side_bar_bg">#3D435C</color>
+
+    <!-- ICON COLORS -->
+    <color name="icons">#FFFFFF</color>
+
+    <!-- APP BG -->
+    <color name="app_bg">#2D3030</color>
+
+    <!-- TESTING -->
+    <color name="red_200">#EF9A9A</color>
+    <color name="green_200">#A5D6A7</color>
+    <color name="red_400">#EF5350</color>
+    <color name="white">#FFFFFF</color>
+</resources>

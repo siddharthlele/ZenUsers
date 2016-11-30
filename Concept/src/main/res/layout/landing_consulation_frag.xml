@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/linlaConsultations"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtConsultations"
+            fontPath="fonts/Exo2-Medium.otf"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="start|center"
+            android:padding="11dp"
+            android:text="Public Questions"
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="16sp" />
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:padding="11dp"
+            android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/fixed_divider_horizontal_bright" />
+
+    <LinearLayout
+        android:id="@+id/linlaGraphicAskQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:adjustViewBounds="true"
+            android:padding="11dp"
+            android:src="@drawable/doctor_bg"
+            app:srcCompat="@drawable/doctor_bg" />
+
+        <android.support.v7.widget.AppCompatTextView
+            fontPath="fonts/Exo2-Regular.otf"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/empty_margin"
+            android:gravity="center"
+            android:paddingBottom="2dp"
+            android:paddingEnd="11dp"
+            android:paddingLeft="11dp"
+            android:paddingRight="11dp"
+            android:paddingStart="11dp"
+            android:paddingTop="2dp"
+            android:text="Get your pet well. Now."
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="18sp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            fontPath="fonts/Exo2-Light.otf"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="2dp"
+            android:gravity="center"
+            android:paddingBottom="11dp"
+            android:paddingEnd="11dp"
+            android:paddingLeft="11dp"
+            android:paddingRight="11dp"
+            android:paddingStart="11dp"
+            android:paddingTop="2dp"
+            android:text="Skip the traffic and waiting rooms. Get an expert medical opinion without disrupting your daily life."
+            android:textColor="@android:color/primary_text_light"
+            android:textSize="15sp" />
+
+        <LinearLayout
+            android:id="@+id/linlaAskQuestion"
+            android:layout_width="fill_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/primary_dark"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtAskQuestion"
+                fontPath="fonts/Exo2-Light.otf"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="ASK A FREE QUESTION"
+                android:textColor="@android:color/primary_text_dark" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

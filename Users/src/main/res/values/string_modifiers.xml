@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- PET MODIFIER -->
+    <string name="pet_modifier_type_label">Select the type of Pet</string>
+    <string name="pet_modifier_breed_label">Select your Pet\'s Breed</string>
+    <string name="pet_modifier_name_label">Enter your Pet\'s Name</string>
+    <string name="pet_modifier_gender_label">Select your Pet\'s gender</string>
+    <string name="pet_modifier_gender_male">Male</string>
+    <string name="pet_modifier_gender_female">Female</string>
+    <string name="pet_modifier_dob_label">Select your Pet\'s date of birth</string>
+    <string name="pet_modifier_image_picker_label">Select an image of your cute and cuddly</string>
+</resources>
