@@ -19,11 +19,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.Picasso;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.zenpets.users.R;
 import com.zenpets.users.utils.TypefaceSpan;
@@ -235,10 +236,11 @@ public class ProfileCreator extends AppCompatActivity implements DatePickerDialo
                 USER_NAME = user.getDisplayName();
                 edtUserName.setText(USER_NAME);
                 PROFILE_PICTURE_URL = String.valueOf(user.getProviderData().get(1).getPhotoUrl()) + "?sz=600";
-                Picasso.with(ProfileCreator.this)
+                Glide.with(getApplicationContext())
                         .load(PROFILE_PICTURE_URL)
-                        .centerInside()
-                        .fit()
+                        .crossFade()
+                        .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                        .centerCrop()
                         .into(imgvwUserProfile);
 
             } else if (user.getProviderData().get(1).getProviderId().equalsIgnoreCase("facebook.com")) {
@@ -247,10 +249,11 @@ public class ProfileCreator extends AppCompatActivity implements DatePickerDialo
                 USER_NAME = user.getDisplayName();
                 edtUserName.setText(USER_NAME);
                 PROFILE_PICTURE_URL = "https://graph.facebook.com/" + user.getProviderData().get(1).getUid() + "/picture?width=4000";
-                Picasso.with(ProfileCreator.this)
+                Glide.with(getApplicationContext())
                         .load(PROFILE_PICTURE_URL)
-                        .centerInside()
-                        .fit()
+                        .crossFade()
+                        .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                        .centerCrop()
                         .into(imgvwUserProfile);
             }
         }

@@ -16,7 +16,6 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatEditText;
 import android.support.v7.widget.AppCompatImageView;
-import android.support.v7.widget.AppCompatRadioButton;
 import android.support.v7.widget.AppCompatSpinner;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.Toolbar;
@@ -31,7 +30,6 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -67,6 +65,7 @@ import java.util.Locale;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import co.ceryle.segmentedbutton.SegmentedButtonGroup;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class PetCreator extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
@@ -103,9 +102,7 @@ public class PetCreator extends AppCompatActivity implements DatePickerDialog.On
     @BindView(R.id.spnBreeds) AppCompatSpinner spnBreeds;
     @BindView(R.id.inputPetName) TextInputLayout inputPetName;
     @BindView(R.id.edtPetName) AppCompatEditText edtPetName;
-    @BindView(R.id.rdgrpGender) RadioGroup rdgrpGender;
-    @BindView(R.id.rdbtnMale) AppCompatRadioButton rdbtnMale;
-    @BindView(R.id.rdbtnFemale) AppCompatRadioButton rdbtnFemale;
+    @BindView(R.id.groupGender) SegmentedButtonGroup groupGender;
     @BindView(R.id.txtPetDOB) AppCompatTextView txtPetDOB;
     @BindView(R.id.imgvwPetThumb) AppCompatImageView imgvwPetThumb;
 
@@ -183,25 +180,18 @@ public class PetCreator extends AppCompatActivity implements DatePickerDialog.On
         /** FETCH ALL PET TYPES **/
         fetchPetTypes();
 
-        /***** CONFIGURE THE ACTIONBAR *****/
-        configAB();
+        /***** CONFIGURE THE TOOLBAR *****/
+        configTB();
 
         /***** SELECT THE USER'S GENDER *****/
-        rdgrpGender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+        groupGender.setOnClickedButtonPosition(new SegmentedButtonGroup.OnClickedButtonPosition() {
             @Override
-            public void onCheckedChanged(RadioGroup radioGroup, int checkedId) {
-
-                switch (checkedId) {
-                    case R.id.rdbtnMale:
-                        /** SET THE GENDER TO MALE **/
-                        PET_GENDER = "Male";
-                        break;
-                    case R.id.rdbtnFemale:
-                        /** SET THE GENDER TO FEMALE **/
-                        PET_GENDER = "Female";
-                        break;
-                    default:
-                        break;
+            public void onClickedButtonPosition(int position) {
+                Toast.makeText(getApplicationContext(), "Clicked: " + position, Toast.LENGTH_SHORT).show();
+                if (position == 0)  {
+                    PET_GENDER = "Male";
+                } else if (position == 1)   {
+                    PET_GENDER = "Female";
                 }
             }
         });
@@ -219,8 +209,8 @@ public class PetCreator extends AppCompatActivity implements DatePickerDialog.On
         dialog = new ProgressDialog(this);
     }
 
-    /***** CONFIGURE THE ACTIONBAR *****/
-    private void configAB() {
+    /***** CONFIGURE THE TOOLBAR *****/
+    private void configTB() {
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.myToolbar);
         setSupportActionBar(myToolbar);

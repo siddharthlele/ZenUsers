@@ -14,9 +14,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.squareup.picasso.Picasso;
 import com.wdullaer.materialdatetimepicker.date.DatePickerDialog;
 import com.zenpets.users.R;
 import com.zenpets.users.utils.TypefaceSpan;
@@ -24,7 +25,6 @@ import com.zenpets.users.utils.TypefaceSpan;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
 import butterknife.BindView;
@@ -103,10 +103,11 @@ public class ProfileEditorActivity extends AppCompatActivity implements DatePick
 
             /** SET THE PROFILE PICTURE AND SET THE SCALE TYPE **/
             if (USER_PROFILE_PICTURE != null)   {
-                Picasso.with(ProfileEditorActivity.this)
+                Glide.with(getApplicationContext())
                         .load(USER_PROFILE_PICTURE)
-                        .centerInside()
-                        .fit()
+                        .crossFade()
+                        .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                        .centerCrop()
                         .into(imgvwProfilePicture);
                 imgvwProfilePicture.setScaleType(AppCompatImageView.ScaleType.CENTER_CROP);
             }

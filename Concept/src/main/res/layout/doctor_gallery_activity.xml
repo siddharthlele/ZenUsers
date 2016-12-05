@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/zen_toolbar" />
+
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center" />
+
+        <!--<LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center"
+            android:orientation="vertical"
+            android:paddingBottom="5dp"
+            android:paddingEnd="11dp"
+            android:paddingLeft="11dp"
+            android:paddingRight="11dp"
+            android:paddingStart="11dp"
+            android:paddingTop="5dp">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/listClinicImages"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:cacheColorHint="@android:color/transparent"
+                android:fadingEdge="none"
+                android:persistentDrawingCache="scrolling"
+                android:scrollbars="none"
+                android:visibility="visible" />
+        </LinearLayout>-->
+    </FrameLayout>
+</LinearLayout>

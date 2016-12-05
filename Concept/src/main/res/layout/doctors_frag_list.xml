@@ -62,9 +62,9 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
                 android:adjustViewBounds="true"
-                app:iiv_color="@android:color/holo_red_light"
+                app:iiv_color="@android:color/holo_blue_dark"
                 app:iiv_icon="faw-paw"
-                app:iiv_size="50dp" />
+                app:iiv_size="56dp" />
 
             <android.support.v7.widget.AppCompatTextView
                 fontPath="fonts/Roboto-Thin.ttf"

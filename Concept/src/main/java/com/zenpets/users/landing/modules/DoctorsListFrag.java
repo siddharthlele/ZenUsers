@@ -15,6 +15,8 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
@@ -32,10 +34,9 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
-import com.squareup.picasso.Picasso;
 import com.zenpets.users.R;
-import com.zenpets.users.utils.models.clinic.ClinicsData;
 import com.zenpets.users.utils.models.DoctorsData;
+import com.zenpets.users.utils.models.clinic.ClinicsData;
 
 import java.math.BigDecimal;
 
@@ -205,10 +206,11 @@ public class DoctorsListFrag extends Fragment implements
                                                     /** GET THE PROFILE URL **/
                                                     DOCTORS_PROFILE_URL = data.getDoctorProfile();
                                                     if (DOCTORS_PROFILE_URL != null) {
-                                                        Picasso.with(getActivity())
+                                                        Glide.with(getActivity())
                                                                 .load(DOCTORS_PROFILE_URL)
-                                                                .centerInside()
-                                                                .resize(1024, 768)
+                                                                .crossFade()
+                                                                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                                                                .centerCrop()
                                                                 .into(viewHolder.imgvwDoctorProfile);
                                                     }
 

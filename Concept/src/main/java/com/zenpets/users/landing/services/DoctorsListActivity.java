@@ -108,8 +108,8 @@ public class DoctorsListActivity extends AppCompatActivity implements
             buildGoogleApiClient();
         }
 
-        /***** CONFIGURE THE ACTIONBAR *****/
-        configAB();
+        /***** CONFIGURE THE TOOLBAR *****/
+        configTB();
 
         /** CONFIGURE THE RECYCLER VIEW **/
         configRecycler();
@@ -131,7 +131,7 @@ public class DoctorsListActivity extends AppCompatActivity implements
 
         refDoctors = FirebaseDatabase.getInstance().getReference().child("Doctors");
         adapter = new FirebaseRecyclerAdapter<DoctorsData, DoctorsVH>
-                (DoctorsData.class, R.layout.new_services_doctor_item, DoctorsVH.class, refDoctors) {
+                (DoctorsData.class, R.layout.services_doctors_item, DoctorsVH.class, refDoctors) {
 
             @Override
             protected void populateViewHolder(final DoctorsVH viewHolder, final DoctorsData model, final int position) {
@@ -231,7 +231,7 @@ public class DoctorsListActivity extends AppCompatActivity implements
                                                         for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
 //                                                            Log.e("REVIEWS", String.valueOf(postSnapshot));
                                                             String recommendStatus = postSnapshot.child("recommendStatus").getValue(String.class);
-                                                            Log.e("recommendStatus", recommendStatus);
+//                                                            Log.e("recommendStatus", recommendStatus);
                                                             if (recommendStatus.equalsIgnoreCase("Yes"))    {
                                                                 noOfYes++;
                                                             }
@@ -240,7 +240,7 @@ public class DoctorsListActivity extends AppCompatActivity implements
                                                         /** CALCULATE THE PERCENTAGE OF LIKES **/
                                                         double percentLikes = ((double)noOfYes / totalLikes) * 100;
                                                         int finalPercentLikes = (int)percentLikes;
-                                                        Log.e("YES PERCENTAGE", String.valueOf(finalPercentLikes));
+//                                                        Log.e("YES PERCENTAGE", String.valueOf(finalPercentLikes));
 
                                                         /** SET THE PERCENTAGE **/
                                                         viewHolder.txtDoctorLikesPercent.setText(String.valueOf(finalPercentLikes) + "%");
@@ -418,9 +418,9 @@ public class DoctorsListActivity extends AppCompatActivity implements
         listDoctors.setHasFixedSize(true);
     }
 
-    /***** CONFIGURE THE ACTIONBAR *****/
+    /***** CONFIGURE THE TOOLBAR *****/
     @SuppressWarnings("ConstantConditions")
-    private void configAB() {
+    private void configTB() {
         Toolbar myToolbar = (Toolbar) findViewById(R.id.myToolbar);
         setSupportActionBar(myToolbar);
 

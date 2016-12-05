@@ -1,7 +1,8 @@
 <resources>
 
-    <style name="ZenPets" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="android:windowBackground">@drawable/bg_pattern</item>
+    <style name="ZenPets" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/app_bg</item>
+        <!--<item name="android:windowBackground">@drawable/bg_pattern</item>-->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryDark">@color/primary_dark</item>
         <item name="colorAccent">@color/primary</item>
@@ -14,7 +15,7 @@
         <item name="fontPath">fonts/RobotoCondensed-Regular.ttf</item>
     </style>
 
-    <style name="Splash" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Splash" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@color/primary</item>
         <item name="windowNoTitle">true</item>
         <item name="windowActionBar">false</item>
@@ -32,7 +33,7 @@
 
     <style name="Toolbar.TitleText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
         <item name="android:textColor">@android:color/white</item>
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">16sp</item>
     </style>
 
     <style name="FloatingTextInput" parent="@android:style/TextAppearance">
@@ -60,8 +61,9 @@
 
     <style name="ZenPets.PopupOverlay" parent="ThemeOverlay.AppCompat" />
 
-    <style name="ZenPetsDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="android:windowBackground">@drawable/bg_pattern</item>
+    <style name="ZenPetsDialog" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowBackground">@color/app_bg</item>
+        <!--<item name="android:windowBackground">@drawable/bg_pattern</item>-->
         <item name="colorAccent">@color/primary</item>
     </style>
 
@@ -82,4 +84,12 @@
         <item name="fab_colorPressed">@color/primary_dark</item>
         <item name="fab_colorRipple">@color/primary_dark</item>
     </style>-->
+
+    <style name="Widget.CardContent" parent="android:Widget">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
 </resources>

@@ -5,6 +5,8 @@
     android:layout_height="fill_parent"
     android:orientation="vertical">
 
+    <include layout="@layout/zen_toolbar" />
+
     <LinearLayout
         android:id="@+id/linlaHeaderProgress"
         android:layout_width="fill_parent"
@@ -62,9 +64,9 @@
                 android:layout_gravity="center"
                 android:layout_marginBottom="10dp"
                 android:adjustViewBounds="true"
-                app:iiv_color="@android:color/holo_red_light"
+                app:iiv_color="@android:color/holo_blue_dark"
                 app:iiv_icon="faw-paw"
-                app:iiv_size="50dp" />
+                app:iiv_size="56dp" />
 
             <android.support.v7.widget.AppCompatTextView
                 fontPath="fonts/Roboto-Thin.ttf"
@@ -75,8 +77,8 @@
                 android:layout_marginTop="@dimen/empty_margin"
                 android:gravity="center"
                 android:padding="@dimen/empty_pad"
-                android:text="There are no Doctors at your location at the moment :-("
-                android:textColor="@android:color/secondary_text_light"
+                android:text="There are no Consultations at the moment. Tap here to ask a free question now"
+                android:textColor="@android:color/secondary_text_dark"
                 android:textSize="@dimen/empty_size" />
         </LinearLayout>
     </FrameLayout>

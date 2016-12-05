@@ -11,7 +11,6 @@ import android.view.animation.Animation;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.zenpets.users.credentials.LoginActivity;
-import com.zenpets.users.landing.LandingActivity;
 import com.zenpets.users.landing.NewLandingActivity;
 
 import butterknife.BindView;

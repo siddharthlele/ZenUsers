@@ -13,10 +13,12 @@ import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
+import android.text.Spannable;
+import android.text.SpannableString;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -41,18 +43,22 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.mikepenz.iconics.view.IconicsImageView;
 import com.zenpets.users.R;
 import com.zenpets.users.review.DoctorReviewsActivity;
 import com.zenpets.users.review.ReviewCreatorActivity;
+import com.zenpets.users.utils.TypefaceSpan;
+import com.zenpets.users.utils.adapters.doctors.ClinicImagesAdapter;
 import com.zenpets.users.utils.models.DoctorsData;
-import com.zenpets.users.utils.models.clinic.ClinicImagesData;
 import com.zenpets.users.utils.models.clinic.ClinicsData;
-import com.zenpets.users.utils.models.reviews.ReviewsData;
 import com.zenpets.users.utils.models.doctors.ServicesData;
 import com.zenpets.users.utils.models.doctors.TimingsData;
+import com.zenpets.users.utils.models.reviews.ReviewsData;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 
 import butterknife.BindView;
@@ -72,6 +78,11 @@ public class DoctorsProfileActivity extends AppCompatActivity {
     /** THE FIREBASE RECYCLER ADAPTER INSTANCES **/
     FirebaseRecyclerAdapter adapServices;
     FirebaseRecyclerAdapter adapReviews;
+
+    /** THE CLINIC IMAGES ADAPTER, THE ARRAY LIST AND THE STRING ARRAY **/
+    ClinicImagesAdapter adapter;
+    List<String> arrImages = new ArrayList<>();
+    String[] strImages;
 
     /** DATA TYPE TO STORE THE DATA **/
     String CLINIC_ID;
@@ -122,7 +133,6 @@ public class DoctorsProfileActivity extends AppCompatActivity {
     @BindView(R.id.imgvwClinicCover) AppCompatImageView imgvwClinicCover;
     @BindView(R.id.imgvwDoctorProfile) CircleImageView imgvwDoctorProfile;
     @BindView(R.id.txtDoctorName) AppCompatTextView txtDoctorName;
-    @BindView(R.id.txtDoctorEducation) AppCompatTextView txtDoctorEducation;
     @BindView(R.id.linlaExperience) LinearLayout linlaExperience;
     @BindView(R.id.txtExperience) AppCompatTextView txtExperience;
     @BindView(R.id.linlaVotes) LinearLayout linlaVotes;
@@ -137,7 +147,7 @@ public class DoctorsProfileActivity extends AppCompatActivity {
     @BindView(R.id.linlaReviews) LinearLayout linlaReviews;
     @BindView(R.id.listReviews) RecyclerView listReviews;
     @BindView(R.id.linlaNoReviews) LinearLayout linlaNoReviews;
-    @BindView(R.id.linlaPhotos) LinearLayout linlaPhotos;
+    @BindView(R.id.listClinicImages) RecyclerView listClinicImages;
     @BindView(R.id.linlaServices) LinearLayout linlaServices;
     @BindView(R.id.listServices) RecyclerView listServices;
     @BindView(R.id.linlaNoServices) LinearLayout linlaNoServices;
@@ -207,6 +217,9 @@ public class DoctorsProfileActivity extends AppCompatActivity {
 
         /** CONFIGURE THE RECYCLER VIEWS **/
         configRecyclers();
+
+        /***** CONFIGURE THE TOOLBAR *****/
+        configTB();
     }
 
     /** GET THE DOCTOR'S COMPLETE PROFILE **/
@@ -229,19 +242,19 @@ public class DoctorsProfileActivity extends AppCompatActivity {
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             if (dataSnapshot.hasChildren()) {
                                 for (DataSnapshot child : dataSnapshot.getChildren()) {
-                                    final ClinicsData data = child.getValue(ClinicsData.class);
+                                    final ClinicsData clinic = child.getValue(ClinicsData.class);
 
                                     /* GET THE CLINIC ID */
                                     CLINIC_ID = child.getKey();
 
                                     /* GET THE CLINIC NAME */
-                                    CLINIC_NAME = data.getClinicName();
+                                    CLINIC_NAME = clinic.getClinicName();
 
                                     /* GET THE CLINIC CURRENCY */
-                                    CLINIC_CURRENCY = data.getClinicCurrency();
+                                    CLINIC_CURRENCY = clinic.getClinicCurrency();
 
                                     /* GET THE CLINIC COVER PICTURE */
-                                    CLINIC_COVER = data.getClinicLogo();
+                                    CLINIC_COVER = clinic.getClinicLogo();
                                     if (CLINIC_COVER != null) {
                                         Glide.with(getApplicationContext())
                                                 .load(CLINIC_COVER)
@@ -253,14 +266,14 @@ public class DoctorsProfileActivity extends AppCompatActivity {
 
                                     /* GET THE CLINIC NAME AND ADDRESS */
                                     txtClinicName.setText(CLINIC_NAME);
-                                    CLINIC_ADDRESS = data.getClinicAddress();
+                                    CLINIC_ADDRESS = clinic.getClinicAddress();
                                     txtClinicAddress.setText(CLINIC_ADDRESS);
 
                                     /* GET THE CLINIC LATITUDE */
-                                    CLINIC_LATITUDE = data.getClinicLatitude();
+                                    CLINIC_LATITUDE = clinic.getClinicLatitude();
 
                                     /* GET THE CLINIC LONGITUDE */
-                                    CLINIC_LONGITUDE = data.getClinicLongitude();
+                                    CLINIC_LONGITUDE = clinic.getClinicLongitude();
 
                                     /* GET THE CLINIC LOCATION */
                                     if (CLINIC_LATITUDE != null && CLINIC_LONGITUDE != null)    {
@@ -272,14 +285,13 @@ public class DoctorsProfileActivity extends AppCompatActivity {
                                                 googleMap.getUiSettings().setAllGesturesEnabled(false);
                                                 googleMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
                                                 googleMap.setBuildingsEnabled(true);
-                                                googleMap.setTrafficEnabled(true);
-                                                googleMap.setIndoorEnabled(true);
+                                                googleMap.setTrafficEnabled(false);
+                                                googleMap.setIndoorEnabled(false);
                                                 MarkerOptions options = new MarkerOptions();
                                                 options.position(latLng);
-                                                options.title(CLINIC_NAME);
                                                 options.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_RED));
                                                 Marker mMarker = googleMap.addMarker(options);
-                                                googleMap.addMarker(new MarkerOptions().position(latLng).title(CLINIC_NAME));
+                                                googleMap.addMarker(options);
 
                                                 /** MOVE THE MAP CAMERA **/
                                                 googleMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mMarker.getPosition(), 18));
@@ -330,57 +342,44 @@ public class DoctorsProfileActivity extends AppCompatActivity {
                                         }
                                     });
 
-                                    /** GET THE DOCTOR'S EDUCATION **/
-                                    DatabaseReference refEducation = FirebaseDatabase.getInstance().getReference().child("Doctors").child(DOCTOR_ID).child("Education");
-                                    refEducation.addValueEventListener(new ValueEventListener() {
-                                        @Override
-                                        public void onDataChange(DataSnapshot dataSnapshot) {
-                                            if (dataSnapshot.hasChildren()) {
-                                                StringBuilder builder = new StringBuilder();
-                                                for (DataSnapshot education : dataSnapshot.getChildren())   {
-                                                    String qualificationName = education.child("qualificationName").getValue(String.class);
-                                                    builder.append(qualificationName + ", ");
-                                                }
-                                                String strQualification = builder.toString();
-                                                if (strQualification.endsWith(" "))    {
-                                                    strQualification = strQualification.substring(0, strQualification.length() - 1);
-                                                }
-                                                if (strQualification.endsWith(",")) {
-                                                    strQualification = strQualification.substring(0, strQualification.length() - 1);
-                                                }
-
-                                                /** SET THE EDUCATION **/
-                                                txtDoctorEducation.setText(strQualification);
-                                            }
-                                        }
-
-                                        @Override
-                                        public void onCancelled(DatabaseError databaseError) {
-                                        }
-                                    });
-
                                     /** GET THE DOCTOR'S REVIEWS **/
                                     DatabaseReference refReviews = FirebaseDatabase.getInstance().getReference().child("Doctors").child(DOCTOR_ID).child("Reviews");
                                     Query qryReviews = refReviews.limitToLast(3);
 
-                                    /** SETUP THE FIREBASE RECYCLER ADAPTER **/
+                                    /** SETUP THE REVIEWS FIREBASE RECYCLER ADAPTER **/
                                     adapReviews = new FirebaseRecyclerAdapter<ReviewsData, ReviewsVH>
                                             (ReviewsData.class, R.layout.doctor_profile_reviews_item, ReviewsVH.class, qryReviews) {
                                         @Override
                                         protected void populateViewHolder(ReviewsVH viewHolder, ReviewsData model, int position) {
                                             if (model != null)  {
+                                                /** GET THE VISIT REASON **/
+                                                viewHolder.txtVisitReason.setText(model.getVisitReason());
 
-                                                /** SET THE VISIT EXPERIENCE **/
+                                                /** GET THE DOCTOR EXPERIENCE **/
                                                 viewHolder.txtVisitExperience.setText(model.getDoctorExperience());
 
-                                                /** SET THE VISIT REASON **/
-                                                viewHolder.txtVisitReason.setText(model.getVisitReason());
+                                                /** GET THE LIKE STATUS **/
+                                                String strLikeStatus = model.getRecommendStatus();
+                                                if (strLikeStatus.equalsIgnoreCase("Yes"))  {
+                                                    viewHolder.imgvwLikeStatus.setIcon("faw-thumbs-o-up");
+                                                    viewHolder.imgvwLikeStatus.setColor(ContextCompat.getColor(getApplicationContext(), android.R.color.holo_blue_dark));
+                                                } else if (strLikeStatus.equalsIgnoreCase("No"))    {
+                                                    viewHolder.imgvwLikeStatus.setIcon("faw-thumbs-o-down");
+                                                    viewHolder.imgvwLikeStatus.setColor(ContextCompat.getColor(getApplicationContext(), android.R.color.holo_red_dark));
+                                                }
+
+                                                /** GET THE USER NAME **/
+                                                viewHolder.txtUserName.setText(model.getUserName());
+
+                                                /** GET THE TIME STAMP **/
+                                                String strTimeStamp = model.getTimeStamp();
+//                                                viewHolder.txtPostedAgo.setText(model.getTimeStamp());
                                             }
                                         }
                                     };
 
                                     qryReviews.addChildEventListener(reviewChildEventListener);
-                                    qryReviews.addValueEventListener(reviewValueEventListener);
+                                    qryReviews.addListenerForSingleValueEvent(reviewValueEventListener);
 
                                     /** SET THE ADAPTER **/
                                     listReviews.setAdapter(adapReviews);
@@ -389,7 +388,7 @@ public class DoctorsProfileActivity extends AppCompatActivity {
                                     DatabaseReference refServices = FirebaseDatabase.getInstance().getReference().child("Doctors").child(DOCTOR_ID).child("Services");
                                     Query qryServices = refServices.limitToLast(3);
 
-                                    /** SETUP THE FIREBASE RECYCLER ADAPTER **/
+                                    /** SETUP THE SERVICES FIREBASE RECYCLER ADAPTER **/
                                     adapServices = new FirebaseRecyclerAdapter<ServicesData, ServicesVH>
                                             (ServicesData.class, R.layout.doctor_profile_services_item, ServicesVH.class, qryServices) {
                                         @Override
@@ -412,53 +411,58 @@ public class DoctorsProfileActivity extends AppCompatActivity {
                                         @Override
                                         public void onDataChange(DataSnapshot dataSnapshot) {
                                             if (dataSnapshot.hasChildren()) {
-//                                                Log.e("IMAGES", String.valueOf(dataSnapshot));
-                                                for (final DataSnapshot child : dataSnapshot.getChildren())    {
-                                                    ClinicImagesData data = child.getValue(ClinicImagesData.class);
 
-                                                    /** GET THE CLINIC IMAGES **/
-                                                    String CLINIC_IMAGE = data.getClinicImage();
-//                                                    Log.e("CLINIC IMAGE", CLINIC_IMAGE);
+                                                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
 
-                                                    AppCompatImageView imageView = new AppCompatImageView(getApplicationContext());
-
-                                                    /** SET THE IMAGE VIEW DIMENSIONS **/
-                                                    LinearLayout.LayoutParams imgvwDimens = new LinearLayout.LayoutParams(130, 130);
-                                                    imageView.setLayoutParams(imgvwDimens);
-
-                                                    /** SET THE SCALE TYPE **/
-                                                    imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-
-                                                    /** SET THE MARGIN **/
-                                                    int dimensMargin = 5;
-                                                    float densityMargin = getResources().getDisplayMetrics().density;
-                                                    int finalDimensMargin = (int)(dimensMargin * densityMargin);
-
-                                                    LinearLayout.LayoutParams imgvwMargin = new LinearLayout.LayoutParams(130, 130);
-                                                    imgvwMargin.setMargins(finalDimensMargin, finalDimensMargin, finalDimensMargin, finalDimensMargin);
-
-                                                    /** SET THE CLINIC IMAGE **/
-                                                    if (CLINIC_IMAGE != null)   {
-                                                        Glide.with(getApplicationContext())
-                                                                .load(CLINIC_IMAGE)
-                                                                .crossFade()
-                                                                .diskCacheStrategy(DiskCacheStrategy.SOURCE)
-                                                                .centerCrop()
-                                                                .into(imageView);
-                                                    }
-
-                                                    /** ADD THE IMAGE VIEW INSTANCE TO THE CONTAINER LINEAR LAYOUT **/
-                                                    linlaPhotos.addView(imageView, imgvwMargin);
-
-                                                    imageView.setOnClickListener(new View.OnClickListener() {
-                                                        @Override
-                                                        public void onClick(View view) {
-//                                                            String imageID = child.getKey();
-//                                                            Log.e("IMAGE ID", imageID);
-//                                                            Toast.makeText(getApplicationContext(), "Image clicked....", Toast.LENGTH_SHORT).show();
-                                                        }
-                                                    });
+                                                    /** GET THE CLINIC IMAGE **/
+                                                    String clinicImage = postSnapshot.child("clinicImage").getValue(String.class);
+                                                    arrImages.add(clinicImage);
                                                 }
+
+                                                /** CONVERT THE LIST ARRAY TO A STRING ARRAY **/
+                                                strImages = arrImages.toArray(new String[arrImages.size()]);
+
+                                                /** INSTANTIATE THE CLINIC IMAGES ADAPTER **/
+                                                adapter = new ClinicImagesAdapter(DoctorsProfileActivity.this, arrImages, CLINIC_ID);
+
+                                                /** SET THE ADAPTER TO THE RECYCLER VIEW **/
+                                                listClinicImages.setAdapter(adapter);
+                                            }
+                                        }
+
+                                        @Override
+                                        public void onCancelled(DatabaseError databaseError) {
+                                        }
+                                    });
+
+                                    /** GET THE DOCTOR'S REVIEWS (LIKES) **/
+                                    DatabaseReference refLikes = FirebaseDatabase.getInstance().getReference().child("Doctors").child(DOCTOR_ID).child("Reviews");
+                                    refLikes.addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(DataSnapshot dataSnapshot) {
+                                            if (dataSnapshot.hasChildren()) {
+
+                                                /** GET THE NUMBER LIKES **/
+                                                int totalLikes = (int) dataSnapshot.getChildrenCount();
+
+                                                /** GET THE NUMBER OF "YES" **/
+                                                int noOfYes = 0;
+                                                for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                                                    String recommendStatus = postSnapshot.child("recommendStatus").getValue(String.class);
+                                                    if (recommendStatus.equalsIgnoreCase("Yes"))    {
+                                                        noOfYes++;
+                                                    }
+                                                }
+
+                                                /** CALCULATE THE PERCENTAGE OF LIKES **/
+                                                double percentLikes = ((double)noOfYes / totalLikes) * 100;
+                                                int finalPercentLikes = (int)percentLikes;
+
+                                                /** SET THE PERCENTAGE AND THE TOTAL LIKES **/
+                                                txtVotes.setText(String.valueOf(finalPercentLikes) + "% (" + String.valueOf(totalLikes) + " Votes)");
+
+                                            } else {
+                                                txtVotes.setText("No reviews and votes yet");
                                             }
                                         }
 
@@ -522,6 +526,7 @@ public class DoctorsProfileActivity extends AppCompatActivity {
     private static class ReviewsVH extends RecyclerView.ViewHolder {
         AppCompatTextView txtVisitReason;
         AppCompatTextView txtVisitExperience;
+        IconicsImageView imgvwLikeStatus;
         AppCompatTextView txtUserName;
         AppCompatTextView txtPostedAgo;
 
@@ -529,6 +534,7 @@ public class DoctorsProfileActivity extends AppCompatActivity {
             super(itemView);
             txtVisitReason = (AppCompatTextView) itemView.findViewById(R.id.txtVisitReason);
             txtVisitExperience = (AppCompatTextView) itemView.findViewById(R.id.txtVisitExperience);
+            imgvwLikeStatus = (IconicsImageView) itemView.findViewById(R.id.imgvwLikeStatus);
             txtUserName = (AppCompatTextView) itemView.findViewById(R.id.txtUserName);
             txtPostedAgo = (AppCompatTextView) itemView.findViewById(R.id.txtPostedAgo);
         }
@@ -553,13 +559,15 @@ public class DoctorsProfileActivity extends AppCompatActivity {
 
             if (SUN_MOR_FROM != null && SUN_MOR_TO != null) {
                 txtTimingsMorning.setText(SUN_MOR_FROM + " - " + SUN_MOR_TO);
+                txtTimingsMorning.setVisibility(View.VISIBLE);
             } else {
-                txtTimingsMorning.setText("Closed Today");
+                txtTimingsMorning.setVisibility(View.GONE);
             }
             if (SUN_AFT_FROM != null && SUN_AFT_TO != null) {
                 txtTimingAfternoon.setText(SUN_AFT_FROM + " - " + SUN_AFT_TO);
+                txtTimingAfternoon.setVisibility(View.VISIBLE);
             } else {
-                txtTimingAfternoon.setText("Closed Today");
+                txtTimingAfternoon.setVisibility(View.GONE);
             }
         } else if (TODAY_DAY.equalsIgnoreCase("Monday"))  {
             MON_MOR_FROM = timings.getMonMorFrom();
@@ -578,13 +586,15 @@ public class DoctorsProfileActivity extends AppCompatActivity {
 
             if (MON_MOR_FROM != null && MON_MOR_TO != null)  {
                 txtTimingsMorning.setText(MON_MOR_FROM + " - " + MON_MOR_TO);
+                txtTimingsMorning.setVisibility(View.VISIBLE);
             } else {
-                txtTimingsMorning.setText("Closed Today");
+                txtTimingsMorning.setVisibility(View.GONE);
             }
             if (MON_AFT_FROM != null && MON_AFT_TO != null) {
                 txtTimingAfternoon.setText(MON_AFT_FROM + " - " + MON_AFT_TO);
+                txtTimingAfternoon.setVisibility(View.VISIBLE);
             } else {
-                txtTimingAfternoon.setText("Closed Today");
+                txtTimingAfternoon.setVisibility(View.GONE);
             }
         } else if (TODAY_DAY.equalsIgnoreCase("Tuesday"))   {
             TUE_MOR_FROM = timings.getTueMorFrom();
@@ -600,16 +610,18 @@ public class DoctorsProfileActivity extends AppCompatActivity {
                 txtClosed.setVisibility(View.VISIBLE);
                 txtOpen.setVisibility(View.GONE);
             }
-            
+
             if (TUE_MOR_FROM != null && TUE_MOR_TO != null) {
                 txtTimingsMorning.setText(TUE_MOR_FROM + " - " + TUE_MOR_TO);
+                txtTimingsMorning.setVisibility(View.VISIBLE);
             } else {
-                txtTimingsMorning.setText("Closed Today");
+                txtTimingsMorning.setVisibility(View.GONE);
             }
             if (TUE_AFT_FROM != null && TUE_AFT_TO != null) {
                 txtTimingAfternoon.setText(TUE_AFT_FROM + " - " + TUE_AFT_TO);
+                txtTimingAfternoon.setVisibility(View.VISIBLE);
             } else {
-                txtTimingAfternoon.setText("Closed Today");
+                txtTimingAfternoon.setVisibility(View.GONE);
             }
         } else if (TODAY_DAY.equalsIgnoreCase("Wednesday")) {
             WED_MOR_FROM = timings.getWedMorFrom();
@@ -628,13 +640,15 @@ public class DoctorsProfileActivity extends AppCompatActivity {
 
             if (WED_MOR_FROM != null && WED_MOR_TO != null) {
                 txtTimingsMorning.setText(WED_MOR_FROM + " - " + WED_MOR_TO);
+                txtTimingsMorning.setVisibility(View.VISIBLE);
             } else {
-                txtTimingsMorning.setText("Closed Today");
+                txtTimingsMorning.setVisibility(View.GONE);
             }
             if (WED_AFT_FROM != null && WED_AFT_TO != null) {
                 txtTimingAfternoon.setText(WED_AFT_FROM + " - " + WED_AFT_TO);
+                txtTimingAfternoon.setVisibility(View.VISIBLE);
             } else {
-                txtTimingAfternoon.setText("Closed Today");
+                txtTimingAfternoon.setVisibility(View.GONE);
             }
         } else if (TODAY_DAY.equalsIgnoreCase("Thursday"))  {
             THU_MOR_FROM = timings.getThuMorFrom();
@@ -653,13 +667,15 @@ public class DoctorsProfileActivity extends AppCompatActivity {
 
             if (THU_MOR_FROM != null && THU_MOR_TO != null) {
                 txtTimingsMorning.setText(THU_MOR_FROM + " - " + THU_MOR_TO);
+                txtTimingsMorning.setVisibility(View.VISIBLE);
             } else {
-                txtTimingsMorning.setText("Closed Today");
+                txtTimingsMorning.setVisibility(View.GONE);
             }
             if (THU_AFT_FROM != null && THU_AFT_TO != null) {
                 txtTimingAfternoon.setText(THU_AFT_FROM + " - " + THU_AFT_TO);
+                txtTimingAfternoon.setVisibility(View.VISIBLE);
             } else {
-                txtTimingAfternoon.setText("Closed Today");
+                txtTimingAfternoon.setVisibility(View.GONE);
             }
         } else if (TODAY_DAY.equalsIgnoreCase("Friday"))    {
             FRI_MOR_FROM = timings.getFriMorFrom();
@@ -678,13 +694,15 @@ public class DoctorsProfileActivity extends AppCompatActivity {
 
             if (FRI_MOR_FROM != null && FRI_MOR_TO != null) {
                 txtTimingsMorning.setText(FRI_MOR_FROM + " - " + FRI_MOR_TO);
+                txtTimingsMorning.setVisibility(View.VISIBLE);
             } else {
-                txtTimingsMorning.setText("Closed Today");
+                txtTimingsMorning.setVisibility(View.GONE);
             }
             if (FRI_AFT_FROM != null && FRI_AFT_TO != null) {
                 txtTimingAfternoon.setText(FRI_AFT_FROM + " - " + FRI_AFT_TO);
+                txtTimingAfternoon.setVisibility(View.VISIBLE);
             } else {
-                txtTimingAfternoon.setText("Closed Today");
+                txtTimingAfternoon.setVisibility(View.GONE);
             }
         } else if (TODAY_DAY.equalsIgnoreCase("Saturday"))  {
             SAT_MOR_FROM = timings.getSatMorFrom();
@@ -703,13 +721,15 @@ public class DoctorsProfileActivity extends AppCompatActivity {
 
             if (SAT_MOR_FROM != null && SAT_MOR_TO != null) {
                 txtTimingsMorning.setText(SAT_MOR_FROM + " - " + SAT_MOR_TO);
+                txtTimingsMorning.setVisibility(View.VISIBLE);
             } else {
-                txtTimingsMorning.setText("Closed Today");
+                txtTimingsMorning.setVisibility(View.GONE);
             }
             if (SAT_AFT_FROM != null && SAT_AFT_TO != null) {
                 txtTimingAfternoon.setText(SAT_AFT_FROM + " - " + SAT_AFT_TO);
+                txtTimingAfternoon.setVisibility(View.VISIBLE);
             } else {
-                txtTimingAfternoon.setText("Closed Today");
+                txtTimingAfternoon.setVisibility(View.GONE);
             }
         }
     }
@@ -777,6 +797,13 @@ public class DoctorsProfileActivity extends AppCompatActivity {
         listReviews.setLayoutManager(llmReviews);
         listReviews.setHasFixedSize(false);
         listReviews.setNestedScrollingEnabled(false);
+
+        LinearLayoutManager llmImages = new LinearLayoutManager(this);
+        llmImages.setOrientation(LinearLayoutManager.HORIZONTAL);
+        llmImages.setAutoMeasureEnabled(true);
+        listClinicImages.setLayoutManager(llmImages);
+        listClinicImages.setHasFixedSize(false);
+        listClinicImages.setNestedScrollingEnabled(false);
     }
 
     /** SHOW THE CHARGES DIALOG **/
@@ -1029,23 +1056,6 @@ public class DoctorsProfileActivity extends AppCompatActivity {
         dialog.show();
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                this.finish();
-                break;
-            default:
-                break;
-        }
-        return false;
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
-
     /** THE DOCTOR SERVICES CHILD EVENT LISTENER **/
     private ChildEventListener servicesChildEventListener = new ChildEventListener() {
         @Override
@@ -1133,4 +1143,39 @@ public class DoctorsProfileActivity extends AppCompatActivity {
         public void onCancelled(DatabaseError databaseError) {
         }
     };
+
+    /***** CONFIGURE THE TOOLBAR *****/
+    @SuppressWarnings("ConstantConditions")
+    private void configTB() {
+        Toolbar myToolbar = (Toolbar) findViewById(R.id.myToolbar);
+        setSupportActionBar(myToolbar);
+
+        String strTitle = "Doctor Details";
+//        String strTitle = getString(R.string.add_a_new_medicine_record);
+        SpannableString s = new SpannableString(strTitle);
+        s.setSpan(new TypefaceSpan(getApplicationContext()), 0, s.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
+
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(true);
+        getSupportActionBar().setTitle(s);
+        getSupportActionBar().setSubtitle(null);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                this.finish();
+                break;
+            default:
+                break;
+        }
+        return false;
+    }
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
 }

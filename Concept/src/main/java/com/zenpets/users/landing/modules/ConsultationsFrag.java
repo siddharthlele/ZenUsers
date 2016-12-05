@@ -68,7 +68,7 @@ public class ConsultationsFrag extends Fragment {
     /***** CONFIGURE THE TOOLBAR *****/
     private void configTB() {
 //        String strTitle = getResources().getString(R.string.account_manager_title);
-        String strTitle = "Consultations";
+        String strTitle = "Consultations Feed";
         SpannableString s = new SpannableString(strTitle);
         s.setSpan(new TypefaceSpan(getActivity()), 0, s.length(), Spannable.SPAN_EXCLUSIVE_EXCLUSIVE);
 

@@ -39,6 +39,10 @@ public class ReviewCreatorActivity extends AppCompatActivity {
     /** THE USER ID **/
     private String USER_ID = null;
     private String USER_KEY = null;
+    private String USER_NAME = null;
+
+    /** THE TIMESTAMP **/
+    private String TIME_STAMP = null;
 
     /** THE DOCTOR ID **/
     String DOCTOR_ID = null;
@@ -116,7 +120,7 @@ public class ReviewCreatorActivity extends AppCompatActivity {
         final DatabaseReference refDoctor = FirebaseDatabase.getInstance().getReference().child("Doctors").child(DOCTOR_ID).child("Reviews");
 
         /** COLLECT THE DATA **/
-        ReviewsData data = new ReviewsData(RECOMMEND_STATUS, APPOINTMENT_STATUS, DOCTOR_RATING, VISIT_REASON, DOCTOR_EXPERIENCE, USER_KEY);
+        ReviewsData data = new ReviewsData(RECOMMEND_STATUS, APPOINTMENT_STATUS, DOCTOR_RATING, VISIT_REASON, DOCTOR_EXPERIENCE, USER_KEY, USER_ID, USER_NAME, TIME_STAMP);
 
         /** POST THE REVIEW DATA **/
         refDoctor.push().setValue(data, new DatabaseReference.CompletionListener() {
@@ -125,7 +129,7 @@ public class ReviewCreatorActivity extends AppCompatActivity {
                 if (databaseError != null)  {
                     Toast.makeText(
                             getApplicationContext(),
-                            "Failed to add your review. Please submit again",
+                            "Failed to submit your review. Please post again.",
                             Toast.LENGTH_LONG).show();
                 } else {
                     /** POST THE REFERENCE IN THE USERS RECORD **/
@@ -155,14 +159,22 @@ public class ReviewCreatorActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Failed to get required data....", Toast.LENGTH_SHORT).show();
                 finish();
             } else {
+
+                /* GET THE TIME STAMP */
+                Long aLong = System.currentTimeMillis() / 1000;
+                TIME_STAMP = String.valueOf(aLong);
+
+                /* GET THE USER NAME */
+                USER_NAME = user.getDisplayName();
+
                 DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Users");
                 Query query = reference.orderByChild("userID").equalTo(USER_ID);
                 query.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
                         for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                            /* GET THE USER KEY */
                             USER_KEY = postSnapshot.getKey();
-//                            Log.e("USER KEY", USER_KEY);
                         }
                     }
 

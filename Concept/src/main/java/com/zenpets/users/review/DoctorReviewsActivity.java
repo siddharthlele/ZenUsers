@@ -8,7 +8,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
@@ -53,7 +52,7 @@ public class DoctorReviewsActivity extends AppCompatActivity {
     /** GET THE DOCTOR'S REVIEWS **/
     private void getDoctorReviews() {
         DatabaseReference refReviews = FirebaseDatabase.getInstance().getReference().child("Doctors").child(DOCTOR_ID).child("Reviews");
-        Log.e("REFERENCE", String.valueOf(refReviews));
+//        Log.e("REFERENCE", String.valueOf(refReviews));
 
         /** SETUP THE FIREBASE RECYCLER ADAPTER **/
         FirebaseRecyclerAdapter adapter = new FirebaseRecyclerAdapter<ReviewsData, ReviewsVH>
@@ -74,9 +73,9 @@ public class DoctorReviewsActivity extends AppCompatActivity {
 
                     /** GET THE USER KEY AND THE USER NAME **/
                     String strUserKey = model.getUserKey();
-                    Log.e("USER KEY", strUserKey);
+//                    Log.e("USER KEY", strUserKey);
                     DatabaseReference refUser = FirebaseDatabase.getInstance().getReference().child("Users").child(strUserKey);
-                    Log.e("REFERENCE", String.valueOf(refUser));
+//                    Log.e("REFERENCE", String.valueOf(refUser));
                     refUser.addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
@@ -182,7 +181,7 @@ public class DoctorReviewsActivity extends AppCompatActivity {
             if (DOCTOR_ID != null)  {
                 /** GET THE DOCTOR'S REVIEWS **/
                 getDoctorReviews();
-                Log.e("DOCTOR ID", DOCTOR_ID);
+//                Log.e("DOCTOR ID", DOCTOR_ID);
             } else {
                 Toast.makeText(getApplicationContext(), "Failed to get required information", Toast.LENGTH_LONG).show();
                 finish();

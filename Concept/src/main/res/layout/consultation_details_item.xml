@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        style="@style/ZenPetsCards"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="6dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="6dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:padding="4dp">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgvwDoctorProfile"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:src="@drawable/beagle"
+                    app:civ_border_color="#DCDCDC"
+                    app:civ_border_width="2dp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtDoctorName"
+                    fontPath="fonts/Exo2-Regular.otf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center"
+                    android:maxLines="1"
+                    android:padding="11dp"
+                    android:text="Doctor Name"
+                    android:textColor="@android:color/secondary_text_dark"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtAnswerTimeStamp"
+                    fontPath="fonts/Exo2-Regular.otf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center"
+                    android:maxLines="1"
+                    android:paddingBottom="5dp"
+                    android:paddingEnd="11dp"
+                    android:paddingLeft="11dp"
+                    android:paddingRight="11dp"
+                    android:paddingStart="11dp"
+                    android:paddingTop="5dp"
+                    android:text="2 hours ago"
+                    android:textColor="@android:color/tertiary_text_dark"
+                    android:textSize="14sp" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.50dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:background="#CC999999" />
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtConsultAnswer"
+                fontPath="fonts/Exo2-Regular.otf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center"
+                android:padding="11dp"
+                android:text="Answer"
+                android:textColor="@android:color/secondary_text_dark"
+                android:textSize="16sp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                fontPath="fonts/Exo2-Regular.otf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="start|center"
+                android:paddingBottom="5dp"
+                android:paddingEnd="11dp"
+                android:paddingLeft="11dp"
+                android:paddingRight="11dp"
+                android:paddingStart="11dp"
+                android:paddingTop="5dp"
+                android:text="Next Steps"
+                android:textColor="@android:color/tertiary_text_dark"
+                android:textSize="15sp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtConsultNextSteps"
+                fontPath="fonts/Exo2-Regular.otf"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center"
+                android:padding="11dp"
+                android:text="Next Steps"
+                android:textColor="@android:color/secondary_text_dark"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtHelpful"
+                    fontPath="fonts/Exo2-Regular.otf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center"
+                    android:maxLines="1"
+                    android:padding="11dp"
+                    android:text="0/0 Found this helpful"
+                    android:textColor="@android:color/tertiary_text_dark"
+                    android:textSize="14sp" />
+
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:id="@+id/imgvwFlagAnswer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:adjustViewBounds="true"
+                    app:iiv_color="@android:color/holo_red_light"
+                    app:iiv_icon="faw-flag-o"
+                    app:iiv_size="14dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.50dp"
+                android:layout_marginBottom="3dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="3dp"
+                android:background="#CC999999" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatTextView
+                    fontPath="fonts/Exo2-Regular.otf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left|center"
+                    android:maxLines="1"
+                    android:padding="11dp"
+                    android:text="Was this answer helpful?"
+                    android:textColor="@android:color/tertiary_text_dark"
+                    android:textSize="15sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtHelpfulYes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="11dp"
+                    android:text="YES"
+                    android:textColor="@android:color/holo_blue_bright"
+                    android:textSize="15sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtHelpfulNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="11dp"
+                    android:text="NO"
+                    android:textColor="@android:color/holo_blue_bright"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</LinearLayout>

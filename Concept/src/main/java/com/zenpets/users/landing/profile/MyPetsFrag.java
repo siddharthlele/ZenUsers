@@ -21,6 +21,8 @@ import android.widget.Toast;
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.afollestad.materialdialogs.Theme;
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -35,7 +37,6 @@ import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
-import com.squareup.picasso.Picasso;
 import com.zenpets.users.R;
 import com.zenpets.users.creators.PetCreator;
 import com.zenpets.users.details.PetDetailsContainer;
@@ -183,10 +184,11 @@ public class MyPetsFrag extends Fragment {
                     }
 
                     /** SET THE USER PET IMAGE**/
-                    Picasso.with(getActivity())
+                    Glide.with(getActivity())
                             .load(model.getPetPicture())
-                            .resize(1024, 768)
-                            .centerInside()
+                            .crossFade()
+                            .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                            .centerCrop()
                             .into(viewHolder.imgvwPetPicture);
 
                     /***** SHOW THE PET DETAILS *****/

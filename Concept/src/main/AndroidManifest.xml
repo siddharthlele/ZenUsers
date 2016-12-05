@@ -65,10 +65,19 @@
         <activity
             android:name=".landing.services.FilterDoctorsActivity"
             android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".doctors.DoctorGalleryActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <!-- CONSULTATIONS -->
         <activity
+            android:name=".creators.ConsultationCreatorActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
             android:name=".consultations.ConsultationList"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".consultations.ConsultationDetailsActivity"
             android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <!-- PET -->
@@ -80,6 +89,9 @@
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity
             android:name=".details.PetDetailsContainer"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".profile.pets.UserPetsActivity"
             android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <!-- VACCINATION -->

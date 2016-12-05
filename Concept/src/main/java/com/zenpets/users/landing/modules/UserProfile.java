@@ -18,6 +18,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.zenpets.users.R;
+import com.zenpets.users.profile.pets.UserPetsActivity;
 import com.zenpets.users.profile.ProfileDetailsActivity;
 import com.zenpets.users.utils.TypefaceSpan;
 
@@ -42,6 +43,12 @@ public class UserProfile extends Fragment {
         startActivity(intent);
     }
 
+    /** SHOW THE USER'S PETS **/
+    @OnClick(R.id.linlaMyPets) void showPets()  {
+        Intent intent = new Intent(getActivity(), UserPetsActivity.class);
+        startActivity(intent);
+    }
+
     /** SHOW THE USER'S DOCTORS **/
     @OnClick(R.id.linlaMyDoctors) void showDoctors()    {
     }
@@ -50,9 +57,9 @@ public class UserProfile extends Fragment {
     @OnClick(R.id.linlaMyConsultQueries) void showQueries() {
     }
 
-    /** SHOW USER'S SAVED ARTICLES **/
-    @OnClick(R.id.linlaMySavedArticles) void showArticles() {
-    }
+//    /** SHOW USER'S SAVED ARTICLES **/
+//    @OnClick(R.id.linlaMySavedArticles) void showArticles() {
+//    }
 
     /** SHOW USER'S REMINDERS **/
     @OnClick(R.id.linlaMyReminders) void showReminders()    {

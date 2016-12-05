@@ -18,9 +18,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.squareup.picasso.Picasso;
 import com.zenpets.users.R;
 import com.zenpets.users.help.HelpActivity;
 import com.zenpets.users.landing.modules.AllServicesFrag;
@@ -72,10 +73,11 @@ public class LandingActivity extends AppCompatActivity {
             /** SET THE PROFILE PICTURE **/
             USER_NAME = user.getDisplayName();
             if (USER_PROFILE_PICTURE != null)   {
-                Picasso.with(LandingActivity.this)
+                Glide.with(getApplicationContext())
                         .load(USER_PROFILE_PICTURE)
-                        .centerInside()
-                        .fit()
+                        .crossFade()
+                        .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                        .centerCrop()
                         .into(imgvwProfile);
             }
 

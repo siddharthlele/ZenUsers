@@ -11,9 +11,7 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:fillViewport="true"
-        android:scrollbarSize="5dp"
-        android:scrollbarThumbVertical="@color/primary_dark">
+        android:fillViewport="true">
 
         <LinearLayout
             android:layout_width="fill_parent"
@@ -39,7 +37,7 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|bottom"
-                    android:background="#CCDCDCDC"
+                    android:background="#CC212121"
                     android:gravity="center"
                     android:paddingBottom="20dp"
                     android:paddingEnd="15dp"
@@ -48,7 +46,7 @@
                     android:paddingStart="15dp"
                     android:paddingTop="20dp"
                     android:text="USER NAME"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/primary_text_dark"
                     android:textSize="18sp" />
             </FrameLayout>
 
@@ -64,7 +62,7 @@
                     android:layout_width="47dp"
                     android:layout_height="47dp"
                     android:adjustViewBounds="true"
-                    app:iiv_color="@android:color/secondary_text_light"
+                    app:iiv_color="@android:color/secondary_text_dark"
                     app:iiv_icon="faw-envelope"
                     app:iiv_size="20dp" />
 
@@ -77,7 +75,7 @@
                     android:gravity="start|center"
                     android:padding="11dp"
                     android:text="Email Address"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/primary_text_dark"
                     android:textSize="15sp" />
             </LinearLayout>
 
@@ -101,7 +99,7 @@
                     android:layout_width="47dp"
                     android:layout_height="47dp"
                     android:adjustViewBounds="true"
-                    app:iiv_color="@android:color/secondary_text_light"
+                    app:iiv_color="@android:color/secondary_text_dark"
                     app:iiv_icon="faw-phone"
                     app:iiv_size="20dp" />
 
@@ -114,7 +112,7 @@
                     android:gravity="start|center"
                     android:padding="11dp"
                     android:text="Phone Number"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/primary_text_dark"
                     android:textSize="15sp" />
             </LinearLayout>
 
@@ -138,7 +136,7 @@
                     android:layout_width="47dp"
                     android:layout_height="47dp"
                     android:adjustViewBounds="true"
-                    app:iiv_color="@android:color/secondary_text_light"
+                    app:iiv_color="@android:color/secondary_text_dark"
                     app:iiv_icon="faw-map-marker"
                     app:iiv_size="20dp" />
 
@@ -151,7 +149,7 @@
                     android:gravity="start|center"
                     android:padding="11dp"
                     android:text="City"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/primary_text_dark"
                     android:textSize="15sp" />
             </LinearLayout>
 
@@ -175,7 +173,7 @@
                     android:layout_width="47dp"
                     android:layout_height="47dp"
                     android:adjustViewBounds="true"
-                    app:iiv_color="@android:color/secondary_text_light"
+                    app:iiv_color="@android:color/secondary_text_dark"
                     app:iiv_icon="faw-venus-mars"
                     app:iiv_size="20dp" />
 
@@ -188,7 +186,7 @@
                     android:gravity="start|center"
                     android:padding="11dp"
                     android:text="Gender"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/primary_text_dark"
                     android:textSize="15sp" />
             </LinearLayout>
 
@@ -212,7 +210,7 @@
                     android:layout_width="47dp"
                     android:layout_height="47dp"
                     android:adjustViewBounds="true"
-                    app:iiv_color="@android:color/secondary_text_light"
+                    app:iiv_color="@android:color/secondary_text_dark"
                     app:iiv_icon="faw-birthday-cake"
                     app:iiv_size="20dp" />
 
@@ -225,7 +223,7 @@
                     android:gravity="start|center"
                     android:padding="11dp"
                     android:text="Date of Birth"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/primary_text_dark"
                     android:textSize="15sp" />
             </LinearLayout>
 
@@ -247,7 +245,7 @@
                 android:gravity="start|center"
                 android:padding="11dp"
                 android:text="EDIT"
-                android:textColor="@android:color/holo_blue_dark"
+                android:textColor="@android:color/holo_blue_light"
                 android:textSize="18sp" />
 
         </LinearLayout>

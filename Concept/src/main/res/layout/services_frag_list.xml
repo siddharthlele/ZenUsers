@@ -11,6 +11,7 @@
         android:layout_gravity="center"
         android:cacheColorHint="@android:color/transparent"
         android:fadingEdge="none"
+        android:overScrollMode="never"
         android:persistentDrawingCache="scrolling"
         android:scrollbarSize="5dp"
         android:scrollbarThumbVertical="@color/primary_dark"

@@ -36,7 +36,7 @@
                 android:maxLines="1"
                 android:padding="11dp"
                 android:text="@string/dash_user_name_name"
-                android:textColor="@android:color/primary_text_light"
+                android:textColor="@android:color/primary_text_dark"
                 android:textSize="18sp" />
 
             <android.support.v7.widget.AppCompatTextView
@@ -64,6 +64,41 @@
             android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/linlaMyPets"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="47dp"
+                    android:layout_height="47dp"
+                    android:adjustViewBounds="true"
+                    app:iiv_color="@android:color/secondary_text_dark"
+                    app:iiv_icon="gmd-pets"
+                    app:iiv_size="20dp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtMyPets"
+                    fontPath="fonts/Exo2-Medium.otf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start|center"
+                    android:padding="11dp"
+                    android:text="My Pets"
+                    android:textColor="@android:color/primary_text_dark"
+                    android:textSize="16sp" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:padding="11dp"
+                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/linlaMyDoctors"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
@@ -74,7 +109,7 @@
                     android:layout_width="47dp"
                     android:layout_height="47dp"
                     android:adjustViewBounds="true"
-                    app:iiv_color="@android:color/secondary_text_light"
+                    app:iiv_color="@android:color/secondary_text_dark"
                     app:iiv_icon="faw-user-md"
                     app:iiv_size="20dp" />
 
@@ -87,7 +122,7 @@
                     android:gravity="start|center"
                     android:padding="11dp"
                     android:text="My Doctors"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/primary_text_dark"
                     android:textSize="16sp" />
 
                 <android.support.v7.widget.AppCompatImageView
@@ -95,16 +130,8 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:padding="11dp"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
             </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/fixed_divider_horizontal_bright" />
 
             <LinearLayout
                 android:id="@+id/linlaMyConsultQueries"
@@ -117,7 +144,7 @@
                     android:layout_width="47dp"
                     android:layout_height="47dp"
                     android:adjustViewBounds="true"
-                    app:iiv_color="@android:color/secondary_text_light"
+                    app:iiv_color="@android:color/secondary_text_dark"
                     app:iiv_icon="faw-comments"
                     app:iiv_size="20dp" />
 
@@ -130,7 +157,7 @@
                     android:gravity="start|center"
                     android:padding="11dp"
                     android:text="Consult Queries"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/primary_text_dark"
                     android:textSize="16sp" />
 
                 <android.support.v7.widget.AppCompatImageView
@@ -138,18 +165,10 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:padding="11dp"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
             </LinearLayout>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/fixed_divider_horizontal_bright" />
-
-            <LinearLayout
+            <!--<LinearLayout
                 android:id="@+id/linlaMySavedArticles"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
@@ -160,7 +179,7 @@
                     android:layout_width="47dp"
                     android:layout_height="47dp"
                     android:adjustViewBounds="true"
-                    app:iiv_color="@android:color/secondary_text_light"
+                    app:iiv_color="@android:color/secondary_text_dark"
                     app:iiv_icon="faw-bookmark-o"
                     app:iiv_size="20dp" />
 
@@ -173,7 +192,7 @@
                     android:gravity="start|center"
                     android:padding="11dp"
                     android:text="Saved Articles"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/primary_text_dark"
                     android:textSize="16sp" />
 
                 <android.support.v7.widget.AppCompatImageView
@@ -181,16 +200,8 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:padding="11dp"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
-            </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/fixed_divider_horizontal_bright" />
+                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
+            </LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/linlaMyReminders"
@@ -203,7 +214,7 @@
                     android:layout_width="47dp"
                     android:layout_height="47dp"
                     android:adjustViewBounds="true"
-                    app:iiv_color="@android:color/secondary_text_light"
+                    app:iiv_color="@android:color/secondary_text_dark"
                     app:iiv_icon="faw-clock-o"
                     app:iiv_size="20dp" />
 
@@ -216,7 +227,7 @@
                     android:gravity="start|center"
                     android:padding="11dp"
                     android:text="My Reminders"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/primary_text_dark"
                     android:textSize="16sp" />
 
                 <android.support.v7.widget.AppCompatImageView
@@ -224,16 +235,8 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:padding="11dp"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
             </LinearLayout>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginTop="5dp"
-                android:background="@drawable/fixed_divider_horizontal_bright" />
 
             <LinearLayout
                 android:id="@+id/linlaMyPreferences"
@@ -246,7 +249,7 @@
                     android:layout_width="47dp"
                     android:layout_height="47dp"
                     android:adjustViewBounds="true"
-                    app:iiv_color="@android:color/secondary_text_light"
+                    app:iiv_color="@android:color/secondary_text_dark"
                     app:iiv_icon="faw-cog"
                     app:iiv_size="20dp" />
 
@@ -259,7 +262,7 @@
                     android:gravity="start|center"
                     android:padding="11dp"
                     android:text="My Preferences"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/primary_text_dark"
                     android:textSize="16sp" />
 
                 <android.support.v7.widget.AppCompatImageView
@@ -267,7 +270,7 @@
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
                     android:padding="11dp"
-                    android:src="@drawable/ic_keyboard_arrow_right_black_24dp" />
+                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
             </LinearLayout>
         </LinearLayout>
     </ScrollView>

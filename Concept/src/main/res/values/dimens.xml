@@ -13,4 +13,9 @@
     <dimen name="empty_margin">10dp</dimen>
     <dimen name="empty_pad">6dp</dimen>
     <dimen name="empty_size">18sp</dimen>
+
+    <!-- DOCTOR PROFILE BEHAVIOR -->
+    <dimen name="image_width">120dp</dimen>
+    <dimen name="image_final_width">32dp</dimen>
+    <dimen name="spacing_normal">16dp</dimen>
 </resources>

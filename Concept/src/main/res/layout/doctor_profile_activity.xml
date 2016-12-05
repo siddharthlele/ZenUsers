@@ -42,18 +42,18 @@
                     <LinearLayout
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="bottom|start"
+                        android:layout_gravity="bottom"
+                        android:layout_margin="10dp"
                         android:gravity="center"
                         android:orientation="horizontal">
 
                         <de.hdodenhof.circleimageview.CircleImageView
                             android:id="@+id/imgvwDoctorProfile"
-                            android:layout_width="90dp"
-                            android:layout_height="90dp"
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
                             android:layout_gravity="start|bottom"
-                            android:layout_margin="20dp"
                             android:src="@drawable/beagle"
-                            app:civ_border_color="#CCDCDCDC"
+                            app:civ_border_color="#DCDCDC"
                             app:civ_border_width="4dp" />
 
                         <LinearLayout
@@ -64,25 +64,16 @@
 
                             <android.support.v7.widget.AppCompatTextView
                                 android:id="@+id/txtDoctorName"
-                                fontPath="fonts/Roboto-Medium.ttf"
+                                fontPath="fonts/Exo2-SemiBold.otf"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:gravity="left|center"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="5dp"
+                                android:gravity="start|center"
                                 android:padding="11dp"
-                                android:text="92% (200 votes)"
+                                android:text="Doctor Name"
                                 android:textColor="@android:color/primary_text_dark"
                                 android:textSize="16sp" />
-
-                            <android.support.v7.widget.AppCompatTextView
-                                android:id="@+id/txtDoctorEducation"
-                                fontPath="fonts/Roboto-Regular.ttf"
-                                android:layout_width="fill_parent"
-                                android:layout_height="wrap_content"
-                                android:gravity="left|center"
-                                android:padding="11dp"
-                                android:text="92% (200 votes)"
-                                android:textColor="@android:color/primary_text_dark"
-                                android:textSize="15sp" />
                         </LinearLayout>
                     </LinearLayout>
                 </FrameLayout>
@@ -116,12 +107,12 @@
                         android:paddingStart="11dp"
                         android:paddingTop="5dp"
                         android:text="@string/doc_profile_exp_icon"
-                        android:textColor="@android:color/primary_text_light"
+                        android:textColor="@android:color/secondary_text_dark"
                         android:textSize="15sp" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtExperience"
-                        fontPath="fonts/Roboto-Regular.ttf"
+                        fontPath="fonts/Exo2-Light.otf"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -133,8 +124,8 @@
                         android:paddingStart="11dp"
                         android:paddingTop="5dp"
                         android:text="20 yrs experience"
-                        android:textColor="@android:color/secondary_text_light"
-                        android:textSize="15sp" />
+                        android:textColor="@android:color/secondary_text_dark"
+                        android:textSize="14sp" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -158,12 +149,12 @@
                         android:paddingStart="11dp"
                         android:paddingTop="5dp"
                         android:text="@string/doc_profile_likes_icon"
-                        android:textColor="@android:color/primary_text_light"
+                        android:textColor="@android:color/secondary_text_dark"
                         android:textSize="15sp" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtVotes"
-                        fontPath="fonts/Roboto-Regular.ttf"
+                        fontPath="fonts/Exo2-Light.otf"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -175,8 +166,8 @@
                         android:paddingStart="11dp"
                         android:paddingTop="5dp"
                         android:text="92% (200 votes)"
-                        android:textColor="@android:color/secondary_text_light"
-                        android:textSize="15sp" />
+                        android:textColor="@android:color/secondary_text_dark"
+                        android:textSize="14sp" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -201,12 +192,12 @@
                     android:paddingStart="11dp"
                     android:paddingTop="5dp"
                     android:text="@string/doc_profile_charges_icon"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="15sp" />
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtDoctorCharges"
-                    fontPath="fonts/Roboto-Regular.ttf"
+                    fontPath="fonts/Exo2-Light.otf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -217,9 +208,9 @@
                     android:paddingRight="11dp"
                     android:paddingStart="11dp"
                     android:paddingTop="5dp"
-                    android:text="92% (200 votes)"
-                    android:textColor="@android:color/secondary_text_light"
-                    android:textSize="15sp" />
+                    android:text="Consultation Fees"
+                    android:textColor="@android:color/secondary_text_dark"
+                    android:textSize="14sp" />
 
                 <com.mikepenz.iconics.view.IconicsButton
                     android:id="@+id/btnChargesInfo"
@@ -253,7 +244,7 @@
                     android:paddingStart="11dp"
                     android:paddingTop="5dp"
                     android:text="@string/doc_profile_hospital_icon"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="15sp" />
 
                 <LinearLayout
@@ -265,7 +256,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtClinicName"
-                        fontPath="fonts/Roboto-Regular.ttf"
+                        fontPath="fonts/Exo2-Regular.otf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -276,12 +267,12 @@
                         android:paddingStart="11dp"
                         android:paddingTop="5dp"
                         android:text="NAME"
-                        android:textColor="@android:color/primary_text_light"
+                        android:textColor="@android:color/primary_text_dark"
                         android:textSize="15sp" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtClinicAddress"
-                        fontPath="fonts/Roboto-Regular.ttf"
+                        fontPath="fonts/Exo2-Light.otf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -292,7 +283,7 @@
                         android:paddingStart="11dp"
                         android:paddingTop="5dp"
                         android:text="ADDRESS"
-                        android:textColor="@android:color/tertiary_text_light"
+                        android:textColor="@android:color/tertiary_text_dark"
                         android:textSize="14sp" />
 
                     <com.google.android.gms.maps.MapView
@@ -331,7 +322,7 @@
                     android:paddingStart="11dp"
                     android:paddingTop="5dp"
                     android:text="@string/doc_profile_timings_icon"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="15sp" />
 
                 <LinearLayout
@@ -343,39 +334,31 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtOpen"
-                        fontPath="fonts/Roboto-Regular.ttf"
+                        fontPath="fonts/Exo2-Light.otf"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="11dp"
                         android:background="#D0EDEB"
-                        android:paddingBottom="5dp"
-                        android:paddingEnd="11dp"
-                        android:paddingLeft="11dp"
-                        android:paddingRight="11dp"
-                        android:paddingStart="11dp"
-                        android:paddingTop="5dp"
+                        android:padding="5dp"
                         android:text="OPEN TODAY"
                         android:textColor="#18AA9E"
-                        android:textSize="14sp" />
+                        android:textSize="12sp" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtClosed"
-                        fontPath="fonts/Roboto-Regular.ttf"
+                        fontPath="fonts/Exo2-Light.otf"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginLeft="11dp"
                         android:background="#FDE2DE"
-                        android:paddingBottom="5dp"
-                        android:paddingEnd="11dp"
-                        android:paddingLeft="11dp"
-                        android:paddingRight="11dp"
-                        android:paddingStart="11dp"
-                        android:paddingTop="5dp"
+                        android:padding="5dp"
                         android:text="CLOSED TODAY"
                         android:textColor="#FD745E"
-                        android:textSize="14sp" />
+                        android:textSize="12sp" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtTimingsMorning"
-                        fontPath="fonts/Roboto-Regular.ttf"
+                        fontPath="fonts/Exo2-Light.otf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -386,12 +369,12 @@
                         android:paddingStart="11dp"
                         android:paddingTop="5dp"
                         android:text="MORNING TIMINGS"
-                        android:textColor="@android:color/secondary_text_light"
-                        android:textSize="15sp" />
+                        android:textColor="@android:color/secondary_text_dark"
+                        android:textSize="14sp" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtTimingAfternoon"
-                        fontPath="fonts/Roboto-Regular.ttf"
+                        fontPath="fonts/Exo2-Light.otf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -402,16 +385,14 @@
                         android:paddingStart="11dp"
                         android:paddingTop="5dp"
                         android:text="AFTERNOON TIMINGS"
-                        android:textColor="@android:color/secondary_text_light"
-                        android:textSize="15sp" />
+                        android:textColor="@android:color/secondary_text_dark"
+                        android:textSize="14sp" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtAllTimings"
-                        fontPath="fonts/Roboto-Medium.ttf"
+                        fontPath="fonts/Exo2-SemiBold.otf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginTop="10dp"
                         android:gravity="start|center"
                         android:paddingBottom="5dp"
                         android:paddingEnd="11dp"
@@ -446,7 +427,7 @@
                     android:paddingStart="11dp"
                     android:paddingTop="5dp"
                     android:text="@string/doc_profile_reviews_icon"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="15sp" />
 
                 <LinearLayout
@@ -459,7 +440,7 @@
                     android:visibility="visible">
 
                     <android.support.v7.widget.AppCompatTextView
-                        fontPath="fonts/Roboto-Medium.ttf"
+                        fontPath="fonts/Exo2-SemiBold.otf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -470,7 +451,7 @@
                         android:paddingStart="11dp"
                         android:paddingTop="5dp"
                         android:text="REVIEWS"
-                        android:textColor="@android:color/tertiary_text_light"
+                        android:textColor="@android:color/tertiary_text_dark"
                         android:textSize="15sp" />
 
                     <android.support.v7.widget.RecyclerView
@@ -486,11 +467,9 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtAllReviews"
-                        fontPath="fonts/Roboto-Medium.ttf"
+                        fontPath="fonts/Exo2-SemiBold.otf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginTop="10dp"
                         android:gravity="start|center"
                         android:paddingBottom="5dp"
                         android:paddingEnd="11dp"
@@ -513,7 +492,7 @@
                     android:visibility="gone">
 
                     <android.support.v7.widget.AppCompatTextView
-                        fontPath="fonts/Roboto-Regular.ttf"
+                        fontPath="fonts/Exo2-Light.otf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -550,7 +529,7 @@
                     android:paddingStart="11dp"
                     android:paddingTop="5dp"
                     android:text="@string/doc_profile_images_icon"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="15sp" />
 
                 <LinearLayout
@@ -565,19 +544,16 @@
                     android:paddingStart="11dp"
                     android:paddingTop="5dp">
 
-                    <HorizontalScrollView
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/listClinicImages"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:fillViewport="true"
-                        android:scrollbarSize="2dp">
-
-                        <LinearLayout
-                            android:id="@+id/linlaPhotos"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:orientation="horizontal"
-                            android:overScrollMode="never" />
-                    </HorizontalScrollView>
+                        android:layout_gravity="center"
+                        android:cacheColorHint="@android:color/transparent"
+                        android:fadingEdge="none"
+                        android:persistentDrawingCache="scrolling"
+                        android:scrollbars="none"
+                        android:visibility="visible" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -602,7 +578,7 @@
                     android:paddingStart="11dp"
                     android:paddingTop="5dp"
                     android:text="@string/doc_profile_services_icon"
-                    android:textColor="@android:color/primary_text_light"
+                    android:textColor="@android:color/secondary_text_dark"
                     android:textSize="15sp" />
 
                 <LinearLayout
@@ -615,7 +591,7 @@
                     android:visibility="visible">
 
                     <android.support.v7.widget.AppCompatTextView
-                        fontPath="fonts/Roboto-Medium.ttf"
+                        fontPath="fonts/Exo2-SemiBold.otf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:paddingBottom="5dp"
@@ -625,7 +601,7 @@
                         android:paddingStart="11dp"
                         android:paddingTop="5dp"
                         android:text="SERVICES"
-                        android:textColor="@android:color/tertiary_text_light"
+                        android:textColor="@android:color/tertiary_text_dark"
                         android:textSize="15sp" />
 
                     <android.support.v7.widget.RecyclerView
@@ -641,11 +617,9 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtAllServices"
-                        fontPath="fonts/Roboto-Medium.ttf"
+                        fontPath="fonts/Exo2-SemiBold.otf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginBottom="5dp"
-                        android:layout_marginTop="10dp"
                         android:gravity="start|center"
                         android:paddingBottom="5dp"
                         android:paddingEnd="11dp"
@@ -668,7 +642,7 @@
                     android:visibility="gone">
 
                     <android.support.v7.widget.AppCompatTextView
-                        fontPath="fonts/Roboto-Regular.ttf"
+                        fontPath="fonts/Exo2-Light.otf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -695,12 +669,12 @@
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/txtFeedback"
-            fontPath="fonts/Exo2-Light.otf"
+            fontPath="fonts/Exo2-SemiBold.otf"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="GIVE FEEDBACK"
+            android:text="Give Feedback"
             android:textColor="@android:color/primary_text_dark" />
 
         <View
@@ -717,7 +691,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="BOOK"
+            android:text="Book"
             android:textColor="@android:color/primary_text_dark" />
     </LinearLayout>
 
