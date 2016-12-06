@@ -3,10 +3,19 @@ package com.zenpets.users.utils.adapters.consultations;
 import android.app.Activity;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.mikepenz.iconics.view.IconicsImageView;
 import com.zenpets.users.R;
 import com.zenpets.users.utils.models.consultations.ConsultationAnswersData;
@@ -57,11 +66,79 @@ public class ConsultationsDetailsAdapter extends RecyclerView.Adapter<RecyclerVi
             vhHeader.txtViews.setText(header.getConsultViews() + " Views");
 
         } else if (holder instanceof VHItem)    {
-            ConsultationAnswersData data = getItem(position - 1);
-            VHItem vhItem = (VHItem) holder;
+            final ConsultationAnswersData data = getItem(position - 1);
+            final VHItem vhItem = (VHItem) holder;
             vhItem.txtConsultAnswer.setText(data.getConsultAnswer());
             vhItem.txtConsultNextSteps.setText(data.getConsultNextSteps());
             vhItem.txtAnswerTimeStamp.setText(data.getTimeStamp());
+
+            /** GET THE USER KEY **/
+            final String USER_KEY = data.getUserKey();
+
+            /** GET THE ANSWER KEY **/
+            final String ANSWER_KEY = data.getAnswerKey();
+
+            /** GET THE HELPFUL YES COUNT **/
+            int intHelpfulYes = data.getHelpfulYes();
+
+            /** GET THE HELPFUL NO COUNT **/
+            int intHelpfulNo = data.getHelpfulNo();
+
+            /** MARK THE ANSWER AS HELPFUL **/
+            vhItem.txtHelpfulYes.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    /** CHECK IF THE USER HAS ALREADY LIKED THE ANSWER **/
+                    DatabaseReference refVotes =
+                            FirebaseDatabase.getInstance().getReference().child("Users").child(USER_KEY).child("Votes");
+//                    Log.e("REFERENCE", String.valueOf(refVotes));
+                    refVotes.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.hasChildren()) {
+                                Log.e("VOTES", String.valueOf(dataSnapshot));
+
+                                /** CHECK IF THE USER HAS VOTED ON THIS ANSWER **/
+                            } else {
+                                Toast.makeText(activity, "User hasn't voted yet. Adding vote now....", Toast.LENGTH_SHORT).show();
+                                DatabaseReference refPostVote = FirebaseDatabase.getInstance().getReference().child("Answers").child(ANSWER_KEY);
+                                Log.e("REFERENCE", String.valueOf(refPostVote));
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                        }
+                    });
+
+                }
+            });
+
+            /** GET THE DOCTOR'S DETAILS **/
+            String doctorID = data.getDoctorID();
+            DatabaseReference refDoctors = FirebaseDatabase.getInstance().getReference().child("Doctors").child(doctorID);
+            refDoctors.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+
+                    /** SET THE DOCTOR'S NAME **/
+                    String doctorName = dataSnapshot.child("doctorName").getValue(String.class);
+                    vhItem.txtDoctorName.setText(doctorName);
+
+                    /** SET THE DOCTOR'S PROFILE PICTURE **/
+                    String doctorProfile = dataSnapshot.child("doctorProfile").getValue(String.class);
+                    Glide.with(activity)
+                            .load(doctorProfile)
+                            .crossFade()
+                            .diskCacheStrategy(DiskCacheStrategy.SOURCE)
+                            .centerCrop()
+                            .into(vhItem.imgvwDoctorProfile);
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                }
+            });
         }
     }
 
@@ -106,6 +183,8 @@ public class ConsultationsDetailsAdapter extends RecyclerView.Adapter<RecyclerVi
         AppCompatTextView txtConsultNextSteps;
         AppCompatTextView txtHelpful;
         IconicsImageView imgvwFlagAnswer;
+        AppCompatTextView txtHelpfulYes;
+        AppCompatTextView txtHelpfulNo;
 
         VHItem(View v) {
             super(v);
@@ -116,6 +195,8 @@ public class ConsultationsDetailsAdapter extends RecyclerView.Adapter<RecyclerVi
             txtConsultNextSteps = (AppCompatTextView) v.findViewById(R.id.txtConsultNextSteps);
             txtHelpful = (AppCompatTextView) v.findViewById(R.id.txtHelpful);
             imgvwFlagAnswer = (IconicsImageView) v.findViewById(R.id.imgvwFlagAnswer);
+            txtHelpfulYes = (AppCompatTextView) v.findViewById(R.id.txtHelpfulYes);
+            txtHelpfulNo = (AppCompatTextView) v.findViewById(R.id.txtHelpfulNo);
         }
     }
 }

@@ -16,5 +16,4 @@
         app:contentInsetStartWithNavigation="0dp"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:titleTextAppearance="@style/Toolbar.TitleText" />
-
 </LinearLayout>

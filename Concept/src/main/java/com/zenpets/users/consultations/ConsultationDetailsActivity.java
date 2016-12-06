@@ -10,10 +10,13 @@ import android.support.v7.widget.Toolbar;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -39,10 +42,14 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class ConsultationDetailsActivity extends AppCompatActivity {
 
+    /** THE USER KEY **/
+    String USER_KEY = null;
+
     /** THE INCOMING CONSULT ID **/
     String CONSULT_ID = null;
 
     /** THE CONSULTATION DETAILS ADAPTER AND ARRAY LIST **/
+    ConsultationAnswersData answersData;
     ConsultationHeaderData data;
     ConsultationsDetailsAdapter adapter;
     ArrayList<ConsultationAnswersData> arrAnswers = new ArrayList<>();
@@ -63,6 +70,28 @@ public class ConsultationDetailsActivity extends AppCompatActivity {
 
         /** CONFIGURE THE RECYCLER VIEW **/
         configRecycler();
+
+        /** GET THE USER DETAILS **/
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        if (user != null) {
+            String USER_ID = user.getUid();
+            DatabaseReference reference = FirebaseDatabase.getInstance().getReference().child("Users");
+            Query query = reference.orderByChild("userID").equalTo(USER_ID);
+            query.addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+                    for (DataSnapshot postSnapshot: dataSnapshot.getChildren()) {
+                        USER_KEY = postSnapshot.getKey();
+                    }
+                }
+
+                @Override
+                public void onCancelled(DatabaseError databaseError) {
+                }
+            });
+        } else {
+            finish();
+        }
 
         /** GET THE INCOMING DATA **/
         fetchIncomingData();
@@ -110,11 +139,13 @@ public class ConsultationDetailsActivity extends AppCompatActivity {
 //                        Log.e("ANSWERS", String.valueOf(dataSnapshot));
 
                         /** AN INSTANCE OF THE CONSULTATION ANSWERS DATA CLASS **/
-                        ConsultationAnswersData answersData;
                         for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
 
                             /** INSTANTIATE THE CONSULTATION ANSWERS DATA CLASS INSTANCE **/
                             answersData = new ConsultationAnswersData();
+
+                            /** SET THE ANSWER KEY **/
+                            answersData.setAnswerKey(postSnapshot.getKey());
 
                             /** SET THE NEXT STEPS **/
                             String consultNextSteps = postSnapshot.child("consultNextSteps").getValue(String.class);
@@ -126,6 +157,11 @@ public class ConsultationDetailsActivity extends AppCompatActivity {
                             answersData.setConsultAnswer(consultAnswer);
 //                            Log.e("ANSWER", consultAnswer);
 
+                            /** GET THE DOCTOR'S ID **/
+                            String doctorID = postSnapshot.child("doctorID").getValue(String.class);
+                            answersData.setDoctorID(doctorID);
+//                            Log.e("DOCTOR ID", doctorID);
+
                             /** SET THE TIME STAMP **/
                             String timeStamp = postSnapshot.child("timeStamp").getValue(String.class);
                             long lngTimeStamp = Long.parseLong(timeStamp) * 1000;
@@ -136,6 +172,21 @@ public class ConsultationDetailsActivity extends AppCompatActivity {
                             PrettyTime prettyTime = new PrettyTime();
                             String strDate = prettyTime.format(date);
                             answersData.setTimeStamp(strDate);
+
+                            /** GET THE HELPFUL YES COUNT **/
+                            int intHelpfulYes = postSnapshot.child("helpfulYes").getValue(Integer.class);
+                            answersData.setHelpfulYes(intHelpfulYes);
+
+                            /** GET THE HELPFUL NO COUNT **/
+                            int intHelpfulNo = postSnapshot.child("helpfulNo").getValue(Integer.class);
+                            answersData.setHelpfulNo(intHelpfulNo);
+
+                            /** SET THE TOTAL HELPFUL VOTES (YES + NO) **/
+                            int totalVotes = intHelpfulYes + intHelpfulNo;
+                            answersData.setTotalVotes(totalVotes);
+
+                            /** ADD THE USER KEY **/
+                            answersData.setUserKey(USER_KEY);
 
                             /** ADD THE COLLECTED DATA TO THE ARRAY LIST **/
                             arrAnswers.add(answersData);
