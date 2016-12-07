@@ -133,7 +133,7 @@ public class ConsultationDetailsActivity extends AppCompatActivity {
 
                 DatabaseReference refAnswer = FirebaseDatabase.getInstance().getReference().child("Answers");
                 Query query = refAnswer.orderByChild("consultID").equalTo(CONSULT_ID);
-                query.addValueEventListener(new ValueEventListener() {
+                query.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
 //                        Log.e("ANSWERS", String.valueOf(dataSnapshot));
@@ -203,6 +203,14 @@ public class ConsultationDetailsActivity extends AppCompatActivity {
                     public void onCancelled(DatabaseError databaseError) {
                     }
                 });
+//                query.addValueEventListener(new ValueEventListener() {
+//                    @Override
+//                    public void onDataChange(DataSnapshot dataSnapshot)
+//
+//                    @Override
+//                    public void onCancelled(DatabaseError databaseError) {
+//                    }
+//                });
             }
 
             @Override

@@ -3,7 +3,6 @@ package com.zenpets.users.utils.adapters.consultations;
 import android.app.Activity;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +14,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.mikepenz.iconics.view.IconicsImageView;
 import com.zenpets.users.R;
@@ -79,10 +79,14 @@ public class ConsultationsDetailsAdapter extends RecyclerView.Adapter<RecyclerVi
             final String ANSWER_KEY = data.getAnswerKey();
 
             /** GET THE HELPFUL YES COUNT **/
-            int intHelpfulYes = data.getHelpfulYes();
+            final int intHelpfulYes = data.getHelpfulYes();
 
             /** GET THE HELPFUL NO COUNT **/
             int intHelpfulNo = data.getHelpfulNo();
+
+            /** SET THE HELPFUL COUNTS **/
+            String strHelpful = String.valueOf(intHelpfulYes) + "/" + String.valueOf(intHelpfulNo) + " Found this helpful";
+            vhItem.txtHelpful.setText(strHelpful);
 
             /** MARK THE ANSWER AS HELPFUL **/
             vhItem.txtHelpfulYes.setOnClickListener(new View.OnClickListener() {
@@ -91,18 +95,35 @@ public class ConsultationsDetailsAdapter extends RecyclerView.Adapter<RecyclerVi
                     /** CHECK IF THE USER HAS ALREADY LIKED THE ANSWER **/
                     DatabaseReference refVotes =
                             FirebaseDatabase.getInstance().getReference().child("Users").child(USER_KEY).child("Votes");
-//                    Log.e("REFERENCE", String.valueOf(refVotes));
-                    refVotes.addListenerForSingleValueEvent(new ValueEventListener() {
+                    Query query = refVotes.orderByChild("answerID").equalTo(ANSWER_KEY);
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             if (dataSnapshot.hasChildren()) {
-                                Log.e("VOTES", String.valueOf(dataSnapshot));
 
                                 /** CHECK IF THE USER HAS VOTED ON THIS ANSWER **/
+                                Toast.makeText(activity, "You have already marked this answer helpful", Toast.LENGTH_SHORT).show();
+
                             } else {
-                                Toast.makeText(activity, "User hasn't voted yet. Adding vote now....", Toast.LENGTH_SHORT).show();
+
                                 DatabaseReference refPostVote = FirebaseDatabase.getInstance().getReference().child("Answers").child(ANSWER_KEY);
-                                Log.e("REFERENCE", String.valueOf(refPostVote));
+                                refPostVote.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        dataSnapshot.getRef().child("helpfulYes").setValue(intHelpfulYes + 1, new DatabaseReference.CompletionListener() {
+                                            @Override
+                                            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                                                DatabaseReference refUser = FirebaseDatabase.getInstance().getReference().child("Users").child(USER_KEY).child("Votes").push();
+                                                refUser.child("answerID").setValue(ANSWER_KEY);
+                                                refUser.child("voteStatus").setValue("Helpful Yes");
+                                            }
+                                        });
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                    }
+                                });
                             }
                         }
 
