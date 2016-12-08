@@ -22,6 +22,7 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:baselineAligned="false"
                 android:orientation="horizontal">
 
                 <LinearLayout
@@ -40,13 +41,13 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtDoctorCharges"
-                        fontPath="fonts/Exo2-Light.otf"
+                        fontPath="fonts/RobotoCondensed-Light.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:padding="3dp"
                         android:text="₹ 200"
-                        android:textColor="@android:color/secondary_text_light"
+                        android:textColor="@android:color/secondary_text_dark"
                         android:textSize="15sp" />
                 </LinearLayout>
 
@@ -60,7 +61,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtDoctorName"
-                        fontPath="fonts/Exo2-Regular.otf"
+                        fontPath="fonts/RobotoCondensed-Regular.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="2dp"
@@ -69,19 +70,19 @@
                         android:maxLines="1"
                         android:padding="5dp"
                         android:text="DOCTOR NAME"
-                        android:textColor="@android:color/primary_text_light"
+                        android:textColor="@android:color/primary_text_dark"
                         android:textSize="16sp" />
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtClinicAddress"
-                        fontPath="fonts/Exo2-Regular.otf"
+                        fontPath="fonts/RobotoCondensed-Regular.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="2dp"
                         android:layout_marginTop="2dp"
                         android:padding="5dp"
                         android:text="CLINIC ADDRESS"
-                        android:textColor="@android:color/tertiary_text_light"
+                        android:textColor="@android:color/tertiary_text_dark"
                         android:textSize="14sp" />
 
                     <LinearLayout
@@ -99,12 +100,12 @@
 
                             <android.support.v7.widget.AppCompatTextView
                                 android:id="@+id/txtDoctorExp"
-                                fontPath="fonts/Exo2-Light.otf"
+                                fontPath="fonts/RobotoCondensed-Light.ttf"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="3dp"
                                 android:text="20 yrs exp"
-                                android:textColor="@android:color/secondary_text_light"
+                                android:textColor="@android:color/secondary_text_dark"
                                 android:textSize="11sp" />
                         </LinearLayout>
 
@@ -122,17 +123,17 @@
                                 android:layout_margin="2dp"
                                 android:gravity="center"
                                 android:text="@string/doctor_bottom_separator_circle"
-                                android:textColor="@android:color/tertiary_text_light"
+                                android:textColor="@android:color/tertiary_text_dark"
                                 android:textSize="5sp" />
 
                             <android.support.v7.widget.AppCompatTextView
                                 android:id="@+id/txtDoctorLikes"
-                                fontPath="fonts/Exo2-Light.otf"
+                                fontPath="fonts/RobotoCondensed-Light.ttf"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="3dp"
                                 android:text="29 reviews"
-                                android:textColor="@android:color/secondary_text_light"
+                                android:textColor="@android:color/secondary_text_dark"
                                 android:textSize="11sp" />
                         </LinearLayout>
 
@@ -150,17 +151,17 @@
                                 android:layout_margin="2dp"
                                 android:gravity="center"
                                 android:text="@string/doctor_bottom_separator_circle"
-                                android:textColor="@android:color/tertiary_text_light"
+                                android:textColor="@android:color/tertiary_text_dark"
                                 android:textSize="5sp" />
 
                             <android.support.v7.widget.AppCompatTextView
                                 android:id="@+id/txtDoctorReviews"
-                                fontPath="fonts/Exo2-Light.otf"
+                                fontPath="fonts/RobotoCondensed-Light.ttf"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="3dp"
                                 android:text="29 reviews"
-                                android:textColor="@android:color/secondary_text_light"
+                                android:textColor="@android:color/secondary_text_dark"
                                 android:textSize="11sp" />
                         </LinearLayout>
 
@@ -179,17 +180,17 @@
                                 android:gravity="center"
                                 android:padding="2dp"
                                 android:text="@string/doctor_bottom_separator_circle"
-                                android:textColor="@android:color/tertiary_text_light"
+                                android:textColor="@android:color/tertiary_text_dark"
                                 android:textSize="5sp" />
 
                             <android.support.v7.widget.AppCompatTextView
                                 android:id="@+id/txtDoctorDistance"
-                                fontPath="fonts/Exo2-Light.otf"
+                                fontPath="fonts/RobotoCondensed-Light.ttf"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="3dp"
                                 android:text="~ 1.1 km"
-                                android:textColor="@android:color/secondary_text_light"
+                                android:textColor="@android:color/secondary_text_dark"
                                 android:textSize="11sp" />
                         </LinearLayout>
                     </LinearLayout>

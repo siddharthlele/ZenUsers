@@ -63,7 +63,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtPetName"
-                    fontPath="fonts/Exo2-Regular.otf"
+                    fontPath="fonts/RobotoCondensed-Regular.ttf"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:gravity="start|center"
@@ -75,7 +75,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtPetAge"
-                    fontPath="fonts/Exo2-Regular.otf"
+                    fontPath="fonts/RobotoCondensed-Regular.ttf"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="start|bottom"

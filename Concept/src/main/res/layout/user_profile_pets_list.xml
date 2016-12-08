@@ -67,7 +67,7 @@
                     app:srcCompat="@drawable/ic_empty_pet" />
 
                 <android.support.v7.widget.AppCompatTextView
-                    fontPath="fonts/Exo2-Light.otf"
+                    fontPath="fonts/RobotoCondensed-Light.ttf"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/empty_margin"

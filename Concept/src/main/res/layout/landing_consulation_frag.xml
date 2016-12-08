@@ -14,7 +14,7 @@
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/txtConsultations"
-            fontPath="fonts/Exo2-Medium.otf"
+            fontPath="fonts/RobotoCondensed-Bold.ttf"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -58,7 +58,7 @@
             app:srcCompat="@drawable/doctor_bg" />
 
         <android.support.v7.widget.AppCompatTextView
-            fontPath="fonts/Exo2-Regular.otf"
+            fontPath="fonts/RobotoCondensed-Bold.ttf"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/empty_margin"
@@ -74,7 +74,7 @@
             android:textSize="18sp" />
 
         <android.support.v7.widget.AppCompatTextView
-            fontPath="fonts/Exo2-Light.otf"
+            fontPath="fonts/RobotoCondensed-Light.ttf"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
@@ -100,7 +100,7 @@
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/txtAskQuestion"
-                fontPath="fonts/Exo2-Light.otf"
+                fontPath="fonts/RobotoCondensed-Light.ttf"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"

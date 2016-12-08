@@ -50,33 +50,33 @@ public class DoctorsListFrag extends Fragment implements
         LocationListener {
 
     /** A GOOGLE API CLIENT INSTANCE **/
-    GoogleApiClient mGoogleApiClient;
+    private GoogleApiClient mGoogleApiClient;
 
     /** A LOCATION REQUEST INSTANCE **/
-    LocationRequest mLocationRequest;
+    private LocationRequest mLocationRequest;
 
     /** THE USERS CURRENT COORDINATES **/
-    LatLng currentCoordinates;
-    Location currentLocation;
+    private LatLng currentCoordinates;
+    private Location currentLocation;
 
     /** PLAY SERVICE REQUEST CODE **/
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 1000;
 
     /** A DATABASE REFERENCE **/
-    DatabaseReference refDoctors;
+    private DatabaseReference refDoctors;
 
     /** THE FIREBASE RECYCLER ADAPTER INSTANCE **/
     private FirebaseRecyclerAdapter adapter;
 
     /** STRINGS TO HOLD THE DATA TYPES **/
-    String CLINIC_OWNER;
-    String DOCTOR_PREFIX = null;
-    String DOCTOR_NAME = null;
-    String DOCTORS_PROFILE_URL;
-    String DOCTOR_EXPERIENCE;
-    String DOCTOR_CHARGES;
-    String CLINIC_ADDRESS;
-    String CLINIC_CURRENCY;
+    private String CLINIC_OWNER;
+    private String DOCTOR_PREFIX = null;
+    private String DOCTOR_NAME = null;
+    private String DOCTORS_PROFILE_URL;
+    private String DOCTOR_EXPERIENCE;
+    private String DOCTOR_CHARGES;
+    private String CLINIC_ADDRESS;
+    private String CLINIC_CURRENCY;
 
     /** CAST THE LAYOUT ELEMENTS **/
     @BindView(R.id.linlaHeaderProgress) LinearLayout linlaHeaderProgress;
@@ -373,7 +373,7 @@ public class DoctorsListFrag extends Fragment implements
     }
 
     /** ROUND UP THE DISTANCE **/
-    public static float roundUpDistance(float d, int decimalPlace) {
+    private static float roundUpDistance(float d, int decimalPlace) {
         BigDecimal bd = new BigDecimal(Float.toString(d));
         bd = bd.setScale(decimalPlace, BigDecimal.ROUND_HALF_UP);
         return bd.floatValue();
@@ -395,7 +395,7 @@ public class DoctorsListFrag extends Fragment implements
     }
 
     /***** CREATE AND INSTANTIATE THE GOOGLE API CLIENT INSTANCE *****/
-    protected synchronized void buildGoogleApiClient() {
+    private synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(getActivity())
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)

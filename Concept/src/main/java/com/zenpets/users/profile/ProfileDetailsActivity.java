@@ -26,9 +26,9 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class ProfileDetailsActivity extends AppCompatActivity {
 
     /** STRINGS TO HOLD THE USER DETAILS **/
-    String USER_NAME = null;
-    String EMAIL_ADDRESS = null;
-    String USER_PROFILE_PICTURE = null;
+    private String USER_NAME = null;
+    private String EMAIL_ADDRESS = null;
+    private String USER_PROFILE_PICTURE = null;
 
     /** CAST THE LAYOUT ELEMENTS **/
     @BindView(R.id.imgvwProfilePicture) AppCompatImageView imgvwProfilePicture;

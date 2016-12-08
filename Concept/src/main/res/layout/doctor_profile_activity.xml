@@ -64,7 +64,7 @@
 
                             <android.support.v7.widget.AppCompatTextView
                                 android:id="@+id/txtDoctorName"
-                                fontPath="fonts/Exo2-SemiBold.otf"
+                                fontPath="fonts/RobotoCondensed-Bold.ttf"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
@@ -84,7 +84,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="5dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:baselineAligned="false">
 
                 <LinearLayout
                     android:id="@+id/linlaExperience"
@@ -112,7 +113,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtExperience"
-                        fontPath="fonts/Exo2-Light.otf"
+                        fontPath="fonts/RobotoCondensed-Light.ttf"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -154,11 +155,11 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtVotes"
-                        fontPath="fonts/Exo2-Light.otf"
+                        fontPath="fonts/RobotoCondensed-Light.ttf"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:gravity="left|center"
+                        android:gravity="start|center"
                         android:paddingBottom="5dp"
                         android:paddingEnd="11dp"
                         android:paddingLeft="11dp"
@@ -197,11 +198,11 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtDoctorCharges"
-                    fontPath="fonts/Exo2-Light.otf"
+                    fontPath="fonts/RobotoCondensed-Light.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="left|center"
+                    android:gravity="start|center"
                     android:paddingBottom="5dp"
                     android:paddingEnd="11dp"
                     android:paddingLeft="11dp"
@@ -228,7 +229,7 @@
             <LinearLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="left|top"
+                android:gravity="start|top"
                 android:orientation="horizontal">
 
                 <android.support.v7.widget.AppCompatTextView
@@ -256,7 +257,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtClinicName"
-                        fontPath="fonts/Exo2-Regular.otf"
+                        fontPath="fonts/RobotoCondensed-Regular.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -272,7 +273,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtClinicAddress"
-                        fontPath="fonts/Exo2-Light.otf"
+                        fontPath="fonts/RobotoCondensed-Light.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -334,10 +335,11 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtOpen"
-                        fontPath="fonts/Exo2-Light.otf"
+                        fontPath="fonts/RobotoCondensed-Light.ttf"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="11dp"
+                        android:layout_marginStart="11dp"
                         android:background="#D0EDEB"
                         android:padding="5dp"
                         android:text="OPEN TODAY"
@@ -346,10 +348,11 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtClosed"
-                        fontPath="fonts/Exo2-Light.otf"
+                        fontPath="fonts/RobotoCondensed-Light.ttf"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="11dp"
+                        android:layout_marginStart="11dp"
                         android:background="#FDE2DE"
                         android:padding="5dp"
                         android:text="CLOSED TODAY"
@@ -358,7 +361,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtTimingsMorning"
-                        fontPath="fonts/Exo2-Light.otf"
+                        fontPath="fonts/RobotoCondensed-Light.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -374,7 +377,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtTimingAfternoon"
-                        fontPath="fonts/Exo2-Light.otf"
+                        fontPath="fonts/RobotoCondensed-Light.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -390,7 +393,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtAllTimings"
-                        fontPath="fonts/Exo2-SemiBold.otf"
+                        fontPath="fonts/RobotoCondensed-Bold.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -440,7 +443,7 @@
                     android:visibility="visible">
 
                     <android.support.v7.widget.AppCompatTextView
-                        fontPath="fonts/Exo2-SemiBold.otf"
+                        fontPath="fonts/RobotoCondensed-Bold.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -467,7 +470,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtAllReviews"
-                        fontPath="fonts/Exo2-SemiBold.otf"
+                        fontPath="fonts/RobotoCondensed-Bold.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -492,7 +495,7 @@
                     android:visibility="gone">
 
                     <android.support.v7.widget.AppCompatTextView
-                        fontPath="fonts/Exo2-Light.otf"
+                        fontPath="fonts/RobotoCondensed-Light.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -591,7 +594,7 @@
                     android:visibility="visible">
 
                     <android.support.v7.widget.AppCompatTextView
-                        fontPath="fonts/Exo2-SemiBold.otf"
+                        fontPath="fonts/RobotoCondensed-Bold.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:paddingBottom="5dp"
@@ -617,7 +620,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtAllServices"
-                        fontPath="fonts/Exo2-SemiBold.otf"
+                        fontPath="fonts/RobotoCondensed-Bold.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -642,7 +645,7 @@
                     android:visibility="gone">
 
                     <android.support.v7.widget.AppCompatTextView
-                        fontPath="fonts/Exo2-Light.otf"
+                        fontPath="fonts/RobotoCondensed-Light.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -669,7 +672,7 @@
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/txtFeedback"
-            fontPath="fonts/Exo2-SemiBold.otf"
+            fontPath="fonts/RobotoCondensed-Bold.ttf"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -686,7 +689,7 @@
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/txtBook"
-            fontPath="fonts/Exo2-Light.otf"
+            fontPath="fonts/RobotoCondensed-Light.ttf"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

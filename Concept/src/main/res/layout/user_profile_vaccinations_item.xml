@@ -20,7 +20,7 @@
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/txtVaccineName"
-                fontPath="fonts/Exo2-Regular.otf"
+                fontPath="fonts/RobotoCondensed-Regular.ttf"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="start|center"
@@ -31,7 +31,7 @@
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/txtVaccineDate"
-                fontPath="fonts/Exo2-Light.otf"
+                fontPath="fonts/RobotoCondensed-Light.ttf"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_today_black_24dp"
@@ -45,7 +45,7 @@
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/txtVaccineNotes"
-                fontPath="fonts/Exo2-Light.otf"
+                fontPath="fonts/RobotoCondensed-Light.ttf"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:drawableLeft="@drawable/ic_event_note_black_24dp"

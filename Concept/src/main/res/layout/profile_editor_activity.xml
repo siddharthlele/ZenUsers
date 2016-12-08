@@ -67,8 +67,10 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.50dp"
+                android:layout_marginEnd="5dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="5dp"
                 android:background="#CC999999" />
 
@@ -105,8 +107,10 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.50dp"
+                android:layout_marginEnd="5dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="5dp"
                 android:background="#CC999999" />
 
@@ -159,6 +163,7 @@
                 <com.mikepenz.iconics.view.IconicsImageView
                     android:layout_width="47dp"
                     android:layout_height="47dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
                     android:adjustViewBounds="true"
                     app:iiv_color="@android:color/tertiary_text_dark"
@@ -169,8 +174,10 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.50dp"
+                android:layout_marginEnd="5dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="5dp"
                 android:background="#CC999999" />
 
@@ -205,6 +212,7 @@
                 <com.mikepenz.iconics.view.IconicsImageView
                     android:layout_width="47dp"
                     android:layout_height="47dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
                     android:adjustViewBounds="true"
                     app:iiv_color="@android:color/tertiary_text_dark"
@@ -215,8 +223,10 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.50dp"
+                android:layout_marginEnd="5dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="5dp"
                 android:background="#CC999999" />
 
@@ -275,8 +285,10 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.50dp"
+                android:layout_marginEnd="5dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="5dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="5dp"
                 android:background="#CC999999" />
 
@@ -312,6 +324,7 @@
                 <com.mikepenz.iconics.view.IconicsImageView
                     android:layout_width="47dp"
                     android:layout_height="47dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginRight="5dp"
                     android:adjustViewBounds="true"
                     app:iiv_color="@android:color/tertiary_text_light"

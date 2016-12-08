@@ -30,7 +30,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class DoctorReviewsActivity extends AppCompatActivity {
 
     /** THE DOCTOR ID **/
-    String DOCTOR_ID = null;
+    private String DOCTOR_ID = null;
 
     /** CAST THE LAYOUT ELEMENTS **/
     @BindView(R.id.listDoctorReviews) RecyclerView listDoctorReviews;

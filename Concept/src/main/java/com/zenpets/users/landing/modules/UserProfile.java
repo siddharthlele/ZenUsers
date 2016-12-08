@@ -30,8 +30,8 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class UserProfile extends Fragment {
 
     /** THE USER DETAILS **/
-    String USER_NAME;
-    String USER_PROFILE_PICTURE;
+    private String USER_NAME;
+    private String USER_PROFILE_PICTURE;
 
     /** CAST THE LAYOUT ELEMENTS **/
     @BindView(R.id.imgvwProfile) CircleImageView imgvwProfile;

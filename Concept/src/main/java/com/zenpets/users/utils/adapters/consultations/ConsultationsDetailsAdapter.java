@@ -3,6 +3,7 @@ package com.zenpets.users.utils.adapters.consultations;
 import android.app.Activity;
 import android.support.v7.widget.AppCompatTextView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -82,17 +83,17 @@ public class ConsultationsDetailsAdapter extends RecyclerView.Adapter<RecyclerVi
             final int intHelpfulYes = data.getHelpfulYes();
 
             /** GET THE HELPFUL NO COUNT **/
-            int intHelpfulNo = data.getHelpfulNo();
+            final int intHelpfulNo = data.getHelpfulNo();
 
             /** SET THE HELPFUL COUNTS **/
             String strHelpful = String.valueOf(intHelpfulYes) + "/" + String.valueOf(intHelpfulNo) + " Found this helpful";
             vhItem.txtHelpful.setText(strHelpful);
 
-            /** MARK THE ANSWER AS HELPFUL **/
-            vhItem.txtHelpfulYes.setOnClickListener(new View.OnClickListener() {
+            /** MARK THE ANSWER UNHELPFUL **/
+            vhItem.txtHelpfulNo.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    /** CHECK IF THE USER HAS ALREADY LIKED THE ANSWER **/
+                    /** CHECK IF THE USER HAS VOTED ON THE ANSWER **/
                     DatabaseReference refVotes =
                             FirebaseDatabase.getInstance().getReference().child("Users").child(USER_KEY).child("Votes");
                     Query query = refVotes.orderByChild("answerID").equalTo(ANSWER_KEY);
@@ -100,12 +101,73 @@ public class ConsultationsDetailsAdapter extends RecyclerView.Adapter<RecyclerVi
                         @Override
                         public void onDataChange(DataSnapshot dataSnapshot) {
                             if (dataSnapshot.hasChildren()) {
+                                Log.e("VOTES", String.valueOf(dataSnapshot));
+                                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                                    String voteStatus = postSnapshot.child("voteStatus").getValue(String.class);
+                                    Log.e("STATUS", voteStatus);
 
-                                /** CHECK IF THE USER HAS VOTED ON THIS ANSWER **/
-                                Toast.makeText(activity, "You have already marked this answer helpful", Toast.LENGTH_SHORT).show();
+                                    if (voteStatus.equalsIgnoreCase("Unhelpful"))    {
+                                        Toast.makeText(activity, "You have already marked this answer unhelpful", Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        /** DECREMENT THE HELPFUL NO COUNTER **/
 
+                                    }
+                                }
                             } else {
+                                DatabaseReference refPostVote = FirebaseDatabase.getInstance().getReference().child("Answers").child(ANSWER_KEY);
+                                refPostVote.addListenerForSingleValueEvent(new ValueEventListener() {
+                                    @Override
+                                    public void onDataChange(DataSnapshot dataSnapshot) {
+                                        dataSnapshot.getRef().child("helpfulNo").setValue(intHelpfulNo + 1, new DatabaseReference.CompletionListener() {
+                                            @Override
+                                            public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
+                                                DatabaseReference refUser = FirebaseDatabase.getInstance().getReference().child("Users").child(USER_KEY).child("Votes").push();
+                                                refUser.child("answerID").setValue(ANSWER_KEY);
+                                                refUser.child("voteStatus").setValue("Unhelpful");
+                                            }
+                                        });
 
+                                        /** UPDATE THE VALUE **/
+                                    }
+
+                                    @Override
+                                    public void onCancelled(DatabaseError databaseError) {
+                                    }
+                                });
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                        }
+                    });
+                }
+            });
+
+            /** MARK THE ANSWER AS HELPFUL **/
+            vhItem.txtHelpfulYes.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    /** CHECK IF THE USER HAS VOTED ON THE ANSWER **/
+                    DatabaseReference refVotes =
+                            FirebaseDatabase.getInstance().getReference().child("Users").child(USER_KEY).child("Votes");
+                    Query query = refVotes.orderByChild("answerID").equalTo(ANSWER_KEY);
+                    query.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.hasChildren()) {
+                                Log.e("VOTES", String.valueOf(dataSnapshot));
+                                for (DataSnapshot postSnapshot : dataSnapshot.getChildren()) {
+                                    String voteStatus = postSnapshot.child("voteStatus").getValue(String.class);
+                                    Log.e("STATUS", voteStatus);
+
+                                    if (voteStatus.equalsIgnoreCase("Unhelpful"))    {
+                                        /** DECREMENT THE HELPFUL NO COUNTER **/
+                                    } else {
+                                        Toast.makeText(activity, "You have already marked this answer helpful", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            } else {
                                 DatabaseReference refPostVote = FirebaseDatabase.getInstance().getReference().child("Answers").child(ANSWER_KEY);
                                 refPostVote.addListenerForSingleValueEvent(new ValueEventListener() {
                                     @Override
@@ -115,7 +177,7 @@ public class ConsultationsDetailsAdapter extends RecyclerView.Adapter<RecyclerVi
                                             public void onComplete(DatabaseError databaseError, DatabaseReference databaseReference) {
                                                 DatabaseReference refUser = FirebaseDatabase.getInstance().getReference().child("Users").child(USER_KEY).child("Votes").push();
                                                 refUser.child("answerID").setValue(ANSWER_KEY);
-                                                refUser.child("voteStatus").setValue("Helpful Yes");
+                                                refUser.child("voteStatus").setValue("Helpful");
                                             }
                                         });
                                     }

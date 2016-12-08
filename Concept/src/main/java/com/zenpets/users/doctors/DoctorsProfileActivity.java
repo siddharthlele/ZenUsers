@@ -70,64 +70,64 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class DoctorsProfileActivity extends AppCompatActivity {
 
     /** THE DOCTOR ID **/
-    String DOCTOR_ID = null;
+    private String DOCTOR_ID = null;
 
     /** TODAY'S DAY **/
-    String TODAY_DAY = null;
+    private String TODAY_DAY = null;
 
     /** THE FIREBASE RECYCLER ADAPTER INSTANCES **/
-    FirebaseRecyclerAdapter adapServices;
-    FirebaseRecyclerAdapter adapReviews;
+    private FirebaseRecyclerAdapter adapServices;
+    private FirebaseRecyclerAdapter adapReviews;
 
     /** THE CLINIC IMAGES ADAPTER, THE ARRAY LIST AND THE STRING ARRAY **/
-    ClinicImagesAdapter adapter;
-    List<String> arrImages = new ArrayList<>();
-    String[] strImages;
+    private ClinicImagesAdapter adapter;
+    private List<String> arrImages = new ArrayList<>();
+    private String[] strImages;
 
     /** DATA TYPE TO STORE THE DATA **/
-    String CLINIC_ID;
-    String CLINIC_OWNER;
-    String CLINIC_NAME;
-    String CLINIC_CURRENCY;
-    String CLINIC_COVER;
-    String CLINIC_ADDRESS;
-    Double CLINIC_LATITUDE;
-    Double CLINIC_LONGITUDE;
-    String DOCTOR_PREFIX;
-    String DOCTOR_NAME;
-    String DOCTOR_PROFILE;
-    String DOCTOR_EXPERIENCE;
-    String DOCTOR_CHARGES;
+    private String CLINIC_ID;
+    private String CLINIC_OWNER;
+    private String CLINIC_NAME;
+    private String CLINIC_CURRENCY;
+    private String CLINIC_COVER;
+    private String CLINIC_ADDRESS;
+    private Double CLINIC_LATITUDE;
+    private Double CLINIC_LONGITUDE;
+    private String DOCTOR_PREFIX;
+    private String DOCTOR_NAME;
+    private String DOCTOR_PROFILE;
+    private String DOCTOR_EXPERIENCE;
+    private String DOCTOR_CHARGES;
 
     /** THE TIMING STRINGS **/
-    String SUN_MOR_FROM = null;
-    String SUN_MOR_TO = null;
-    String SUN_AFT_FROM = null;
-    String SUN_AFT_TO = null;
-    String MON_MOR_FROM = null;
-    String MON_MOR_TO = null;
-    String MON_AFT_FROM = null;
-    String MON_AFT_TO = null;
-    String TUE_MOR_FROM = null;
-    String TUE_MOR_TO = null;
-    String TUE_AFT_FROM = null;
-    String TUE_AFT_TO = null;
-    String WED_MOR_FROM = null;
-    String WED_MOR_TO = null;
-    String WED_AFT_FROM = null;
-    String WED_AFT_TO = null;
-    String THU_MOR_FROM = null;
-    String THU_MOR_TO = null;
-    String THU_AFT_FROM = null;
-    String THU_AFT_TO = null;
-    String FRI_MOR_FROM = null;
-    String FRI_MOR_TO = null;
-    String FRI_AFT_FROM = null;
-    String FRI_AFT_TO = null;
-    String SAT_MOR_FROM = null;
-    String SAT_MOR_TO = null;
-    String SAT_AFT_FROM = null;
-    String SAT_AFT_TO = null;
+    private String SUN_MOR_FROM = null;
+    private String SUN_MOR_TO = null;
+    private String SUN_AFT_FROM = null;
+    private String SUN_AFT_TO = null;
+    private String MON_MOR_FROM = null;
+    private String MON_MOR_TO = null;
+    private String MON_AFT_FROM = null;
+    private String MON_AFT_TO = null;
+    private String TUE_MOR_FROM = null;
+    private String TUE_MOR_TO = null;
+    private String TUE_AFT_FROM = null;
+    private String TUE_AFT_TO = null;
+    private String WED_MOR_FROM = null;
+    private String WED_MOR_TO = null;
+    private String WED_AFT_FROM = null;
+    private String WED_AFT_TO = null;
+    private String THU_MOR_FROM = null;
+    private String THU_MOR_TO = null;
+    private String THU_AFT_FROM = null;
+    private String THU_AFT_TO = null;
+    private String FRI_MOR_FROM = null;
+    private String FRI_MOR_TO = null;
+    private String FRI_AFT_FROM = null;
+    private String FRI_AFT_TO = null;
+    private String SAT_MOR_FROM = null;
+    private String SAT_MOR_TO = null;
+    private String SAT_AFT_FROM = null;
+    private String SAT_AFT_TO = null;
 
     /** CAST THE LAYOUT ELEMENTS **/
     @BindView(R.id.imgvwClinicCover) AppCompatImageView imgvwClinicCover;
@@ -153,11 +153,11 @@ public class DoctorsProfileActivity extends AppCompatActivity {
     @BindView(R.id.linlaNoServices) LinearLayout linlaNoServices;
 
     /** THE CLINIC MAP VIEW **/
-    MapView clinicMap;
+    private MapView clinicMap;
 
     /** THE ALL CUSTOM VIEWS **/
-    View custAllTimings;
-    View custAllServices;
+    private View custAllTimings;
+    private View custAllServices;
 
     /** SHOW THE CHARGES DIALOG **/
     @OnClick(R.id.btnChargesInfo) void showChargesInfo()    {
@@ -871,7 +871,7 @@ public class DoctorsProfileActivity extends AppCompatActivity {
         /** CONFIGURE THE DIALOG **/
         final MaterialDialog dialog = new MaterialDialog.Builder(DoctorsProfileActivity.this)
                 .theme(Theme.LIGHT)
-                .typeface("Exo2-Regular.otf", "Exo2-Light.otf")
+                .typeface("RobotoCondensed-Regular.ttf", "RobotoCondensed-Light.ttf")
                 .title("ALL TIMINGS")
                 .customView(custAllTimings, false)
                 .positiveText("Dismiss")
@@ -911,7 +911,7 @@ public class DoctorsProfileActivity extends AppCompatActivity {
                 txtSatAfternoon = (AppCompatTextView) dialog.getCustomView().findViewById(R.id.txtSatAfternoon);
 
                 /** SET THE CUSTOM FONT **/
-                Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/Exo2-Light.otf");
+                Typeface typeface = Typeface.createFromAsset(getAssets(), "fonts/RobotoCondensed-Light.ttf");
                 txtSunMorning.setTypeface(typeface);
                 txtSunAfternoon.setTypeface(typeface);
                 txtMonMorning.setTypeface(typeface);

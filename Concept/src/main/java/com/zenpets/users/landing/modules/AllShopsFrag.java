@@ -28,8 +28,8 @@ public class AllShopsFrag extends Fragment {
     @BindView(R.id.listShops) RecyclerView listShops;
 
     /** THE ARRAY LIST AND ADAPTER **/
-    ArrayList<ShopsData> arrShops = new ArrayList<>();
-    ShopsAdapter adapter;
+    private ArrayList<ShopsData> arrShops = new ArrayList<>();
+    private ShopsAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

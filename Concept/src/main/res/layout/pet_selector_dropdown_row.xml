@@ -18,11 +18,11 @@
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/txtPetName"
-        fontPath="fonts/Exo2-Regular.otf"
+        fontPath="fonts/RobotoCondensed-Regular.ttf"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:gravity="left|center"
+        android:gravity="start|center"
         android:maxLines="1"
         android:padding="11dp"
         android:text="Pet Name"

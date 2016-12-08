@@ -45,7 +45,7 @@ public class ReviewCreatorActivity extends AppCompatActivity {
     private String TIME_STAMP = null;
 
     /** THE DOCTOR ID **/
-    String DOCTOR_ID = null;
+    private String DOCTOR_ID = null;
 
     /** DATA TYPES TO HOLD THE USER SELECTIONS **/
     private String RECOMMEND_STATUS = null;

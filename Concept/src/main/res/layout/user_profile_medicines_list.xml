@@ -79,7 +79,7 @@
                     app:srcCompat="@drawable/ic_empty_medicine" />
 
                 <android.support.v7.widget.AppCompatTextView
-                    fontPath="fonts/Exo2-Regular.otf"
+                    fontPath="fonts/RobotoCondensed-Regular.ttf"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/empty_margin"
@@ -95,7 +95,7 @@
                     android:textSize="18sp" />
 
                 <android.support.v7.widget.AppCompatTextView
-                    fontPath="fonts/Exo2-Light.otf"
+                    fontPath="fonts/RobotoCondensed-Light.ttf"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"
@@ -112,7 +112,7 @@
                     android:textSize="15sp" />
 
                 <android.support.v7.widget.AppCompatTextView
-                    fontPath="fonts/Exo2-Bold.otf"
+                    fontPath="fonts/RobotoCondensed-Bold.ttf"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="2dp"

@@ -13,13 +13,13 @@ public class TypefaceSpan extends MetricAffectingSpan {
 	private Typeface mTypeface;
 	
 	public TypefaceSpan(Context context) {
-		mTypeface = sTypefaceCache.get("Exo2-Medium.otf");
+		mTypeface = sTypefaceCache.get("RobotoCondensed-Regular.ttf");
 
 		if (mTypeface == null)	{
-			mTypeface = Typeface.createFromAsset(context.getApplicationContext() .getAssets(), String.format("fonts/%s", "Exo2-Medium.otf"));
+			mTypeface = Typeface.createFromAsset(context.getApplicationContext() .getAssets(), String.format("fonts/%s", "RobotoCondensed-Regular.ttf"));
 
 			// Cache the loaded Typeface
-			sTypefaceCache.put("Exo2-Medium.otf", mTypeface);
+			sTypefaceCache.put("RobotoCondensed-Regular.ttf", mTypeface);
 		}
 	}
 	

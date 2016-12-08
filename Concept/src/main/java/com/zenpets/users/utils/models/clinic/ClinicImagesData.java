@@ -1,6 +1,6 @@
 package com.zenpets.users.utils.models.clinic;
 
-public class ClinicImagesData {
+class ClinicImagesData {
 
     private String clinicOwner;
     private String clinicID;

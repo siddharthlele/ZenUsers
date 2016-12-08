@@ -41,7 +41,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtDoctorName"
-                        fontPath="fonts/Exo2-Regular.otf"
+                        fontPath="fonts/RobotoCondensed-Regular.ttf"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -58,7 +58,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtAnswerTimeStamp"
-                        fontPath="fonts/Exo2-Regular.otf"
+                        fontPath="fonts/RobotoCondensed-Regular.ttf"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -81,34 +81,34 @@
                 android:gravity="center"
                 android:orientation="horizontal">-->
 
-                <!--<android.support.v7.widget.AppCompatTextView
-                    android:id="@+id/txtAnswerTimeStamp"
-                    fontPath="fonts/Exo2-Regular.otf"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="left|center"
-                    android:maxLines="1"
-                    android:paddingBottom="5dp"
-                    android:paddingEnd="11dp"
-                    android:paddingLeft="11dp"
-                    android:paddingRight="11dp"
-                    android:paddingStart="11dp"
-                    android:paddingTop="5dp"
-                    android:text="2 hours ago"
-                    android:textColor="@android:color/tertiary_text_dark"
-                    android:textSize="14sp" />-->
+            <!--<android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtAnswerTimeStamp"
+                fontPath="fonts/RobotoCondensed-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left|center"
+                android:maxLines="1"
+                android:paddingBottom="5dp"
+                android:paddingEnd="11dp"
+                android:paddingLeft="11dp"
+                android:paddingRight="11dp"
+                android:paddingStart="11dp"
+                android:paddingTop="5dp"
+                android:text="2 hours ago"
+                android:textColor="@android:color/tertiary_text_dark"
+                android:textSize="14sp" />-->
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="0.50dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="#CC999999" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.50dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#CC999999" />
             <!--</LinearLayout>-->
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/txtConsultAnswer"
-                fontPath="fonts/Exo2-Regular.otf"
+                fontPath="fonts/RobotoCondensed-Regular.ttf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="start|center"
@@ -118,7 +118,7 @@
                 android:textSize="16sp" />
 
             <android.support.v7.widget.AppCompatTextView
-                fontPath="fonts/Exo2-Regular.otf"
+                fontPath="fonts/RobotoCondensed-Regular.ttf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -135,7 +135,7 @@
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/txtConsultNextSteps"
-                fontPath="fonts/Exo2-Regular.otf"
+                fontPath="fonts/RobotoCondensed-Regular.ttf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="start|center"
@@ -152,11 +152,11 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtHelpful"
-                    fontPath="fonts/Exo2-Regular.otf"
+                    fontPath="fonts/RobotoCondensed-Regular.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="left|center"
+                    android:gravity="start|center"
                     android:maxLines="1"
                     android:padding="11dp"
                     android:text="0/0 Found this helpful"
@@ -167,6 +167,7 @@
                     android:id="@+id/imgvwFlagAnswer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginRight="10dp"
                     android:adjustViewBounds="true"
                     app:iiv_color="@android:color/holo_red_light"
@@ -189,11 +190,11 @@
                 android:orientation="horizontal">
 
                 <android.support.v7.widget.AppCompatTextView
-                    fontPath="fonts/Exo2-Regular.otf"
+                    fontPath="fonts/RobotoCondensed-Regular.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:gravity="left|center"
+                    android:gravity="start|center"
                     android:maxLines="1"
                     android:padding="11dp"
                     android:text="Was this answer helpful?"

@@ -56,34 +56,34 @@ public class DoctorsListActivity extends AppCompatActivity implements
         LocationListener {
 
     /** A DATABASE REFERENCE **/
-    DatabaseReference refDoctors;
+    private DatabaseReference refDoctors;
 
     /** THE FIREBASE RECYCLER ADAPTER **/
-    FirebaseRecyclerAdapter adapter;
+    private FirebaseRecyclerAdapter adapter;
 
     /** A GOOGLE API CLIENT INSTANCE **/
-    GoogleApiClient mGoogleApiClient;
+    private GoogleApiClient mGoogleApiClient;
 
     /** A LOCATION REQUEST INSTANCE **/
-    LocationRequest mLocationRequest;
+    private LocationRequest mLocationRequest;
 
     /** THE USERS CURRENT COORDINATES **/
-    LatLng currentCoordinates;
-    Location currentLocation;
+    private LatLng currentCoordinates;
+    private Location currentLocation;
 
     /** PLAY SERVICE REQUEST CODE **/
     private final static int PLAY_SERVICES_RESOLUTION_REQUEST = 1000;
 
     /** STRINGS TO HOLD THE DATA TYPES **/
-    String CLINIC_OWNER;
-    String CLINIC_NAME;
-    String CLINIC_CURRENCY;
-    String CLINIC_ADDRESS;
-    String CLINIC_LOCALITY;
-    String DOCTOR_PREFIX = null;
-    String DOCTOR_NAME = null;
-    String DOCTOR_EXPERIENCE;
-    String DOCTOR_CHARGES;
+    private String CLINIC_OWNER;
+    private String CLINIC_NAME;
+    private String CLINIC_CURRENCY;
+    private String CLINIC_ADDRESS;
+    private String CLINIC_LOCALITY;
+    private String DOCTOR_PREFIX = null;
+    private String DOCTOR_NAME = null;
+    private String DOCTOR_EXPERIENCE;
+    private String DOCTOR_CHARGES;
 
     /** CAST THE LAYOUT ELEMENTS **/
     @BindView(R.id.linlaHeaderProgress) LinearLayout linlaHeaderProgress;

@@ -43,7 +43,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class ConsultationList extends AppCompatActivity {
 
     /** THE FIREBASE ADAPTER **/
-    FirebaseRecyclerAdapter adapter;
+    private FirebaseRecyclerAdapter adapter;
 
     /** CAST THE LAYOUT ELEMENTS **/
     @BindView(R.id.linlaHeaderProgress) LinearLayout linlaHeaderProgress;

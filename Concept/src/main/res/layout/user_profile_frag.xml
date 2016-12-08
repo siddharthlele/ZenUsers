@@ -28,7 +28,7 @@
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/txtUserName"
-                fontPath="fonts/Exo2-Regular.otf"
+                fontPath="fonts/RobotoCondensed-Regular.ttf"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
@@ -41,7 +41,7 @@
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/txtViewProfile"
-                fontPath="fonts/Exo2-Regular.otf"
+                fontPath="fonts/RobotoCondensed-Regular.ttf"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:gravity="start|center"
@@ -80,7 +80,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtMyPets"
-                    fontPath="fonts/Exo2-Medium.otf"
+                    fontPath="fonts/RobotoCondensed-Bold.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -115,7 +115,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtMyDoctors"
-                    fontPath="fonts/Exo2-Medium.otf"
+                    fontPath="fonts/RobotoCondensed-Bold.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -150,7 +150,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtMyConsultQueries"
-                    fontPath="fonts/Exo2-Medium.otf"
+                    fontPath="fonts/RobotoCondensed-Bold.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -167,41 +167,6 @@
                     android:padding="11dp"
                     android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
             </LinearLayout>
-
-            <!--<LinearLayout
-                android:id="@+id/linlaMySavedArticles"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <com.mikepenz.iconics.view.IconicsImageView
-                    android:layout_width="47dp"
-                    android:layout_height="47dp"
-                    android:adjustViewBounds="true"
-                    app:iiv_color="@android:color/secondary_text_dark"
-                    app:iiv_icon="faw-bookmark-o"
-                    app:iiv_size="20dp" />
-
-                <android.support.v7.widget.AppCompatTextView
-                    android:id="@+id/txtMySavedArticles"
-                    fontPath="fonts/Exo2-Medium.otf"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="start|center"
-                    android:padding="11dp"
-                    android:text="Saved Articles"
-                    android:textColor="@android:color/primary_text_dark"
-                    android:textSize="16sp" />
-
-                <android.support.v7.widget.AppCompatImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:adjustViewBounds="true"
-                    android:padding="11dp"
-                    android:src="@drawable/ic_keyboard_arrow_right_white_24dp" />
-            </LinearLayout>-->
 
             <LinearLayout
                 android:id="@+id/linlaMyReminders"
@@ -220,7 +185,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtMyReminders"
-                    fontPath="fonts/Exo2-Medium.otf"
+                    fontPath="fonts/RobotoCondensed-Bold.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -255,7 +220,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtMyPreferences"
-                    fontPath="fonts/Exo2-Medium.otf"
+                    fontPath="fonts/RobotoCondensed-Bold.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

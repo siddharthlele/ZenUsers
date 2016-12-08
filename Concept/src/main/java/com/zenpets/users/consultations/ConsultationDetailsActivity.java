@@ -43,16 +43,16 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class ConsultationDetailsActivity extends AppCompatActivity {
 
     /** THE USER KEY **/
-    String USER_KEY = null;
+    private String USER_KEY = null;
 
     /** THE INCOMING CONSULT ID **/
-    String CONSULT_ID = null;
+    private String CONSULT_ID = null;
 
     /** THE CONSULTATION DETAILS ADAPTER AND ARRAY LIST **/
-    ConsultationAnswersData answersData;
-    ConsultationHeaderData data;
-    ConsultationsDetailsAdapter adapter;
-    ArrayList<ConsultationAnswersData> arrAnswers = new ArrayList<>();
+    private ConsultationAnswersData answersData;
+    private ConsultationHeaderData data;
+    private ConsultationsDetailsAdapter adapter;
+    private ArrayList<ConsultationAnswersData> arrAnswers = new ArrayList<>();
 
     /** CAST THE LAYOUT ELEMENTS **/
     @BindView(R.id.linlaHeaderProgress) LinearLayout linlaHeaderProgress;

@@ -28,8 +28,8 @@ public class AllServicesFrag extends Fragment {
     @BindView(R.id.listServices) RecyclerView listServices;
 
     /** THE ARRAY LIST AND ADAPTER **/
-    ArrayList<ServicesData> arrServices = new ArrayList<>();
-    ServicesAdapter adapter;
+    private ArrayList<ServicesData> arrServices = new ArrayList<>();
+    private ServicesAdapter adapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

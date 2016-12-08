@@ -42,11 +42,11 @@ import butterknife.OnClick;
 public class VaccinationsFrag extends Fragment {
 
     /** THE USER ID **/
-    String USER_ID = null;
+    private String USER_ID = null;
 
     /** THE ADAPTER AND THE ARRAY LIST **/
-    VaccinationsAdapter adapter;
-    ArrayList<VaccinationsData> arrVaccinations = new ArrayList<>();
+    private VaccinationsAdapter adapter;
+    private ArrayList<VaccinationsData> arrVaccinations = new ArrayList<>();
 
     /** CAST THE LAYOUT ELEMENTS **/
     @BindView(R.id.linlaHeaderProgress) LinearLayout linlaHeaderProgress;

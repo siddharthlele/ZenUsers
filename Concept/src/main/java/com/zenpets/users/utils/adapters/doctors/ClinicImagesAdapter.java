@@ -27,7 +27,7 @@ public class ClinicImagesAdapter extends RecyclerView.Adapter<ClinicImagesAdapte
     private String[] strImages;
 
     /** THE CLINIC ID **/
-    String CLINIC_ID;
+    private String CLINIC_ID;
 
     public ClinicImagesAdapter(Activity activity, List<String> arrImages, String CLINIC_ID) {
 

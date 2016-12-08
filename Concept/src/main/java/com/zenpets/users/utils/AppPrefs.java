@@ -13,7 +13,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 public class AppPrefs extends Application {
 
     /***** SHARED PREFERENCES INSTANCE *****/
-    public SharedPreferences mPreferences;
+    private SharedPreferences mPreferences;
 
     /** THE INITIAL SETUP STATUS **/
     private final String CURRENT_LATITUDE = "currentLatitude";

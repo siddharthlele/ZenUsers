@@ -1,6 +1,6 @@
 package com.zenpets.users.utils.models.doctors;
 
-public class EducationData {
+class EducationData {
     private String doctorID;
     private String qualificationName;
     private String collegeName;

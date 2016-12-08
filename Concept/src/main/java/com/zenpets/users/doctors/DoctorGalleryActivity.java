@@ -27,14 +27,11 @@ import java.util.List;
 
 public class DoctorGalleryActivity extends AppCompatActivity {
 
-    private ClinicFullScreenAdapter adapter;
-    private ViewPager viewPager;
-
     /** THE STRING ARRAY **/
-    String[] strImages;
+    private String[] strImages;
 
     /** THE CLINIC ID **/
-    String CLINIC_ID = null;
+    private String CLINIC_ID = null;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -45,7 +42,7 @@ public class DoctorGalleryActivity extends AppCompatActivity {
         configTB();
 
         /** CAST THE VIEW PAGER INSTANCE **/
-        viewPager = (ViewPager) findViewById(R.id.pager);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
 
         /** GET THE INCOMING POSITION **/
         Bundle bundle = getIntent().getExtras();
@@ -57,7 +54,7 @@ public class DoctorGalleryActivity extends AppCompatActivity {
         List<String> arrImages = new ArrayList<>(Arrays.asList(strImages));
 
         /** INSTANTIATE AND SET THE ADAPTER TO THE VIEW PAGER **/
-        adapter = new ClinicFullScreenAdapter(arrImages);
+        ClinicFullScreenAdapter adapter = new ClinicFullScreenAdapter(arrImages);
         viewPager.setAdapter(adapter);
 
         /** DISPLAY THE SELECTED IMAGE FIRST **/

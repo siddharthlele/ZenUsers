@@ -33,7 +33,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtUserName"
-                    fontPath="fonts/Exo2-Medium.otf"
+                    fontPath="fonts/RobotoCondensed-Bold.ttf"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center|bottom"
@@ -68,7 +68,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtEmailAddress"
-                    fontPath="fonts/Exo2-Light.otf"
+                    fontPath="fonts/RobotoCondensed-Light.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -82,8 +82,10 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.50dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginStart="0.50dp"
                 android:layout_marginTop="5dp"
                 android:background="#CC999999" />
 
@@ -105,7 +107,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtPhoneNumber"
-                    fontPath="fonts/Exo2-Light.otf"
+                    fontPath="fonts/RobotoCondensed-Light.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -119,8 +121,10 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.50dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="5dp"
                 android:background="#CC999999" />
 
@@ -142,7 +146,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtCity"
-                    fontPath="fonts/Exo2-Light.otf"
+                    fontPath="fonts/RobotoCondensed-Light.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -156,8 +160,10 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.50dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="5dp"
                 android:background="#CC999999" />
 
@@ -179,7 +185,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtGender"
-                    fontPath="fonts/Exo2-Light.otf"
+                    fontPath="fonts/RobotoCondensed-Light.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -193,8 +199,10 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.50dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="5dp"
                 android:background="#CC999999" />
 
@@ -216,7 +224,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtDOB"
-                    fontPath="fonts/Exo2-Light.otf"
+                    fontPath="fonts/RobotoCondensed-Light.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -230,18 +238,22 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.50dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginLeft="50dp"
                 android:layout_marginRight="10dp"
+                android:layout_marginStart="50dp"
                 android:layout_marginTop="5dp"
                 android:background="#CC999999" />
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/txtEditProfile"
-                fontPath="fonts/Exo2-Bold.otf"
+                fontPath="fonts/RobotoCondensed-Bold.ttf"
                 android:layout_width="fill_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:layout_marginEnd="20dp"
                 android:layout_marginLeft="45dp"
                 android:layout_marginRight="20dp"
+                android:layout_marginStart="45dp"
                 android:gravity="start|center"
                 android:padding="11dp"
                 android:text="EDIT"

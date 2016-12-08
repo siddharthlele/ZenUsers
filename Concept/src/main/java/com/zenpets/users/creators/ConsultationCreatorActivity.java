@@ -51,17 +51,17 @@ public class ConsultationCreatorActivity extends AppCompatActivity {
     private String USER_KEY = null;
 
     /** THE USER PETS ARRAY LIST **/
-    ArrayList<PetData> arrMyPets = new ArrayList<>();
+    private ArrayList<PetData> arrMyPets = new ArrayList<>();
 
     /** FOR KEEPING TRACK OF THE HEADER AND DESCRIPTION CHARACTER COUNT **/
-    int headerCharCount;
-    int descriptionCharCount;
+    private int headerCharCount;
+    private int descriptionCharCount;
 
     /** STRINGS TO HOLD THE COLLECTED INFORMATION **/
-    String CONSULT_STATUS ="Public";
-    String PET_ID = null;
-    String QUESTION_HEADER = null;
-    String QUESTION_DESCRIPTION = null;
+    private String CONSULT_STATUS ="Public";
+    private String PET_ID = null;
+    private String QUESTION_HEADER = null;
+    private String QUESTION_DESCRIPTION = null;
     private String TIME_STAMP = null;
 
     /** CAST THE LAYOUT ELEMENTS **/
@@ -215,7 +215,7 @@ public class ConsultationCreatorActivity extends AppCompatActivity {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            descriptionCharCount = Integer.valueOf(s.length());
+            descriptionCharCount = s.length();
             txtDescriptionCount.setText(String.valueOf(descriptionCharCount) + "/1000");
             if (descriptionCharCount < 100)   {
                 txtDescriptionCount.setTextColor(ContextCompat.getColor(getApplicationContext(), android.R.color.holo_red_dark));
@@ -240,7 +240,7 @@ public class ConsultationCreatorActivity extends AppCompatActivity {
 
         @Override
         public void onTextChanged(CharSequence s, int start, int before, int count) {
-            headerCharCount = Integer.valueOf(s.length());
+            headerCharCount = s.length();
             txtHeaderCount.setText(String.valueOf(headerCharCount) + "/25");
             if (headerCharCount < 10)   {
                 txtHeaderCount.setTextColor(ContextCompat.getColor(getApplicationContext(), android.R.color.holo_red_dark));

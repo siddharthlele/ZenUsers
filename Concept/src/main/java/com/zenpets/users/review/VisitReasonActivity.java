@@ -31,8 +31,8 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class VisitReasonActivity extends AppCompatActivity {
 
     /** THE ADAPTER AND THE ARRAY LIST **/
-    VisitReasonsAdapter adapter;
-    ArrayList<VisitReasonsData> arrReasons = new ArrayList<>();
+    private VisitReasonsAdapter adapter;
+    private ArrayList<VisitReasonsData> arrReasons = new ArrayList<>();
 
     /** CAST THE LAYOUT ELEMENTS **/
     @BindView(R.id.edtSearch) AppCompatEditText edtSearch;

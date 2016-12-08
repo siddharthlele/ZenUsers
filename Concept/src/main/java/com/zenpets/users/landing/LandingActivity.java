@@ -38,7 +38,6 @@ public class LandingActivity extends AppCompatActivity {
     private CircleImageView imgvwProfile;
     private AppCompatTextView txtUserName;
 
-    private String USER_NAME;
     private String USER_PROFILE_PICTURE;
 
     /** DECLARE THE LAYOUT ELEMENTS **/
@@ -71,7 +70,7 @@ public class LandingActivity extends AppCompatActivity {
             }
 
             /** SET THE PROFILE PICTURE **/
-            USER_NAME = user.getDisplayName();
+            String USER_NAME = user.getDisplayName();
             if (USER_PROFILE_PICTURE != null)   {
                 Glide.with(getApplicationContext())
                         .load(USER_PROFILE_PICTURE)

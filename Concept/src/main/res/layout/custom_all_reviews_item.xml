@@ -24,7 +24,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtNameStart"
-                    fontPath="fonts/Exo2-SemiBold.otf"
+                    fontPath="fonts/RobotoCondensed-Bold.ttf"
                     android:layout_width="65dp"
                     android:layout_height="65dp"
                     android:layout_margin="5dp"
@@ -87,7 +87,7 @@
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/txtVisitReason"
-                fontPath="fonts/Exo2-Medium.otf"
+                fontPath="fonts/RobotoCondensed-Bold.ttf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="6dp"
@@ -103,7 +103,7 @@
 
             <android.support.v7.widget.AppCompatTextView
                 android:id="@+id/txtVisitExperience"
-                fontPath="fonts/Exo2-Light.otf"
+                fontPath="fonts/RobotoCondensed-Light.ttf"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="6dp"
@@ -126,7 +126,7 @@
                 android:padding="5dp">
 
                 <android.support.v7.widget.AppCompatTextView
-                    fontPath="fonts/Exo2-Light.otf"
+                    fontPath="fonts/RobotoCondensed-Light.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -143,7 +143,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtHelpfulNo"
-                    fontPath="fonts/Exo2-Bold.otf"
+                    fontPath="fonts/RobotoCondensed-Bold.ttf"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
@@ -164,7 +164,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtHelpfulYes"
-                    fontPath="fonts/Exo2-Bold.otf"
+                    fontPath="fonts/RobotoCondensed-Bold.ttf"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="5dp"
