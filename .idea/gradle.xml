@@ -10,6 +10,7 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/Concept" />
+            <option value="$PROJECT_DIR$/Final" />
             <option value="$PROJECT_DIR$/Users" />
           </set>
         </option>

@@ -11,7 +11,7 @@ import android.view.animation.Animation;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.zenpets.users.credentials.LoginActivity;
-import com.zenpets.users.landing.NewLandingActivity;
+import com.zenpets.users.landing.LandingActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -45,7 +45,7 @@ public class SplashScreen extends AppCompatActivity {
                 /** DETERMINE IF THE USER IS LOGGED IN **/
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 if (user != null)   {
-                    Intent showLanding = new Intent(SplashScreen.this, NewLandingActivity.class);
+                    Intent showLanding = new Intent(SplashScreen.this, LandingActivity.class);
                     showLanding.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(showLanding);
                     finish();

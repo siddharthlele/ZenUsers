@@ -19,97 +19,97 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class NewLandingActivity extends AppCompatActivity {
-
-    private static final String SELECTED_ITEM = "arg_selected_item";
-    private int mSelectedItem;
-
-    /** CAST THE LAYOUT ELEMENTS **/
-    @BindView(R.id.bottomNavigationView) BottomNavigationView bottomNavigationView;
-
-    @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.new_landing_activity);
-        ButterKnife.bind(this);
-
-        /** SWITCH THE FRAGMENT **/
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-
-                /** CHANGE THE SELECTION **/
-                selectFragment(item);
-                return true;
-            }
-        });
-
-        MenuItem selectedItem;
-        if (savedInstanceState != null) {
-            mSelectedItem = savedInstanceState.getInt(SELECTED_ITEM, 0);
-            selectedItem = bottomNavigationView.getMenu().findItem(mSelectedItem);
-        } else {
-            selectedItem = bottomNavigationView.getMenu().getItem(0);
-        }
-        selectFragment(selectedItem);
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        outState.putInt(SELECTED_ITEM, mSelectedItem);
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
-    public void onBackPressed() {
-        MenuItem homeItem = bottomNavigationView.getMenu().getItem(0);
-        if (mSelectedItem != homeItem.getItemId()) {
-            selectFragment(homeItem);
-        } else {
-            super.onBackPressed();
-        }
-    }
-
-    /** CHANGE THE SELECTION **/
-    private void selectFragment(MenuItem item) {
-        Fragment frag;
-        switch (item.getItemId()) {
-            case R.id.menuServices:
-                frag = new AllServicesFrag();
-                switchFragment(frag);
-                break;
-            case R.id.menuShop:
-                frag = new AllShopsFrag();
-                switchFragment(frag);
-                break;
-            case R.id.menuConsult:
-                frag = new ConsultationsFrag();
-                switchFragment(frag);
-                break;
-            case R.id.menuProfile:
-                frag = new UserProfile();
-                switchFragment(frag);
-                break;
-        }
-
-        mSelectedItem = item.getItemId();
-
-        for (int i = 0; i< bottomNavigationView.getMenu().size(); i++) {
-            MenuItem menuItem = bottomNavigationView.getMenu().getItem(i);
-            menuItem.setChecked(menuItem.getItemId() == item.getItemId());
-        }
-    }
-
-    /** METHOD TO CHANGE THE FRAGMENT **/
-    private void switchFragment(Fragment fragment) {
-        getSupportFragmentManager()
-                .beginTransaction()
-                .replace(R.id.container, fragment)
-                .commit();
-    }
-
-    @Override
-    protected void attachBaseContext(Context newBase) {
-        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
-    }
-}
+//public class NewLandingActivity extends AppCompatActivity {
+//
+//    private static final String SELECTED_ITEM = "arg_selected_item";
+//    private int mSelectedItem;
+//
+//    /** CAST THE LAYOUT ELEMENTS **/
+//    @BindView(R.id.bottomNavigationView) BottomNavigationView bottomNavigationView;
+//
+//    @Override
+//    protected void onCreate(@Nullable Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.new_landing_activity);
+//        ButterKnife.bind(this);
+//
+//        /** SWITCH THE FRAGMENT **/
+//        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//
+//                /** CHANGE THE SELECTION **/
+//                selectFragment(item);
+//                return true;
+//            }
+//        });
+//
+//        MenuItem selectedItem;
+//        if (savedInstanceState != null) {
+//            mSelectedItem = savedInstanceState.getInt(SELECTED_ITEM, 0);
+//            selectedItem = bottomNavigationView.getMenu().findItem(mSelectedItem);
+//        } else {
+//            selectedItem = bottomNavigationView.getMenu().getItem(0);
+//        }
+//        selectFragment(selectedItem);
+//    }
+//
+//    @Override
+//    protected void onSaveInstanceState(Bundle outState) {
+//        outState.putInt(SELECTED_ITEM, mSelectedItem);
+//        super.onSaveInstanceState(outState);
+//    }
+//
+//    @Override
+//    public void onBackPressed() {
+//        MenuItem homeItem = bottomNavigationView.getMenu().getItem(0);
+//        if (mSelectedItem != homeItem.getItemId()) {
+//            selectFragment(homeItem);
+//        } else {
+//            super.onBackPressed();
+//        }
+//    }
+//
+//    /** CHANGE THE SELECTION **/
+//    private void selectFragment(MenuItem item) {
+//        Fragment frag;
+//        switch (item.getItemId()) {
+//            case R.id.menuServices:
+//                frag = new AllServicesFrag();
+//                switchFragment(frag);
+//                break;
+//            case R.id.menuShop:
+//                frag = new AllShopsFrag();
+//                switchFragment(frag);
+//                break;
+//            case R.id.menuConsult:
+//                frag = new ConsultationsFrag();
+//                switchFragment(frag);
+//                break;
+//            case R.id.menuProfile:
+//                frag = new UserProfile();
+//                switchFragment(frag);
+//                break;
+//        }
+//
+//        mSelectedItem = item.getItemId();
+//
+//        for (int i = 0; i< bottomNavigationView.getMenu().size(); i++) {
+//            MenuItem menuItem = bottomNavigationView.getMenu().getItem(i);
+//            menuItem.setChecked(menuItem.getItemId() == item.getItemId());
+//        }
+//    }
+//
+//    /** METHOD TO CHANGE THE FRAGMENT **/
+//    private void switchFragment(Fragment fragment) {
+//        getSupportFragmentManager()
+//                .beginTransaction()
+//                .replace(R.id.container, fragment)
+//                .commit();
+//    }
+//
+//    @Override
+//    protected void attachBaseContext(Context newBase) {
+//        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+//    }
+//}

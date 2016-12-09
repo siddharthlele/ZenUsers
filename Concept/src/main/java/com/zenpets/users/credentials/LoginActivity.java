@@ -34,7 +34,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.zenpets.users.R;
-import com.zenpets.users.landing.NewLandingActivity;
+import com.zenpets.users.landing.LandingActivity;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity implements
                     final String USER_ID = user.getUid();
                     Toast.makeText(getApplicationContext(), user.getUid(), Toast.LENGTH_SHORT).show();
 
-                    Intent showLanding = new Intent(LoginActivity.this, NewLandingActivity.class);
+                    Intent showLanding = new Intent(LoginActivity.this, LandingActivity.class);
                     showLanding.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(showLanding);
                     finish();
@@ -106,7 +106,7 @@ public class LoginActivity extends AppCompatActivity implements
                                 reference.child("userName").setValue(user.getDisplayName());
                                 reference.child("userEmail").setValue(user.getEmail());
                             }else {
-                                Intent showLanding = new Intent(LoginActivity.this, NewLandingActivity.class);
+                                Intent showLanding = new Intent(LoginActivity.this, LandingActivity.class);
                                 showLanding.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(showLanding);
                                 finish();
