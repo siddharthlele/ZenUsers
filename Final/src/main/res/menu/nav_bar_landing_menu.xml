@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/grpHome"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashHome"
+            android:checked="true"
+            android:icon="@drawable/ic_dashboard_white_24dp"
+            android:title="Dashboard" />
+    </group>
+
+    <group
+        android:id="@+id/grpProfile"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashUserProfile"
+            android:checked="false"
+            android:icon="@drawable/ic_person_white_24dp"
+            android:title="@string/dash_btn_lbl_profile" />
+    </group>
+
+    <group
+        android:id="@+id/grpFeatures"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashServices"
+            android:checked="false"
+            android:icon="@drawable/ic_style_white_24dp"
+            android:title="Services" />
+        <item
+            android:id="@+id/dashShops"
+            android:checked="false"
+            android:icon="@drawable/ic_store_white_24dp"
+            android:title="Shop" />
+        <item
+            android:id="@+id/dashConsult"
+            android:checked="false"
+            android:icon="@drawable/ic_chat_white_24dp"
+            android:title="@string/dash_btn_lbl_consult" />
+    </group>
+
+    <group
+        android:id="@+id/grpOthers"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/dashHelp"
+            android:checked="false"
+            android:icon="@drawable/ic_help_white_24dp"
+            android:title="@string/dash_btn_lbl_help" />
+        <item
+            android:id="@+id/dashSettings"
+            android:checked="false"
+            android:icon="@drawable/ic_settings_white_24dp"
+            android:title="@string/dash_btn_lbl_settings" />
+    </group>
+</menu>

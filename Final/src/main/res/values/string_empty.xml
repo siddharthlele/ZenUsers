@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- USER PETS -->
+    <string name="empty_pet_records">You haven\'t added any Pet\'s to your account yet. Tap here to add one now.</string>
+
+    <!-- VACCINATIONS -->
+    <string name="empty_vaccination_title">Never miss vaccination dates</string>
+    <string name="empty_vaccination_message">Add reminders to ensure your Pet gets it\'s vaccinations on time.</string>
+    <string name="empty_vaccination_add_text">ADD VACCINATION REMINDER</string>
+
+    <!-- MEDICINES -->
+    <string name="empty_medicine_title">Never miss medication times</string>
+    <string name="empty_medicine_message">Add reminders to ensure your Pet gets it\'s medicines on time.</string>
+    <string name="empty_medicine_add_text">ADD MEDICATION REMINDER</string>
+</resources>

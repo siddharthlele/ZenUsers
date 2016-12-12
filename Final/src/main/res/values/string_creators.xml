@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- USER PROFILE CREATOR -->
+    <string name="profile_name_label">Your profile name</string>
+    <string name="profile_name_hint">Custom Profile Name</string>
+    <string name="profile_description_label">Tell us something about yourself (optional)</string>
+    <string name="profile_description_hint">Describe yourself....</string>
+    <string name="profile_phone_label">Provide your phone number (optional)</string>
+    <string name="profile_phone_hint">Phone Number</string>
+    <string name="profile_dob_label">Select your Date of Birth</string>
+    <string name="profile_gender_label">Select your gender</string>
+    <string name="profile_gender_male">Male</string>
+    <string name="profile_gender_female">Female</string>
+    <string name="profile_picture_label">Your profile picture</string>
+
+    <!-- PET CREATOR -->
+    <string name="pet_creator_type_label">Select the type of Pet</string>
+    <string name="pet_creator_breed_label">Select your Pet\'s Breed</string>
+    <string name="pet_creator_name_label">Enter your Pet\'s Name</string>
+    <string name="pet_creator_gender_label">Select your Pet\'s gender</string>
+    <string name="pet_creator_gender_male">Male</string>
+    <string name="pet_creator_gender_female">Female</string>
+    <string name="pet_creator_dob_label">Select your Pet\'s date of birth</string>
+    <string name="pet_creator_image_picker_label">Select an image of your cute and cuddly</string>
+
+    <!-- VACCINATION CREATOR -->
+    <string name="vac_creator_pet_label">Select your Pet</string>
+    <string name="vac_creator_type_label">Select the Vaccine</string>
+    <string name="vac_creator_date_label">Date of vaccination</string>
+    <string name="vac_creator_notes_hint">Notes about this vaccine (optional)</string>
+
+    <!-- MEDICATION CREATOR -->
+    <string name="med_creator_name_label">What is the Medicine\'s name?</string>
+    <string name="med_creator_name_hint">Medicine name</string>
+    <string name="med_creator_date_label">Date of medication</string>
+    <string name="med_creator_dosage_label">What was the Medicine\'s dosage?</string>
+    <string name="med_creator_dosage_hint">Notes about this medicine\'s dosage</string>
+    <string name="med_creator_symptoms_label">What were the symptoms for this medicine?</string>
+    <string name="med_creator_symptoms_hint">Notes about the cause / symptoms</string>
+    <string name="med_creator_side_effects_label">Were there any side-effects?</string>
+    <string name="med_creator_side_effects_hint">Notes about side-effects of this medicine, if any</string>
+    <string name="med_creator_image_label">Select an image of the medicine or the prescription for future reference</string>
+    <string name="pet_medicine_bottom_note"><b>Please note:</b> This is only to keep a track of the medication given to your pet and keep a record of the symptoms, which required the medication and side effects, if any. </string>
+</resources>

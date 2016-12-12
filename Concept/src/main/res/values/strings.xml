@@ -2,10 +2,8 @@
     <string name="app_name">Zen Pets</string>
     <string name="splash_app_name">Zen Pets</string>
 
-    <!-- FACEBOOK API KEY -->
+    <!-- THE API KEY'S -->
     <string name="facebook_app_id">1584967218498481</string>
-
-    <!-- GOOGLE MAPS API KEY -->
     <string name="google_maps_key">AIzaSyBUw_vk8k0plUgGg_W27dzpbLW__srTZ80</string>
 
     <!-- A FEW COMMON STRINGS -->

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/linlaService"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/txtServiceName"
+        fontPath="fonts/Roboto-Regular.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:gravity="start|center"
+        android:paddingBottom="3dp"
+        android:paddingEnd="11dp"
+        android:paddingLeft="11dp"
+        android:paddingRight="11dp"
+        android:paddingStart="11dp"
+        android:paddingTop="6dp"
+        android:text="TextView"
+        android:textColor="@android:color/primary_text_dark"
+        android:textSize="16sp" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/txtServiceDescription"
+        fontPath="fonts/Roboto-Light.ttf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:gravity="start|center"
+        android:paddingBottom="6dp"
+        android:paddingEnd="11dp"
+        android:paddingLeft="11dp"
+        android:paddingRight="11dp"
+        android:paddingStart="11dp"
+        android:paddingTop="3dp"
+        android:text="TextView"
+        android:textColor="@android:color/secondary_text_dark"
+        android:textSize="14sp" />
+</LinearLayout>

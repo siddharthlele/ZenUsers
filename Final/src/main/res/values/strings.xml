@@ -1,3 +1,40 @@
 <resources>
     <string name="app_name">Zen Pets</string>
+
+    <!-- THE API KEY'S -->
+    <string name="facebook_app_id">1584967218498481</string>
+    <string name="google_maps_key">AIzaSyBUw_vk8k0plUgGg_W27dzpbLW__srTZ80</string>
+
+    <!-- A FEW COMMON STRINGS -->
+    <string name="common_loading">Loading....</string>
+
+    <!-- DASHBOARD OPEN AND CLOSE STRINGS -->
+    <string name="drawer_open">Open</string>
+    <string name="drawer_close">Close</string>
+
+    <!-- GENERIC STRINGS -->
+    <string name="generic_mb_save">Save</string>
+    <string name="generic_mb_cancel">Cancel</string>
+    <string name="generic_mb_details">Details</string>
+    <string name="generic_mb_edit">Edit</string>
+    <string name="generic_mb_delete">Delete</string>
+    <string name="generic_mb_yes">Yes</string>
+    <string name="generic_mb_no">No</string>
+
+    <!-- DASHBOARD STRINGS -->
+    <string name="dash_user_name_name">USER NAME</string>
+    <string name="dash_btn_lbl_profile">My Profile</string>
+    <string name="dash_btn_lbl_services">Services</string>
+    <string name="dash_btn_lbl_shop">Shop</string>
+    <string name="dash_btn_lbl_consult">Consult</string>
+    <string name="dash_btn_lbl_tips">Tips</string>
+    <string name="dash_btn_lbl_settings">Settings</string>
+    <string name="dash_btn_lbl_help">Help</string>
+
+    <!-- LOGIN SCREEN -->
+    <string name="login_message">Login using your social account</string>
+
+    <!-- PET RECORD ITEM -->
+    <string name="pet_item_name">PET NAME</string>
+    <string name="pet_item_age">AGE</string>
 </resources>

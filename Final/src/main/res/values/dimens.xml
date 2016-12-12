@@ -1,5 +1,21 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="activity_horizontal_margin">16dp</dimen>
-    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- PHONE / TABLET-->
+    <bool name="isTablet">false</bool>
+
+    <!-- SPLASH SCREEN -->
+    <dimen name="app_name_size">47sp</dimen>
+
+    <!-- SCROLL BAR SIZE -->
+    <dimen name="scroll_bar_size">5dp</dimen>
+
+    <!-- EMPTY DETAILS -->
+    <dimen name="empty_margin">10dp</dimen>
+    <dimen name="empty_pad">6dp</dimen>
+    <dimen name="empty_size">18sp</dimen>
+
+    <!-- DOCTOR PROFILE BEHAVIOR -->
+    <dimen name="image_width">120dp</dimen>
+    <dimen name="image_final_width">32dp</dimen>
+    <dimen name="spacing_normal">16dp</dimen>
 </resources>
