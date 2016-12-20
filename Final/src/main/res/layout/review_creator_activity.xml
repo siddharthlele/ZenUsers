@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/myToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:titleTextAppearance="@style/Toolbar.TitleText">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="start|center"
+            android:orientation="horizontal">
+
+            <com.mikepenz.iconics.view.IconicsImageView
+                android:id="@+id/btnFeedbackExit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:adjustViewBounds="true"
+                app:iiv_color="@android:color/white"
+                app:iiv_icon="faw-times"
+                app:iiv_size="20dp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start|center"
+                android:padding="11dp"
+                android:text="Feedback"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="16sp" />
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:padding="11dp">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgvwDoctorProfile"
+            android:layout_width="62dp"
+            android:layout_height="62dp"
+            android:src="@drawable/beagle"
+            app:civ_border_color="#CCDCDCDC"
+            app:civ_border_width="4dp" />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/txtDoctorName"
+            fontPath="fonts/Roboto-Regular.ttf"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:padding="11dp"
+            android:text="DOCTOR NAME"
+            android:textColor="@android:color/primary_text_dark"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollContainer"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:overScrollMode="never"
+        android:scrollbarSize="5dp">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatTextView
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:padding="11dp"
+                    android:text="Would you recommend the doctor to your family and friends?"
+                    android:textColor="@android:color/secondary_text_dark"
+                    android:textSize="15sp" />
+
+                <co.ceryle.segmentedbutton.SegmentedButtonGroup
+                    android:id="@+id/groupRecommend"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:sbg_backgroundColor="@color/card_bg"
+                    app:sbg_dividerBackgroundDrawable="@android:drawable/divider_horizontal_bright"
+                    app:sbg_dividerPadding="10dp"
+                    app:sbg_dividerRadius="10dp"
+                    app:sbg_dividerSize="1dp"
+                    app:sbg_position="0"
+                    app:sbg_radius="2dp"
+                    app:sbg_ripple="false"
+                    app:sbg_selectorColor="@color/primary"
+                    app:sbg_selectorTextColor="@android:color/primary_text_dark">
+
+                    <co.ceryle.segmentedbutton.SegmentedButton
+                        android:id="@+id/btnYes"
+                        fontPath="fonts/Roboto-Light.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="YES" />
+
+                    <co.ceryle.segmentedbutton.SegmentedButton
+                        android:id="@+id/btnNo"
+                        fontPath="fonts/Roboto-Light.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="NO" />
+                </co.ceryle.segmentedbutton.SegmentedButtonGroup>
+
+                <android.support.v7.widget.AppCompatTextView
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="11dp"
+                    android:text="Did your appointment start on time?"
+                    android:textColor="@android:color/secondary_text_dark"
+                    android:textSize="15sp" />
+
+                <co.ceryle.segmentedbutton.SegmentedButtonGroup
+                    android:id="@+id/groupStartTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="4dp"
+                    app:sbg_backgroundColor="@color/card_bg"
+                    app:sbg_dividerBackgroundDrawable="@android:drawable/divider_horizontal_bright"
+                    app:sbg_dividerPadding="10dp"
+                    app:sbg_dividerRadius="10dp"
+                    app:sbg_dividerSize="1dp"
+                    app:sbg_position="0"
+                    app:sbg_radius="2dp"
+                    app:sbg_ripple="false"
+                    app:sbg_selectorColor="@color/primary"
+                    app:sbg_selectorTextColor="@android:color/primary_text_dark">
+
+                    <co.ceryle.segmentedbutton.SegmentedButton
+                        android:id="@+id/btnOnTime"
+                        fontPath="fonts/Roboto-Light.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="On-time"
+                        android:textSize="12sp" />
+
+                    <co.ceryle.segmentedbutton.SegmentedButton
+                        android:id="@+id/btnTenLate"
+                        fontPath="fonts/Roboto-Light.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="10 mins late"
+                        android:textSize="12sp" />
+
+                    <co.ceryle.segmentedbutton.SegmentedButton
+                        android:id="@+id/btnHalfHourLate"
+                        fontPath="fonts/Roboto-Light.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="30 mins late"
+                        android:textSize="12sp" />
+
+                    <co.ceryle.segmentedbutton.SegmentedButton
+                        android:id="@+id/btnHourLate"
+                        fontPath="fonts/Roboto-Light.ttf"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:padding="4dp"
+                        android:text="> 1 hour late"
+                        android:textSize="12sp" />
+                </co.ceryle.segmentedbutton.SegmentedButtonGroup>
+
+                <android.support.v7.widget.AppCompatTextView
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="11dp"
+                    android:text="Your overall experience at the Clinic"
+                    android:textColor="@android:color/secondary_text_dark"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/linlaRating"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <android.support.v7.widget.AppCompatRatingBar
+                        android:id="@+id/ratingOverallExperience"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:numStars="5"
+                        android:progressDrawable="@drawable/zen_ratings"
+                        android:stepSize="1" />
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatTextView
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="11dp"
+                    android:text="For what problem / treatment did you visit the Doctor?"
+                    android:textColor="@android:color/secondary_text_dark"
+                    android:textSize="15sp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edtTreatment"
+                    fontPath="fonts/Roboto-Regular.ttf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="top|start"
+                    android:hint="eg. Vaccination, Regular Check-up"
+                    android:inputType="none"
+                    android:minLines="1"
+                    android:padding="11dp"
+                    android:textColor="@android:color/primary_text_dark"
+                    android:textColorHint="@android:color/secondary_text_dark"
+                    android:textSize="15sp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:padding="11dp"
+                    android:text="How was your experience with the Doctor?"
+                    android:textColor="@android:color/secondary_text_dark"
+                    android:textSize="15sp" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edtExperience"
+                    fontPath="fonts/Roboto-Regular.ttf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:gravity="top|start"
+                    android:hint="Tap to start typing."
+                    android:inputType="textCapSentences|textMultiLine"
+                    android:lines="6"
+                    android:maxLines="11"
+                    android:minLines="6"
+                    android:padding="11dp"
+                    android:textColor="@android:color/primary_text_dark"
+                    android:textColorHint="@android:color/secondary_text_dark"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtTermsOfService"
+                fontPath="fonts/Roboto-Light.ttf"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:lineSpacingExtra="5dp"
+                android:padding="6dp"
+                android:text="By submitting the feedback, I agree to the Terms &amp; Conditions"
+                android:textColor="@android:color/primary_text_dark"
+                android:textColorLink="@android:color/holo_red_dark"
+                android:textSize="12sp" />
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnSubmit"
+                fontPath="fonts/Roboto-Medium.ttf"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:background="@color/primary_dark"
+                android:gravity="center"
+                android:text="Submit"
+                android:textAllCaps="false"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

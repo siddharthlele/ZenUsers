@@ -1,4 +1,4 @@
-package com.zenpets.users.details;
+package com.zenpets.users.details.pet;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

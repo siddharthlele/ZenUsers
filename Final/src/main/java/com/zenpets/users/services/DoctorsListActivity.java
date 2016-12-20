@@ -1,6 +1,7 @@
 package com.zenpets.users.services;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.location.Location;
 import android.os.Bundle;
@@ -37,6 +38,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.zenpets.users.R;
+import com.zenpets.users.details.doctor.DoctorsProfile;
 import com.zenpets.users.utils.TypefaceSpan;
 import com.zenpets.users.utils.models.clinics.ClinicsData;
 import com.zenpets.users.utils.models.services.doctors.DoctorsData;
@@ -247,6 +249,12 @@ public class DoctorsListActivity extends AppCompatActivity implements
                                                         Resources resources = getResources();
                                                         String reviewQuantity = resources.getQuantityString(R.plurals.reviews, 0, 0);
                                                         viewHolder.txtDoctorReviews.setText(reviewQuantity);
+
+                                                        /** SET THE PERCENTAGE **/
+                                                        viewHolder.txtDoctorLikesPercent.setText("0%");
+
+                                                        /** SET THE TOTAL VOTES **/
+                                                        viewHolder.txtDoctorLikesTotal.setText("0 Votes");
                                                     }
                                                 }
 
@@ -274,9 +282,9 @@ public class DoctorsListActivity extends AppCompatActivity implements
                 viewHolder.linlaDoctorContainer.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-//                        Intent intent = new Intent(DoctorsListActivity.this, DoctorsProfileActivity.class);
-//                        intent.putExtra("DOCTOR_ID", adapter.getRef(position).getKey());
-//                        startActivity(intent);
+                        Intent intent = new Intent(DoctorsListActivity.this, DoctorsProfile.class);
+                        intent.putExtra("DOCTOR_ID", adapter.getRef(position).getKey());
+                        startActivity(intent);
                     }
                 });
             }

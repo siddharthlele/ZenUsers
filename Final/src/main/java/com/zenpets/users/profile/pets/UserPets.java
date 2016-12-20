@@ -41,7 +41,7 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.zenpets.users.R;
 import com.zenpets.users.creator.pet.PetCreator;
-import com.zenpets.users.details.PetDetailsContainer;
+import com.zenpets.users.details.pet.PetDetailsContainer;
 import com.zenpets.users.editor.pet.PetEditor;
 import com.zenpets.users.utils.TypefaceSpan;
 import com.zenpets.users.utils.models.pet.PetData;

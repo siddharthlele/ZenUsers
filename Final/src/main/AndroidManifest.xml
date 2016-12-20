@@ -53,7 +53,7 @@
             android:name=".profile.pets.UserPets"
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity
-            android:name=".details.PetDetailsContainer"
+            android:name=".details.pet.PetDetailsContainer"
             android:windowSoftInputMode="stateHidden|adjustPan" />
         <activity
             android:name=".creator.pet.PetCreator"
@@ -65,6 +65,20 @@
         <!-- DOCTORS -->
         <activity
             android:name=".services.DoctorsListActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".details.doctor.DoctorsProfile"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+
+        <!-- REVIEWS -->
+        <activity
+            android:name=".details.doctor.review.DoctorReviewsActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".details.doctor.review.ReviewCreatorActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity
+            android:name=".details.doctor.review.VisitReasonActivity"
             android:windowSoftInputMode="stateHidden|adjustPan" />
 
         <!-- FOR THE FACEBOOK SDK (LOGIN) -->

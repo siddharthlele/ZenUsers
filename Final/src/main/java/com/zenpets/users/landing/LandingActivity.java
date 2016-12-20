@@ -89,7 +89,7 @@ public class LandingActivity extends AppCompatActivity {
 
         /** SHOW THE FIRST FRAGMENT (DASHBOARD) **/
         if (savedInstanceState == null) {
-            Fragment mContent = new DashboardFrag();
+            Fragment mContent = new AllServicesFrag();
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.frame, mContent, "KEY_FRAG")

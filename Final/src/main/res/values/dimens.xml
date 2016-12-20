@@ -11,7 +11,7 @@
 
     <!-- EMPTY DETAILS -->
     <dimen name="empty_margin">10dp</dimen>
-    <dimen name="empty_pad">6dp</dimen>
+    <dimen name="empty_pad">11dp</dimen>
     <dimen name="empty_size">18sp</dimen>
 
     <!-- DOCTOR PROFILE BEHAVIOR -->

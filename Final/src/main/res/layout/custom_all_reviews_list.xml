@@ -1,40 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/myToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:titleTextAppearance="@style/Toolbar.TitleText"></android.support.v7.widget.Toolbar>
+
+    <FrameLayout
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:orientation="vertical">
+        android:layout_gravity="center">
 
-        <include
-            layout="@layout/zen_toolbar"
-            app:layout_anchorGravity="top|center" />
-
-        <LinearLayout
-            android:id="@+id/linlaHeaderProgress"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/listDoctorReviews"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:visibility="gone">
-
-            <ProgressBar
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="2dp" />
-        </LinearLayout>
-
-        <android.support.v7.widget.RecyclerView
-            android:id="@+id/listDoctors"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="center"
-            android:layout_weight="1"
             android:cacheColorHint="@android:color/transparent"
             android:fadingEdge="none"
             android:persistentDrawingCache="scrolling"
@@ -71,22 +60,9 @@
                 android:layout_marginTop="@dimen/empty_margin"
                 android:gravity="center"
                 android:padding="@dimen/empty_pad"
-                android:text="There are no Doctors at your location at the moment :-("
-                android:textColor="@android:color/secondary_text_dark"
-                android:textSize="16sp" />
+                android:text="There are no Reviews for this Doctor yet...."
+                android:textColor="@android:color/secondary_text_light"
+                android:textSize="@dimen/empty_size" />
         </LinearLayout>
-    </LinearLayout>
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fabFilter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_filter_list_white_24dp"
-        app:borderWidth="0dp"
-        app:elevation="6dp"
-        app:layout_anchor="@+id/listDoctors"
-        app:layout_anchorGravity="bottom|end"
-        app:pressedTranslationZ="12dp" />
-</android.support.design.widget.CoordinatorLayout>
+    </FrameLayout>
+</LinearLayout>
