@@ -39,7 +39,7 @@ import com.zenpets.users.R;
 import com.zenpets.users.utils.TypefaceSpan;
 import com.zenpets.users.utils.adapters.UserPetsSpinnerAdapter;
 import com.zenpets.users.utils.adapters.VaccineTypesSpinnerAdapter;
-import com.zenpets.users.utils.models.PetData;
+import com.zenpets.users.utils.models.profile.PetData;
 import com.zenpets.users.utils.models.VaccinesData;
 
 import java.text.DateFormat;

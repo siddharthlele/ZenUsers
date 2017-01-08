@@ -1,6 +1,7 @@
 package com.zenpets.users.landing;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -89,7 +90,7 @@ public class LandingActivity extends AppCompatActivity {
 
         /** SHOW THE FIRST FRAGMENT (DASHBOARD) **/
         if (savedInstanceState == null) {
-            Fragment mContent = new AllServicesFrag();
+            Fragment mContent = new DashboardFrag();
             getSupportFragmentManager()
                     .beginTransaction()
                     .replace(R.id.frame, mContent, "KEY_FRAG")
@@ -154,7 +155,16 @@ public class LandingActivity extends AppCompatActivity {
                         mContent = new ZenSettingsFrag();
                         switchFragment(mContent);
                         return true;
-
+                    case R.id.dashShare:
+                        Intent intent = new Intent(Intent.ACTION_SEND);
+                        intent.setType("text/plain");
+                        intent.putExtra(intent.EXTRA_SUBJECT, "Zen Pets");
+                        String message = "I am using Zen Pets to manage my pet. I can find Vets, Pet Food and loads more using it. You will find this useful too. Download it from here: ";
+                        String link = "https://play.google.com/store/apps/details?id=com.zenpets.users";
+                        String finalText = message + link;
+                        intent.putExtra(Intent.EXTRA_TEXT, finalText);
+                        startActivity(Intent.createChooser(intent, "Select one...."));
+                        return true;
                     default:
                         Toast.makeText(getApplicationContext(), "Somethings Wrong", Toast.LENGTH_SHORT).show();
                         return true;

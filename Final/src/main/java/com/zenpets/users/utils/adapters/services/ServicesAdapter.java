@@ -8,8 +8,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.zenpets.users.R;
+import com.zenpets.users.services.AdoptionListActivity;
 import com.zenpets.users.services.DoctorsListActivity;
 import com.zenpets.users.utils.models.services.ServicesData;
 
@@ -56,29 +58,37 @@ public class ServicesAdapter extends RecyclerView.Adapter<ServicesAdapter.Servic
                 if (strServiceName.equalsIgnoreCase("doctors"))    {
                     intent = new Intent(activity, DoctorsListActivity.class);
                     activity.startActivity(intent);
-//                } else if (strServiceName.equalsIgnoreCase("breeders"))  {
+                } else if (strServiceName.equalsIgnoreCase("breeders"))  {
+                    Toast.makeText(activity, "Coming soon....", Toast.LENGTH_SHORT).show();
 //                    intent = new Intent(activity, BreedersActivity.class);
 //                    activity.startActivity(intent);
-//                } else if (strServiceName.equalsIgnoreCase("handlers")) {
+                } else if (strServiceName.equalsIgnoreCase("handlers")) {
+                    Toast.makeText(activity, "Coming soon....", Toast.LENGTH_SHORT).show();
 //                    intent = new Intent(activity, HandlersActivity.class);
 //                    activity.startActivity(intent);
-//                } else if (strServiceName.equalsIgnoreCase("groomers")) {
+                } else if (strServiceName.equalsIgnoreCase("groomers")) {
+                    Toast.makeText(activity, "Coming soon....", Toast.LENGTH_SHORT).show();
 //                    intent = new Intent(activity, GroomersActivity.class);
 //                    activity.startActivity(intent);
-//                } else if (strServiceName.equalsIgnoreCase("home boarding")) {
+                } else if (strServiceName.equalsIgnoreCase("home boarding")) {
+                    Toast.makeText(activity, "Coming soon....", Toast.LENGTH_SHORT).show();
 //                    intent = new Intent(activity, HomeBoardingActivity.class);
 //                    activity.startActivity(intent);
-//                } else if (strServiceName.equalsIgnoreCase("pet hostels")) {
+                } else if (strServiceName.equalsIgnoreCase("pet hostels")) {
+                    Toast.makeText(activity, "Coming soon....", Toast.LENGTH_SHORT).show();
 //                    intent = new Intent(activity, PetHostelsActivity.class);
 //                    activity.startActivity(intent);
-//                } else if (strServiceName.equalsIgnoreCase("trainers")) {
+                } else if (strServiceName.equalsIgnoreCase("trainers")) {
+                    Toast.makeText(activity, "Coming soon....", Toast.LENGTH_SHORT).show();
 //                    intent = new Intent(activity, TrainersActivity.class);
 //                    activity.startActivity(intent);
-//                } else if (strServiceName.equalsIgnoreCase("walkers")) {
+                } else if (strServiceName.equalsIgnoreCase("walkers")) {
+                    Toast.makeText(activity, "Coming soon....", Toast.LENGTH_SHORT).show();
 //                    intent = new Intent(activity, WalkersActivity.class);
 //                    activity.startActivity(intent);
-//                } else if (strServiceName.equalsIgnoreCase("adoptions")) {
-//                    intent = new Intent(activity, AdoptionActivity.class);
+                } else if (strServiceName.equalsIgnoreCase("adoptions")) {
+                    Toast.makeText(activity, "Coming soon....", Toast.LENGTH_SHORT).show();
+//                    intent = new Intent(activity, AdoptionListActivity.class);
 //                    activity.startActivity(intent);
                 }
             }

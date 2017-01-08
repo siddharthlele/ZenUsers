@@ -375,6 +375,7 @@
                 android:id="@+id/linlaDOB"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
+                android:layout_marginBottom="10dp"
                 android:layout_marginTop="5dp"
                 android:gravity="center"
                 android:orientation="horizontal">

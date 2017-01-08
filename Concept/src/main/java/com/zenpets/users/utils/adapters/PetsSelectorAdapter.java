@@ -13,7 +13,7 @@ import android.widget.ArrayAdapter;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.zenpets.users.R;
-import com.zenpets.users.utils.models.PetData;
+import com.zenpets.users.utils.models.profile.PetData;
 
 import java.util.ArrayList;
 

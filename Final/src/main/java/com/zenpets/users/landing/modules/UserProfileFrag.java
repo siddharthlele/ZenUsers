@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.zenpets.users.R;
 import com.zenpets.users.profile.ProfileDetails;
+import com.zenpets.users.profile.adoptions.UserAdoptionsList;
 import com.zenpets.users.profile.pets.UserPets;
 import com.zenpets.users.utils.TypefaceSpan;
 
@@ -65,6 +66,12 @@ public class UserProfileFrag extends Fragment {
 
     /** SHOW THE USER'S PREFERENCES **/
     @OnClick(R.id.linlaMyPreferences) void showPreferences()    {
+    }
+
+    /** CREATE A NEW ADOPTION LISTING **/
+    @OnClick(R.id.linlaMyNewAdoption) void newAdoption()    {
+        Intent intent = new Intent(getActivity(), UserAdoptionsList.class);
+        startActivity(intent);
     }
 
     @Override

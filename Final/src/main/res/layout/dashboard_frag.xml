@@ -4,4 +4,236 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        android:scrollbarSize="3dp"
+        android:scrollbarThumbVertical="@color/primary_dark">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linlaProfile"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp">
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/imgvwProfilePicture"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:adjustViewBounds="true"
+                        android:scaleType="center"
+                        android:src="@drawable/ic_person_outline_black_24dp" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/imgvwProfileEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end|top"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp"
+                        android:adjustViewBounds="true"
+                        android:background="#CCD0D0D0"
+                        android:padding="11dp"
+                        android:src="@drawable/ic_edit_black_24dp" />
+                </FrameLayout>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtUserName"
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#d0d0d0"
+                    android:gravity="center"
+                    android:paddingBottom="20dp"
+                    android:paddingEnd="15dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingStart="15dp"
+                    android:paddingTop="20dp"
+                    android:text="USER NAME"
+                    android:textColor="@android:color/primary_text_light"
+                    android:textSize="18sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:orientation="vertical">
+
+                <android.support.v7.widget.AppCompatTextView
+                    fontPath="fonts/Roboto-Bold.ttf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center"
+                    android:paddingBottom="5dp"
+                    android:paddingEnd="11dp"
+                    android:paddingLeft="11dp"
+                    android:paddingRight="11dp"
+                    android:paddingStart="11dp"
+                    android:paddingTop="5dp"
+                    android:text="UPCOMING APPOINTMENTS"
+                    android:textColor="@android:color/secondary_text_dark"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/linlaAppointments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/listAppointments"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:cacheColorHint="@android:color/transparent"
+                        android:fadingEdge="none"
+                        android:persistentDrawingCache="scrolling"
+                        android:scrollbars="none"
+                        android:visibility="visible" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtAllAppointments"
+                        fontPath="fonts/Roboto-Bold.ttf"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center"
+                        android:paddingBottom="5dp"
+                        android:paddingEnd="11dp"
+                        android:paddingLeft="11dp"
+                        android:paddingRight="11dp"
+                        android:paddingStart="11dp"
+                        android:paddingTop="5dp"
+                        android:text="SEE ALL APPOINTMENTS"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linlaNoAppointments"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        fontPath="fonts/Roboto-Light.ttf"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center"
+                        android:paddingBottom="5dp"
+                        android:paddingEnd="11dp"
+                        android:paddingLeft="11dp"
+                        android:paddingRight="11dp"
+                        android:paddingStart="11dp"
+                        android:paddingTop="5dp"
+                        android:text="You have no upcoming appointments"
+                        android:textColor="@android:color/secondary_text_dark"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/fixed_divider_horizontal_bright" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    fontPath="fonts/Roboto-Bold.ttf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start|center"
+                    android:paddingBottom="5dp"
+                    android:paddingEnd="11dp"
+                    android:paddingLeft="11dp"
+                    android:paddingRight="11dp"
+                    android:paddingStart="11dp"
+                    android:paddingTop="5dp"
+                    android:text="UPCOMING VACCINATIONS"
+                    android:textColor="@android:color/secondary_text_dark"
+                    android:textSize="15sp" />
+
+                <LinearLayout
+                    android:id="@+id/linlaVaccinations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.RecyclerView
+                        android:id="@+id/listVaccinations"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:cacheColorHint="@android:color/transparent"
+                        android:fadingEdge="none"
+                        android:persistentDrawingCache="scrolling"
+                        android:scrollbars="none"
+                        android:visibility="visible" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtAllVaccinations"
+                        fontPath="fonts/Roboto-Bold.ttf"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center"
+                        android:paddingBottom="5dp"
+                        android:paddingEnd="11dp"
+                        android:paddingLeft="11dp"
+                        android:paddingRight="11dp"
+                        android:paddingStart="11dp"
+                        android:paddingTop="5dp"
+                        android:text="SEE ALL VACCINATIONS"
+                        android:textColor="@android:color/holo_blue_dark"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/linlaNoVaccinations"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="top|center"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        fontPath="fonts/Roboto-Light.ttf"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="start|center"
+                        android:paddingBottom="5dp"
+                        android:paddingEnd="11dp"
+                        android:paddingLeft="11dp"
+                        android:paddingRight="11dp"
+                        android:paddingStart="11dp"
+                        android:paddingTop="5dp"
+                        android:text="You have no upcoming vaccinations"
+                        android:textColor="@android:color/secondary_text_dark"
+                        android:textSize="15sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

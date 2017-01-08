@@ -11,6 +11,7 @@ import android.support.v7.widget.AppCompatRadioButton;
 import android.support.v7.widget.AppCompatRatingBar;
 import android.support.v7.widget.AppCompatTextView;
 import android.text.TextUtils;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.LinearLayout;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
@@ -36,7 +37,7 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class ReviewCreatorActivity extends AppCompatActivity {
 
-    /** THE USER ID **/
+    /** THE USER DETAILS **/
     private String USER_ID = null;
     private String USER_KEY = null;
     private String USER_NAME = null;
@@ -85,7 +86,10 @@ public class ReviewCreatorActivity extends AppCompatActivity {
 
     /** SUBMIT THE REVIEW **/
     @OnClick(R.id.btnSubmit) void submitFeedback()  {
+
         /** HIDE THE KEYBOARD **/
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(edtExperience.getWindowToken(), 0);
 
         /** GET THE DATA **/
         DOCTOR_EXPERIENCE = edtExperience.getText().toString().trim();

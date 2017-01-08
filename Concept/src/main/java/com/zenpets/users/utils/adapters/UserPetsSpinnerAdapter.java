@@ -11,7 +11,7 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import com.zenpets.users.R;
-import com.zenpets.users.utils.models.PetData;
+import com.zenpets.users.utils.models.profile.PetData;
 
 import java.util.ArrayList;
 

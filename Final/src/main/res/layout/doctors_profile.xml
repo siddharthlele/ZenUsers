@@ -64,7 +64,7 @@
 
                             <android.support.v7.widget.AppCompatTextView
                                 android:id="@+id/txtDoctorName"
-                                fontPath="fonts/RobotoCondensed-Bold.ttf"
+                                fontPath="fonts/Roboto-Bold.ttf"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_marginLeft="5dp"
@@ -84,8 +84,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="5dp"
-                android:orientation="horizontal"
-                android:baselineAligned="false">
+                android:baselineAligned="false"
+                android:orientation="horizontal">
 
                 <LinearLayout
                     android:id="@+id/linlaExperience"
@@ -113,7 +113,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtExperience"
-                        fontPath="fonts/RobotoCondensed-Light.ttf"
+                        fontPath="fonts/Roboto-Light.ttf"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -155,7 +155,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtVotes"
-                        fontPath="fonts/RobotoCondensed-Light.ttf"
+                        fontPath="fonts/Roboto-Light.ttf"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -198,7 +198,7 @@
 
                 <android.support.v7.widget.AppCompatTextView
                     android:id="@+id/txtDoctorCharges"
-                    fontPath="fonts/RobotoCondensed-Light.ttf"
+                    fontPath="fonts/Roboto-Light.ttf"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -257,7 +257,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtClinicName"
-                        fontPath="fonts/RobotoCondensed-Regular.ttf"
+                        fontPath="fonts/Roboto-Regular.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -273,7 +273,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtClinicAddress"
-                        fontPath="fonts/RobotoCondensed-Light.ttf"
+                        fontPath="fonts/Roboto-Light.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -335,7 +335,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtOpen"
-                        fontPath="fonts/RobotoCondensed-Light.ttf"
+                        fontPath="fonts/Roboto-Light.ttf"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="11dp"
@@ -348,7 +348,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtClosed"
-                        fontPath="fonts/RobotoCondensed-Light.ttf"
+                        fontPath="fonts/Roboto-Light.ttf"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="11dp"
@@ -361,7 +361,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtTimingsMorning"
-                        fontPath="fonts/RobotoCondensed-Light.ttf"
+                        fontPath="fonts/Roboto-Light.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -377,7 +377,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtTimingAfternoon"
-                        fontPath="fonts/RobotoCondensed-Light.ttf"
+                        fontPath="fonts/Roboto-Light.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -393,7 +393,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtAllTimings"
-                        fontPath="fonts/RobotoCondensed-Bold.ttf"
+                        fontPath="fonts/Roboto-Bold.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -443,7 +443,7 @@
                     android:visibility="visible">
 
                     <android.support.v7.widget.AppCompatTextView
-                        fontPath="fonts/RobotoCondensed-Bold.ttf"
+                        fontPath="fonts/Roboto-Bold.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -470,7 +470,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtAllReviews"
-                        fontPath="fonts/RobotoCondensed-Bold.ttf"
+                        fontPath="fonts/Roboto-Bold.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -495,7 +495,7 @@
                     android:visibility="gone">
 
                     <android.support.v7.widget.AppCompatTextView
-                        fontPath="fonts/RobotoCondensed-Light.ttf"
+                        fontPath="fonts/Roboto-Light.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -594,7 +594,7 @@
                     android:visibility="visible">
 
                     <android.support.v7.widget.AppCompatTextView
-                        fontPath="fonts/RobotoCondensed-Bold.ttf"
+                        fontPath="fonts/Roboto-Bold.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:paddingBottom="5dp"
@@ -620,7 +620,7 @@
 
                     <android.support.v7.widget.AppCompatTextView
                         android:id="@+id/txtAllServices"
-                        fontPath="fonts/RobotoCondensed-Bold.ttf"
+                        fontPath="fonts/Roboto-Bold.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -645,7 +645,7 @@
                     android:visibility="gone">
 
                     <android.support.v7.widget.AppCompatTextView
-                        fontPath="fonts/RobotoCondensed-Light.ttf"
+                        fontPath="fonts/Roboto-Light.ttf"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:gravity="start|center"
@@ -672,7 +672,7 @@
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/txtFeedback"
-            fontPath="fonts/RobotoCondensed-Bold.ttf"
+            fontPath="fonts/Roboto-Bold.ttf"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -689,7 +689,7 @@
 
         <android.support.v7.widget.AppCompatTextView
             android:id="@+id/txtBook"
-            fontPath="fonts/RobotoCondensed-Light.ttf"
+            fontPath="fonts/Roboto-Light.ttf"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"

@@ -183,7 +183,7 @@ public class PetCreator extends AppCompatActivity implements DatePickerDialog.On
         /***** CONFIGURE THE TOOLBAR *****/
         configTB();
 
-        /***** SELECT THE USER'S GENDER *****/
+        /***** SELECT THE PET'S GENDER *****/
         groupGender.setOnClickedButtonPosition(new SegmentedButtonGroup.OnClickedButtonPosition() {
             @Override
             public void onClickedButtonPosition(int position) {

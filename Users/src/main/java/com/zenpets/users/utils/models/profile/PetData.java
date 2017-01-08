@@ -1,4 +1,4 @@
-package com.zenpets.users.utils.models;
+package com.zenpets.users.utils.models.profile;
 
 public class PetData {
 

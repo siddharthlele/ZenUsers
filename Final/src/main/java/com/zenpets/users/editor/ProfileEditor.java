@@ -144,6 +144,9 @@ public class ProfileEditor extends AppCompatActivity implements DatePickerDialog
 
         /** SELECT THE CITY **/
         spnCity.setOnItemSelectedListener(selectCity);
+
+        /** GET THE PROFILE DETAILS (USER NAME AND PROFILE PICTURE) **/
+        getProfile();
     }
 
     /** GET THE PROFILE DETAILS (USER NAME AND PROFILE PICTURE) **/
@@ -209,7 +212,7 @@ public class ProfileEditor extends AppCompatActivity implements DatePickerDialog
                                     /** GET THE PHONE NUMBER **/
                                     USER_PHONE_NUMBER = user.child("userPhoneNumber").getValue(String.class);
                                     if (TextUtils.isEmpty(USER_PHONE_NUMBER))   {
-                                        edtPhoneNumber.setText("Number unspecified");
+                                        edtPhoneNumber.setHint("Mobile Number");
                                     } else {
                                         edtPhoneNumber.setText(USER_PHONE_NUMBER);
                                     }
@@ -439,9 +442,6 @@ public class ProfileEditor extends AppCompatActivity implements DatePickerDialog
         @Override
         public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
             USER_CITY = arrCities.get(position).getCityName();
-
-            /** GET THE PROFILE DETAILS (USER NAME AND PROFILE PICTURE) **/
-            getProfile();
         }
 
         @Override

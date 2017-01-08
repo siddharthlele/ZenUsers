@@ -44,7 +44,7 @@ import com.zenpets.users.creators.PetCreatorActivity;
 import com.zenpets.users.modifier.PetModifierActivity;
 import com.zenpets.users.pets.PetDetailsContainer;
 import com.zenpets.users.utils.TypefaceSpan;
-import com.zenpets.users.utils.models.PetData;
+import com.zenpets.users.utils.models.profile.PetData;
 
 import org.joda.time.LocalDate;
 import org.joda.time.Period;

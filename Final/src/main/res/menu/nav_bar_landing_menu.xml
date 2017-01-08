@@ -45,14 +45,19 @@
         android:id="@+id/grpOthers"
         android:checkableBehavior="single">
         <item
+            android:id="@+id/dashSettings"
+            android:checked="false"
+            android:icon="@drawable/ic_settings_white_24dp"
+            android:title="@string/dash_btn_lbl_settings" />
+        <item
             android:id="@+id/dashHelp"
             android:checked="false"
             android:icon="@drawable/ic_help_white_24dp"
             android:title="@string/dash_btn_lbl_help" />
         <item
-            android:id="@+id/dashSettings"
+            android:id="@+id/dashShare"
             android:checked="false"
-            android:icon="@drawable/ic_settings_white_24dp"
-            android:title="@string/dash_btn_lbl_settings" />
+            android:icon="@drawable/ic_share_white_24dp"
+            android:title="@string/dash_btn_lbl_share" />
     </group>
 </menu>

@@ -189,6 +189,7 @@ public class UserPets extends AppCompatActivity {
                         public void onClick(View v) {
                             Intent intent = new Intent(getApplicationContext(), PetDetailsContainer.class);
                             intent.putExtra("PET_ID_KEY", adapter.getRef(position).getKey());
+                            intent.putExtra("USER_KEY", USER_KEY);
                             startActivity(intent);
                         }
                     });

@@ -30,6 +30,7 @@
     <string name="dash_btn_lbl_tips">Tips</string>
     <string name="dash_btn_lbl_settings">Settings</string>
     <string name="dash_btn_lbl_help">Help</string>
+    <string name="dash_btn_lbl_share">Share</string>
 
     <!-- LOGIN SCREEN -->
     <string name="login_message">Login using your social account</string>
@@ -37,4 +38,13 @@
     <!-- PET RECORD ITEM -->
     <string name="pet_item_name">PET NAME</string>
     <string name="pet_item_age">AGE</string>
+
+    <!-- VACCINATION RECORDS ITEM -->
+    <string name="vac_record_item_name">Vaccine Name</string>
+    <string name="vac_record_item_date">Vaccination Date</string>
+    <string name="vac_record_item_notes">Vaccination Notes</string>
+
+    <!-- MEDICATION RECORDS ITEM -->
+    <string name="medical_record_item_no_image">No image available</string>
+    <string name="medical_record_item_name">MEDICATION NAME</string>
 </resources>

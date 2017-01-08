@@ -36,7 +36,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.zenpets.users.R;
 import com.zenpets.users.utils.TypefaceSpan;
 import com.zenpets.users.utils.adapters.PetsSelectorAdapter;
-import com.zenpets.users.utils.models.PetData;
+import com.zenpets.users.utils.models.profile.PetData;
 import com.zenpets.users.utils.models.consultations.ConsultationsData;
 
 import java.util.ArrayList;

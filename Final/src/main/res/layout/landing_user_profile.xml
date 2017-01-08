@@ -237,6 +237,41 @@
                     android:padding="11dp"
                     android:src="@drawable/ic_chevron_right_white_24dp" />
             </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linlaMyNewAdoption"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.mikepenz.iconics.view.IconicsImageView
+                    android:layout_width="47dp"
+                    android:layout_height="47dp"
+                    android:adjustViewBounds="true"
+                    app:iiv_color="@android:color/secondary_text_dark"
+                    app:iiv_icon="faw-paw"
+                    app:iiv_size="20dp" />
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtNewAdoption"
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="start|center"
+                    android:padding="11dp"
+                    android:text="Your Pet Adoption Listings"
+                    android:textColor="@android:color/primary_text_dark"
+                    android:textSize="16sp" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
+                    android:padding="11dp"
+                    android:src="@drawable/ic_chevron_right_white_24dp" />
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

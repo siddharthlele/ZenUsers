@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:fillViewport="true"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="top|center"
+            android:orientation="vertical">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/imgvwPetCircular"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/beagle"
+                app:civ_border_color="#CCDCDCDC"
+                app:civ_border_width="5dp" />
+
+            <android.support.v7.widget.AppCompatTextView
+                fontPath="fonts/Roboto-Regular.ttf"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="11dp"
+                android:text="@string/pet_details_about_label"
+                android:textColor="@android:color/primary_text_dark"
+                android:textSize="16sp" />
+
+            <View
+                android:layout_width="65dp"
+                android:layout_height="2dp"
+                android:background="#CCDCDCDC" />
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/txtPetName"
+                fontPath="fonts/Roboto-Medium.ttf"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:padding="11dp"
+                android:text="@string/pet_details_about_value"
+                android:textColor="@android:color/holo_orange_dark"
+                android:textSize="29sp" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            fontPath="fonts/fontawesome-webfont.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="6dp"
+                            android:text="@string/gender_less"
+                            android:textColor="@android:color/holo_orange_light"
+                            android:textSize="16sp" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            fontPath="fonts/Roboto-Regular.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="6dp"
+                            android:text="@string/pet_details_gender_label"
+                            android:textColor="@android:color/primary_text_dark"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtPetGender"
+                        fontPath="fonts/Roboto-Medium.ttf"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="11dp"
+                        android:text="@string/pet_details_gender_value"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:textSize="20sp" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="2dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#CCDCDCDC" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <android.support.v7.widget.AppCompatTextView
+                            fontPath="fonts/MaterialIcons-Regular.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="6dp"
+                            android:text="@string/age_icon"
+                            android:textColor="@android:color/holo_orange_light"
+                            android:textSize="16sp" />
+
+                        <android.support.v7.widget.AppCompatTextView
+                            fontPath="fonts/Roboto-Regular.ttf"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="6dp"
+                            android:text="@string/pet_details_age_label"
+                            android:textColor="@android:color/primary_text_dark"
+                            android:textSize="16sp" />
+                    </LinearLayout>
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txtPetAge"
+                        fontPath="fonts/Roboto-Medium.ttf"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="11dp"
+                        android:text="@string/pet_details_age_value"
+                        android:textColor="@android:color/holo_orange_dark"
+                        android:textSize="20sp" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="2dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginTop="10dp"
+                android:background="#CCDCDCDC" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        fontPath="fonts/MaterialIcons-Regular.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="@string/breed_icon"
+                        android:textColor="@android:color/holo_orange_light"
+                        android:textSize="16sp" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        fontPath="fonts/Roboto-Regular.ttf"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:padding="6dp"
+                        android:text="@string/pet_details_breed_label"
+                        android:textColor="@android:color/primary_text_dark"
+                        android:textSize="16sp" />
+                </LinearLayout>
+
+                <android.support.v7.widget.AppCompatTextView
+                    android:id="@+id/txtPetBreed"
+                    fontPath="fonts/Roboto-Medium.ttf"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:padding="11dp"
+                    android:text="@string/pet_details_breed_value"
+                    android:textColor="@android:color/holo_orange_dark"
+                    android:textSize="20sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>
